@@ -281,7 +281,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Payments.config" />
+    <None Include="Payments.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\DataSources\UCommerce.Transactions.Payments.EPay.TransactionInformationType.datasource" />
     <None Include="Service References\Adyen.Test.ModificationSoapService\Payment.wsdl" />
     <None Include="Service References\Adyen.Test.ModificationSoapService\UCommerce.Transactions.Payments.Adyen.Test.ModificationSoapService.BalanceCheckResult.datasource">
