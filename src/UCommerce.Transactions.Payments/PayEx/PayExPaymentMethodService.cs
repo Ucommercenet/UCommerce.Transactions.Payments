@@ -27,11 +27,6 @@ namespace UCommerce.Transactions.Payments.PayEx
 		private ILocalizationContext LocalizationContext { get; set; }
 		private PayExMd5Computer Md5Computer { get; set; }
 
-		/// <summary>
-		/// Gets the <see cref="PayExPaymentMethodServiceConfigurationSection"/>.
-		/// </summary>
-		/// <value>The section.</value>
-
 		private PxOrderSoapClient Client { get; set; }
 
 		/// <summary>
@@ -153,8 +148,8 @@ namespace UCommerce.Transactions.Payments.PayEx
 			if (!message.StatusCode)
 				throw new Exception(string.Format("The webservice returned: {0}.", xml));
 
-			// To avoid Thread being aborted exception allow the request to complete before redirecting.
-			HttpContext.Current.Response.Redirect(message.RedirectUrl);
+            // To avoid Thread being aborted exception allow the request to complete before redirecting.
+            HttpContext.Current.Response.Redirect(message.RedirectUrl);
 			
 			return paymentRequest.Payment;
 		}

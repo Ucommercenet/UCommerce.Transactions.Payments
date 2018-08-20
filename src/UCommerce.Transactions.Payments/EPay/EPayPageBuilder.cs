@@ -23,11 +23,11 @@ namespace UCommerce.Transactions.Payments.EPay
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EPayPageBuilder"/> class.
 		/// </summary>
-		public EPayPageBuilder(CommerceConfigurationProvider configurationProvider, EPayMd5Computer md5Computer, ICallbackUrl callbackUrl, IAbsoluteUrlService absoluteUrlService)
+		public EPayPageBuilder(EPayMd5Computer md5Computer, ICallbackUrl callbackUrl, IAbsoluteUrlService absoluteUrlService)
 		{
 			_callbackUrl = callbackUrl;
 			_absoluteUrlService = absoluteUrlService;
-			LocalizationContext = new CustomGlobalization(configurationProvider);
+			LocalizationContext = new CustomGlobalization();
 			Md5Computer = md5Computer;
 		}
 

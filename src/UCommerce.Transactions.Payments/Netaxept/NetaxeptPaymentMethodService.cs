@@ -62,7 +62,6 @@ namespace UCommerce.Transactions.Payments.Netaxept
 		/// Initializes a new instance of the <see cref="NetaxeptPaymentMethodService"/> class.
 		/// </summary>
 		public NetaxeptPaymentMethodService(
-			CommerceConfigurationProvider configProvider,
 			ILoggingService loggingService,
 			IAbsoluteUrlService absoluteUrlService,
 			ICallbackUrl callbackUrl)
@@ -70,7 +69,7 @@ namespace UCommerce.Transactions.Payments.Netaxept
 			_loggingService = loggingService;
 			_absoluteUrlService = absoluteUrlService;
 			_callbackUrl = callbackUrl;
-			LocalizationContext = new CustomGlobalization(configProvider);
+			LocalizationContext = new CustomGlobalization();
 		}
 
 		/// <summary>
@@ -346,7 +345,7 @@ namespace UCommerce.Transactions.Payments.Netaxept
 			string idData = string.Format("?merchantId={0}&transactionId={1}", merchantId, transactionId);
 			string redirectUrl = (testMode) ? string.Format("{0}{1}", BASE_REDIRECT_URL_TEST, idData) : string.Format("{0}{1}", BASE_REDIRECT_URL_LIVE, idData);
 
-			HttpContext.Current.Response.Redirect(redirectUrl);
+            HttpContext.Current.Response.Redirect(redirectUrl);
 		}
 
 		private string ConcatMessage(string status, string message)

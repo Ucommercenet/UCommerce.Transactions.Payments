@@ -79,10 +79,10 @@ namespace UCommerce.Transactions.Payments.Adyen
 			}
 		}
 
-		public AdyenPageBuilder(CommerceConfigurationProvider configProvider, ICallbackUrl callbackUrl)
+		public AdyenPageBuilder(ICallbackUrl callbackUrl)
 		{
 			_callbackUrl = callbackUrl;
-			LocalizationContext = new CustomGlobalization(configProvider);
+			LocalizationContext = new CustomGlobalization();
 		}
 
 		protected override void BuildHead(StringBuilder page, PaymentRequest paymentRequest)

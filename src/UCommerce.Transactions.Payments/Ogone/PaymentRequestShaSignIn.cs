@@ -18,7 +18,7 @@ namespace UCommerce.Transactions.Payments.Ogone
 		/// Method is used in the OgonePageBuilder.
 		/// </summary>
 		/// <param name="paymentRequest">The payment request.</param>
-		/// <param name="shaSignInParam">The sha sign in as configured at Ogone back-end.</param>
+		/// <param name="shaSignIn">The sha sign in as configured at Ogone back-end.</param>
 		/// <param name="acceptUrl">The accept URL.</param>
 		/// <param name="backUrl">The back URL.</param>
 		/// <param name="cancelUrl">The cancel URL.</param>

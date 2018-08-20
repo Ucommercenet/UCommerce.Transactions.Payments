@@ -77,7 +77,9 @@ namespace UCommerce.Transactions.Payments.Braintree
 
             Payment payment = paymentRequest.Payment;
 
-            HttpContext.Current.Response.Redirect(string.Format("{0}?paymentGuid={1}", paymentFormUrl, payment["paymentGuid"]));
+            var redirectUrl = string.Format("{0}?paymentGuid={1}", paymentFormUrl, payment["paymentGuid"]);
+
+            HttpContext.Current.Response.Redirect(redirectUrl);
 
             return payment;
         }

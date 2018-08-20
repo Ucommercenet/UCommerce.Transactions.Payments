@@ -17,16 +17,14 @@ namespace UCommerce.Transactions.Payments.EPay
 	/// </summary>
 	public class EPayPaymentMethodService : ExternalPaymentMethodService
 	{
-		private CommerceConfigurationProvider ConfigurationProvider { get; set; }
 		private AbstractPageBuilder PageBuilder { get; set; }
 		private EPayMd5Computer Md5Computer { get; set; }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EPayPaymentMethodService"/> class.
 		/// </summary>
-		public EPayPaymentMethodService(CommerceConfigurationProvider configProvider, EPayPageBuilder pageBuilder, EPayMd5Computer md5Computer)
+		public EPayPaymentMethodService(EPayPageBuilder pageBuilder, EPayMd5Computer md5Computer)
 		{
-			ConfigurationProvider = configProvider;
 			PageBuilder = pageBuilder;
 			Md5Computer = md5Computer;
 			Language = 2;

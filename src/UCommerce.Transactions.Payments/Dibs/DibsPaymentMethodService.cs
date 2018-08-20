@@ -24,15 +24,13 @@ namespace UCommerce.Transactions.Payments.Dibs
 	{
 		private readonly IWebRuntimeInspector _webRuntimeInspector;
 	    private readonly ILoggingService _loggingService;
-	    private CommerceConfigurationProvider ConfigProvider { get; set; }
 		private DibsMd5Computer DibsMd5Computer { get; set; }
 		private AbstractPageBuilder PageBuilder { get; set; }
 
-		public DibsPaymentMethodService(CommerceConfigurationProvider configProvider, DibsPageBuilder pageBuilder, DibsMd5Computer md5Computer, IWebRuntimeInspector webRuntimeInspector, ILoggingService loggingService)
+		public DibsPaymentMethodService(DibsPageBuilder pageBuilder, DibsMd5Computer md5Computer, IWebRuntimeInspector webRuntimeInspector, ILoggingService loggingService)
 		{
 			_webRuntimeInspector = webRuntimeInspector;
 		    _loggingService = loggingService;
-		    ConfigProvider = configProvider;
 			DibsMd5Computer = md5Computer;
 			PageBuilder = pageBuilder;
 		}
@@ -57,11 +55,11 @@ namespace UCommerce.Transactions.Payments.Dibs
 			Guard.Against.MissingRequestParameter("transact");
 			Guard.Against.PaymentNotPendingAuthorization(payment);
 
-			int transactionId = GetTransactionParameter();
+			string transactionId = GetTransactionParameter();
 			
 			var hashVeryfied = VerifyMd5Hash(payment);
 
-			payment.TransactionId = transactionId.ToString();
+			payment.TransactionId = transactionId;
 			
 			if (hashVeryfied)
 			{
@@ -83,7 +81,7 @@ namespace UCommerce.Transactions.Payments.Dibs
 
 			string key1 = payment.PaymentMethod.DynamicProperty<string>().Key1.ToString();
 			string key2 = payment.PaymentMethod.DynamicProperty<string>().Key2.ToString();
-			int transact = GetTransactionParameter();
+			string transact = GetTransactionParameter();
 
 			const string format = "When using md5 \"{0}\" cannot be null or empty";
 
@@ -95,7 +93,7 @@ namespace UCommerce.Transactions.Payments.Dibs
 			int isoCode = currencyCodeTranslater.FromIsoCode(currencyParameter);
 
 			var hashComputer = new DibsMd5Computer();
-			var md5ResponseKey = hashComputer.GetPostMd5Key(transact.ToString(), amountParameter, isoCode, key1, key2);
+			var md5ResponseKey = hashComputer.GetPostMd5Key(transact, amountParameter, isoCode, key1, key2);
 
 
 		    var verifyMd5Hash = authKeyParameter.Equals(md5ResponseKey);
@@ -107,16 +105,9 @@ namespace UCommerce.Transactions.Payments.Dibs
 		    return verifyMd5Hash;
 		}
 
-		private int GetTransactionParameter()
+		private string GetTransactionParameter()
 		{
-			int transactionId;
-			var input = HttpContext.Current.Request["transact"];
-			if (!int.TryParse(input, out transactionId))
-			{
-				throw new ArgumentException(string.Format("TransactionId present in the request was not a valid integer. Value is: {0}",input));
-			}
-			
-			return transactionId;
+			return HttpContext.Current.Request["transact"];
 		}
 
 		private string GetCancelUrl(string merchant, string orderid, string transact, string md5key)
@@ -148,7 +139,7 @@ namespace UCommerce.Transactions.Payments.Dibs
 			if (string.IsNullOrEmpty(value))
 				return false;
 
-			return true;
+		    return string.Equals("ACCEPTED", value, StringComparison.InvariantCultureIgnoreCase);
 		}
 
 		private string GetCaptureUrl(string merchant, string amount, string transact, string orderId, string key)

@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCommerce.Transactions.Payments", "UCommerce.Transactions.Payments\UCommerce.Transactions.Payments.csproj", "{A325DBAF-9F9A-4EA7-9B93-1CD48DC0B911}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCommerce.Transactions.Payments.Test", "UCommerce.Transactions.Payments.Test\UCommerce.Transactions.Payments.Test.csproj", "{33E2A3F7-D5F2-4F87-BE95-13BB3941FBBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{EE4CDA08-CCDC-40AD-AFF8-81A58BCBDC7A}"
+	ProjectSection(SolutionItems) = preProject
+		..\tools\Generate.ps1 = ..\tools\Generate.ps1
+		..\tools\GenerateNugetPackage.ps1 = ..\tools\GenerateNugetPackage.ps1
+		..\tools\Get-FolderItem.ps1 = ..\tools\Get-FolderItem.ps1
+		..\tools\Ucommerce.Transactions.Payments\Ucommerce.Transactions.Payments.nuspec = ..\tools\Ucommerce.Transactions.Payments\Ucommerce.Transactions.Payments.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13D32F37-25E4-4CF4-AF26-B16F835E24EA}
 	EndGlobalSection
 EndGlobal

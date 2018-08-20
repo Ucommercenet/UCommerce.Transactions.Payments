@@ -26,8 +26,8 @@ namespace UCommerce.Transactions.Payments.Test.GlobalCollect
 			AssertResponseOk(responseText);
 		}
 
-		[Test, Ignore("")]
-		public void GetPaymentProducts()
+	    [Test, Ignore("")]
+	    public void GetPaymentProducts()
 		{
 			// Arrange
 			var getPaymentProducts = new GetPaymentProducts

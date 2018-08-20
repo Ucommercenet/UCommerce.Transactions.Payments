@@ -24,11 +24,10 @@ namespace UCommerce.Transactions.Payments.Schibsted
         private SchibstedUtil SchibstedUtil { get; set; }
 
         public SchibstedRecurringPaymentMethodService(
-            CommerceConfigurationProvider configProvider,
             SchibstedPageBuilder pageBuilder,
             SchibstedSha256Computer sha256Computer,
             ILoggingService loggingService,
-			IAbsoluteUrlService absoluteUrlService) : base(configProvider, pageBuilder, sha256Computer, loggingService, absoluteUrlService)
+			IAbsoluteUrlService absoluteUrlService) : base(pageBuilder, sha256Computer, loggingService, absoluteUrlService)
         {
 	        _absoluteUrlService = absoluteUrlService;
         }

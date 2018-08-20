@@ -164,9 +164,11 @@ namespace UCommerce.Transactions.Payments.GlobalCollect
 				RedirectToUrl(declineUrl, paymentRequest.Payment);
 			}
 
-			HttpContext.Current.Response.Redirect(paymentData.FormAction);
+		    var redirectUrl = paymentData.FormAction;
 
-			return paymentRequest.Payment;
+            HttpContext.Current.Response.Redirect(redirectUrl);
+
+            return paymentRequest.Payment;
 		}
 
 		public override Payment CancelPayment(Payment paymentToCancel)

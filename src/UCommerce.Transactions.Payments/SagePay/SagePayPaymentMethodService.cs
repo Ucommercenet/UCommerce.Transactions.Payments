@@ -156,7 +156,8 @@ namespace UCommerce.Transactions.Payments.SagePay
 					var getField = GetField("SecurityKey", response);
 					payment.SetSagePaymentInfo(FieldCode.SecurityKey, getField);
 					payment.Save();
-					HttpContext.Current.Response.Redirect(field);
+
+                    HttpContext.Current.Response.Redirect(field);
 					break;
 				default:
 					throw new Exception(string.Format("Error: {0}, Message: {1}.", statusCode, strStatusDetail));
@@ -509,6 +510,7 @@ namespace UCommerce.Transactions.Payments.SagePay
 		/// Gets the sagepay url.
 		/// </summary>
 		/// <param name="strType">Type of the STR.</param>
+		/// <param name="paymentMethod">The payment method.</param>
 		/// <returns></returns>
 		protected virtual string GetSystemURL(string strType, PaymentMethod paymentMethod)
 		{

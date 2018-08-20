@@ -83,7 +83,7 @@ namespace UCommerce.Transactions.Payments.MultiSafepay
 			if (transactionIdXmlNode.InnerText != paymentRequest.Payment.ReferenceId)
 				throw new SecurityException("Transaction ID doesn't match internal reference id.");
 
-			HttpContext.Current.Response.Redirect(paymentUrlXmlNode.InnerText);
+		    System.Web.HttpContext.Current.Items["UCommerceRedirectUrlForPayment"] = paymentUrlXmlNode.InnerText;
 
 			return paymentRequest.Payment;
 		}

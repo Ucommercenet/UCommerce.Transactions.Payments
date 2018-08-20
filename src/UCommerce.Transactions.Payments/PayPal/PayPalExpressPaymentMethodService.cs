@@ -78,7 +78,8 @@ namespace UCommerce.Transactions.Payments.PayPal
 			}
 
 			string windowUrl = string.Format(GetWindowUrlTemplate(paymentRequest.PaymentMethod), responseValues["TOKEN"]);
-			HttpContext.Current.Response.Redirect(windowUrl, true);
+            
+            HttpContext.Current.Response.Redirect(windowUrl, true);
 
 			return payment;
 		}

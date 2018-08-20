@@ -22,15 +22,13 @@ namespace UCommerce.Transactions.Payments.Schibsted
     public class SchibstedPaymentMethodService : ExternalPaymentMethodService
     {
 	    private readonly IAbsoluteUrlService _absoluteUrlService;
-	    protected CommerceConfigurationProvider ConfigProvider { get; set; }
         protected SchibstedSha256Computer Sha256Computer { get; set; }
         protected ILoggingService LoggingService { get; set; }
         protected SchibstedPageBuilder PageBuilder { get; set; }
 
-        public SchibstedPaymentMethodService(CommerceConfigurationProvider configProvider, SchibstedPageBuilder pageBuilder, SchibstedSha256Computer sha256Computer, ILoggingService loggingService, IAbsoluteUrlService absoluteUrlService)
+        public SchibstedPaymentMethodService(SchibstedPageBuilder pageBuilder, SchibstedSha256Computer sha256Computer, ILoggingService loggingService, IAbsoluteUrlService absoluteUrlService)
         {
 	        _absoluteUrlService = absoluteUrlService;
-	        ConfigProvider = configProvider;
             PageBuilder = pageBuilder;
             Sha256Computer = sha256Computer;
             LoggingService = loggingService;

@@ -93,7 +93,7 @@ namespace UCommerce.Transactions.Payments.EWay
 
 			Guard.Against.EmptyRedirectUrl(url);
 
-			HttpContext.Current.Response.Redirect(url);
+            HttpContext.Current.Response.Redirect(url);
 
 			return paymentRequest.Payment;
 		}

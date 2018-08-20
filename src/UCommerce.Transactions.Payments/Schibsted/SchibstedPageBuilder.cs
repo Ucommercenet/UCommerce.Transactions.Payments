@@ -25,13 +25,13 @@ namespace UCommerce.Transactions.Payments.Schibsted
         protected ILoggingService LoggingService { get; set; }
         protected CustomGlobalization LocalizationContext { get; set; }
 
-        public SchibstedPageBuilder(CommerceConfigurationProvider configurationProvider, SchibstedSha256Computer sha256Computer, ILoggingService loggingService, IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl)
+        public SchibstedPageBuilder(SchibstedSha256Computer sha256Computer, ILoggingService loggingService, IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl)
         {
 	        _absoluteUrlService = absoluteUrlService;
 	        _callbackUrl = callbackUrl;
 	        Sha256Computer = sha256Computer;
             LoggingService = loggingService;
-            LocalizationContext = new CustomGlobalization(configurationProvider);
+            LocalizationContext = new CustomGlobalization();
         }
 
         protected override void BuildHead(StringBuilder page, PaymentRequest paymentRequest)

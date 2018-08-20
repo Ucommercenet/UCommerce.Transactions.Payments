@@ -120,10 +120,11 @@ namespace UCommerce.Transactions.Payments.Quickpay
 		    return quickPayStatus.Equals("000") && md5Response.Equals(md5Check);
 	    }
 
-	    /// <summary>
+        /// <summary>
         /// Determines if the API operation was successful
         /// </summary>
-        /// <param name="message">The XML response string</param>
+        /// <param name="message">The XML response string.</param>
+        /// <param name="paymentMethod">The payment method.</param>
         /// <returns>The call status</returns>
         private bool ValidateApiCall(string message, PaymentMethod paymentMethod)
 	    {

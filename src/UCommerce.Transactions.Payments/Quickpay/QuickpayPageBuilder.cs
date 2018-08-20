@@ -25,11 +25,11 @@ namespace UCommerce.Transactions.Payments.Quickpay
 		/// <summary>
 		/// Initializes a new instance of the <see cref="QuickpayPageBuilder"/> class.
 		/// </summary>
-		public QuickpayPageBuilder(CommerceConfigurationProvider configurationProvider, QuickpayMd5Computer md5Computer,IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl)
+		public QuickpayPageBuilder(QuickpayMd5Computer md5Computer,IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl)
 		{
 			_absoluteUrlService = absoluteUrlService;
 			_callbackUrl = callbackUrl;
-			LocalizationContext = new CustomGlobalization(configurationProvider);
+			LocalizationContext = new CustomGlobalization();
 			Md5Computer = md5Computer;
 		}
 

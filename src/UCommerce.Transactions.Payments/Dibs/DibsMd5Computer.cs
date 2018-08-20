@@ -1,6 +1,4 @@
-﻿using UCommerce.Infrastructure.Configuration;
-using UCommerce.Transactions.Payments.Configuration;
-
+﻿
 namespace UCommerce.Transactions.Payments.Dibs
 {
     /// <summary>
@@ -8,16 +6,9 @@ namespace UCommerce.Transactions.Payments.Dibs
     /// </summary>
     public class DibsMd5Computer : AbstractMd5Computer
     {
-        public DibsMd5Computer()
-        {
-        }
-
     	/// <summary>
         /// Gets the refund key <paramref name="orderId"/>, <paramref name="transact"/> and <paramref name="amount"/>.
         /// </summary>
-        /// <param name="orderId">The order id.</param>
-        /// <param name="transact">The transact.</param>
-        /// <param name="amount">The amount.</param>
         /// <returns>Md5 key.</returns>
         public virtual string GetRefundKey(string orderId, string transact, string amount, string key1, string key2, string merchant)
         {
@@ -27,8 +18,6 @@ namespace UCommerce.Transactions.Payments.Dibs
         /// <summary>
         /// Gets the cancel MD5 key computed by <paramref name="orderId"/> and <paramref name="transact"/>.
         /// </summary>
-        /// <param name="orderId">The order id.</param>
-        /// <param name="transact">The transact.</param>
         /// <returns>md5 key.</returns>
 		public virtual string GetCancelMd5Key(string orderId, string transact, string key1, string key2, string merchant)
         {
@@ -38,9 +27,6 @@ namespace UCommerce.Transactions.Payments.Dibs
         /// <summary>
         /// Gets the capture MD5 key computed by <paramref name="orderId"/>, <paramref name="transact"/> and <paramref name="amount"/>.
         /// </summary>
-        /// <param name="orderId">The order id.</param>
-        /// <param name="transact">The transact.</param>
-        /// <param name="amount">The amount.</param>
         /// <returns>Md5 key.</returns>
 		public virtual string GetCaptureMd5Key(string orderId, string transact, string amount, string key1, string key2, string merchant)
         {
@@ -48,11 +34,8 @@ namespace UCommerce.Transactions.Payments.Dibs
         }
 
         /// <summary>
-        /// Computes a Md5 hash of <paramref name=""/>, <paramref name=""/> and <paramref name="amount"/> 3 parameters and Merchant, Key1, Key2 from <see cref="DibsPaymentMethodServiceConfigurationSection"></see>
+        /// Computes a Md5 hash of <paramref name="orderId"/>, <paramref name="currency"/> and <paramref name="amount"/> parameters and Merchant, Key1, Key2 from the configuration.
         /// </summary>
-        /// <param name="orderId">Current order id</param>
-        /// <param name="currency">Used currency</param>
-        /// <param name="amount">Amount <example>100 for 1 USD or 150 for 1.50 USD</example></param>
         /// <returns>Md5 hash</returns>
 		public virtual string GetPreMd5Key(string orderId, string currency, string amount, string key1, string key2, string merchant)
         {
@@ -62,10 +45,8 @@ namespace UCommerce.Transactions.Payments.Dibs
         }
 
         /// <summary>
+        /// Computes a Md5 hash of <paramref name="transact"/> and <paramref name="amount"/> parameters and Key1, Key2 from the configuration.
         /// </summary>
-        /// <param name="transact">Transaction id</param>
-        /// <param name="amount">Amount <example>100 for 1 USD or 150 for 1.50 USD</example></param>
-        /// <param name="currencyNumber">Currency number</param>
         /// <returns>Md5 hash</returns>
 		public virtual string GetPostMd5Key(string transact, string amount, int currencyNumber, string key1, string key2)
         {
