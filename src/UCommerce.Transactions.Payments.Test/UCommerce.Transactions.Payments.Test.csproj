@@ -55,13 +55,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UCommerce.Transactions.Payments\UCommerce.Transactions.Payments.csproj">
-      <Project>{a325dbaf-9f9a-4ea7-9b93-1cd48dc0b911}</Project>
-      <Name>UCommerce.Transactions.Payments</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UCommerce.Transactions.Payments.Adyen\UCommerce.Transactions.Payments.Adyen.csproj">
+      <Project>{EBD1909A-3574-4C03-9157-22B9B2C0C792}</Project>
+      <Name>UCommerce.Transactions.Payments.Adyen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UCommerce.Transactions.Payments.GlobalCollect\UCommerce.Transactions.Payments.GlobalCollect.csproj">
+      <Project>{1E716F4D-E44F-4318-8B48-F345C4D55E58}</Project>
+      <Name>UCommerce.Transactions.Payments.GlobalCollect</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

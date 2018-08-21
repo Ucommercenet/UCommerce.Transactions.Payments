@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E716F4D-E44F-4318-8B48-F345C4D55E58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UCommerce.Transactions.Payments.GlobalCollect</RootNamespace>
+    <AssemblyName>UCommerce.Transactions.Payments.GlobalCollect</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UCommerce, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Admin, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.Admin.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Infrastructure, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Installer, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.Installer.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.NHibernate, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Pipelines, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Presentation, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.SystemHttp, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.SystemHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.SystemWeb, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Web.Api, Version=7.19.0.18233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uCommerce.Core.7.19.0.18233\lib\net45\UCommerce.Web.Api.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\BasicRequest.cs" />
+    <Compile Include="Api\CancelOrder.cs" />
+    <Compile Include="Api\CancelPayment.cs" />
+    <Compile Include="Api\DoRefund.cs" />
+    <Compile Include="Api\ErrorChecker.cs" />
+    <Compile Include="Api\GetDirectory.cs" />
+    <Compile Include="Api\GetOrder.cs" />
+    <Compile Include="Api\GetOrderStatus.cs" />
+    <Compile Include="Api\GetPaymentProducts.cs" />
+    <Compile Include="Api\IAddExtraData.cs" />
+    <Compile Include="Api\IAddToStringBuilder.cs" />
+    <Compile Include="Api\IApiDataPart.cs" />
+    <Compile Include="Api\IApiDataPartReadOnly.cs" />
+    <Compile Include="Api\InsertOrderWithPayment.cs" />
+    <Compile Include="Api\Parts\Address.cs" />
+    <Compile Include="Api\Parts\ApiAction.cs" />
+    <Compile Include="Api\Parts\ApiOrder.cs" />
+    <Compile Include="Api\Parts\ApiPayment.cs" />
+    <Compile Include="Api\Parts\CanAddExtraData.cs" />
+    <Compile Include="Api\Parts\ErrorRow.cs" />
+    <Compile Include="Api\Parts\General.cs" />
+    <Compile Include="Api\Parts\GetOrderStatusResponse.cs" />
+    <Compile Include="Api\Parts\GetPaymentProductsResponse.cs" />
+    <Compile Include="Api\Parts\InsertOrderWithPaymentResponse.cs" />
+    <Compile Include="Api\Parts\Meta.cs" />
+    <Compile Include="Api\Parts\OrderStatus.cs" />
+    <Compile Include="Api\Parts\Params.cs" />
+    <Compile Include="Api\Parts\PartsHelper.cs" />
+    <Compile Include="Api\Parts\PaymentData.cs" />
+    <Compile Include="Api\Parts\PaymentProductData.cs" />
+    <Compile Include="Api\Parts\ResponseMeta.cs" />
+    <Compile Include="Api\Parts\StatusErrorRow.cs" />
+    <Compile Include="Api\SetPayment.cs" />
+    <Compile Include="CreatePaymentRequestDto.cs" />
+    <Compile Include="GlobalCollectConstants.cs" />
+    <Compile Include="GlobalCollectException.cs" />
+    <Compile Include="GlobalCollectHttpPaymentExtractor.cs" />
+    <Compile Include="GlobalCollectOrderStatus.cs" />
+    <Compile Include="GlobalCollectPaymentMethodService.cs" />
+    <Compile Include="GlobalCollectPaymentStatus.cs" />
+    <Compile Include="GlobalCollectSecurityCheck.cs" />
+    <Compile Include="GlobalCollectService.cs" />
+    <Compile Include="IGlobalCollectService.cs" />
+    <Compile Include="IOrderStatus.cs" />
+    <Compile Include="IPaymentData.cs" />
+    <Compile Include="IPaymentProduct.cs" />
+    <Compile Include="ModifiedXmlDocument.cs" />
+    <Compile Include="PaymentStatusHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceApiCaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\GlobalCollect.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
