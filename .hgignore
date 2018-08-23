@@ -34,3 +34,4 @@ src/UCommerceWeb/node_modules/**
 src/uCommerce.sln.ide/*.*
 src/UCommerceWeb/node_modules/*
 src/packages/*
+src/.vs/*
