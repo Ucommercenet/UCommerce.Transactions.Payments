@@ -7,11 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCommerce.Transactions.Paym
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{EE4CDA08-CCDC-40AD-AFF8-81A58BCBDC7A}"
 	ProjectSection(SolutionItems) = preProject
-		..\tools\Generate.ps1 = ..\tools\Generate.ps1
-		..\tools\GenerateForUcommerceDeploy.ps1 = ..\tools\GenerateForUcommerceDeploy.ps1
-		..\tools\GenerateNugetPackage.ps1 = ..\tools\GenerateNugetPackage.ps1
+		..\tools\Deploy.As.Apps.ps1 = ..\tools\Deploy.As.Apps.ps1
 		..\tools\Get-FolderItem.ps1 = ..\tools\Get-FolderItem.ps1
-		..\tools\Ucommerce.Transactions.Payments\Ucommerce.Transactions.Payments.nuspec = ..\tools\Ucommerce.Transactions.Payments\Ucommerce.Transactions.Payments.nuspec
+		..\tools\UpdateAssemblyInfo.ps1 = ..\tools\UpdateAssemblyInfo.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCommerce.Transactions.Payments.Adyen", "UCommerce.Transactions.Payments.Adyen\UCommerce.Transactions.Payments.Adyen.csproj", "{EBD1909A-3574-4C03-9157-22B9B2C0C792}"
