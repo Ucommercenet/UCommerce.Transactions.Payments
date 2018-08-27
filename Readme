@@ -5,7 +5,7 @@
 This project contains all payment provider integrations shipped with Ucommerce out of the box. It is often easier to use a payment provider if the integration code is openly available. The code for the existing integrations is also great inspiration for those looking to create custom integrations with other payment providers not supported by Ucommerce out of the box.
 Furthermore, the integrations being open-source allows for community pull-requests and the possibility to make custom fixes to them when necessary, to be used for a project.
 
-### What does the repository contain? ### 
+### What does the repository contain? ###
 
 * Full source code for all supported payment providers.
 * Powershell script that can deploy the integrations as Ucommerce Apps, to a target folder.
