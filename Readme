@@ -20,10 +20,10 @@ If you don't want to copy all the providers but only selected ones, you can eith
 
 ### Troubleshooting ###
 
-Q: I deployed my app but nothing changes?
+Q: I deployed my app but nothing changes?  
 A: In order to have Ucommerce load your application, you need to perform an application reset.
 
-Q: If I can't override the existing app, won't my DLL clash with the existing one?
+Q: If I can't override the existing app, won't my DLL clash with the existing one?  
 A: You can disable the out of the box app (or any other apps) by adding a '.disabled' extension to the app folder's name. This will prevent any such issues.
 
 
