@@ -40,6 +40,17 @@ function Run-It () {
 		Copy-Item "$src/UCommerce.Transactions.Payments.$element\bin\$Configuration\UCommerce.Transactions.Payments.$element.dll" -Destination "$TargetPath\$element\bin" -Force
 		Copy-Item "$src/UCommerce.Transactions.Payments.$element\Configuration" -Destination "$TargetPath\$element\Configuration" -Force -Recurse
 
+		# DLL Dependency necessary for PayPal
+		if($element -eq "PayPal"){
+			Copy-Item "$src/UCommerce.Transactions.Payments.$element\bin\$Configuration\paypal_base.dll" -Destination "$TargetPath\$element\bin" -Force
+		}
+
+		# DLL Dependency necessary for Braintree
+		if($element -eq "Braintree"){
+			Copy-Item "$src/UCommerce.Transactions.Payments.$element\bin\$Configuration\Braintree-2.22.0.dll" -Destination "$TargetPath\$element\bin" -Force
+			Copy-Item "$src/UCommerce.Transactions.Payments.$element\BraintreePaymentForm.htm" -Destination "$TargetPath\$element" -Force
+		}
+
 		Write-Host "Deployed > $element"
 		Write-Host "---------------------------------------------------------------------------------"
 	}
