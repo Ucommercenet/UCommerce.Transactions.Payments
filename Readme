@@ -12,7 +12,14 @@ Furthermore, the integrations being open-source allows for community pull-reques
 
 ### How do I deploy my custom fix as an app? ###
 
-Simply make your changes to the source code, then run the "Deploy.As.Apps.ps1" Powershell script. There is a mandatory property for the script called "TargetPath". This is a full path to a folder where you would like to deploy the apps. We recommend first deploying them to a temporary location, as overriding the app folders in Ucommerce will cause you losing your changes when upgrading Ucommerce.
+Simply make your changes to the source code, then run the "Deploy.As.Apps.ps1" The powershell script will override what's already in the apps folder, so it goes without saying you need to make sure you can restore to a state before you started making modifications should everything become a mess.
+
+Before running the script make sure you have compiled the solution with either Debug or Release mode based on how you wish to deploy your changes. Otherwise the powershell script will fail as it tries to look for assemblies that does not exist.
+
+example usage
+```
+.\Deploy.As.Apps.ps1 -TargetPath "c:\inetpub\u8\website\umbraco\ucommerce\apps" -Configuration Debug
+```
 
 ### I only need a few of the providers ###
 
