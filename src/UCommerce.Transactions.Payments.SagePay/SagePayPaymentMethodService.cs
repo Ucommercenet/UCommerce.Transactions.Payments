@@ -366,7 +366,7 @@ namespace UCommerce.Transactions.Payments.SagePay
 		/// Writes the <paramref name="dictionary"/> to the response in "Key=Value" form.
 		/// </summary>
 		/// <param name="dictionary">The dictionary.</param>
-		private void WriteResponse(IDictionary<string, string> dicti0onary)
+		private void WriteResponse(IDictionary<string, string> dictionary)
 		{
 			HttpContext.Current.Response.Clear();
 			HttpContext.Current.Response.ContentType = "text/plain";
