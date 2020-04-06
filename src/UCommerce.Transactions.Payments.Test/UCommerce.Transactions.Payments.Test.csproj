@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ucommerce.Transactions.Payments.Test</RootNamespace>
     <AssemblyName>Ucommerce.Transactions.Payments.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -61,6 +61,14 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Ucommerce\src\Ucommerce.Infrastructure\Ucommerce.Infrastructure.csproj">
+      <Project>{890c80a7-f1dd-45e3-a784-34d8b7d0d8f0}</Project>
+      <Name>Ucommerce.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Ucommerce\src\Ucommerce.Model\Ucommerce.csproj">
+      <Project>{40063813-4f14-4aaa-9098-b501d3fe5aa1}</Project>
+      <Name>Ucommerce</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ucommerce.Transactions.Payments.Adyen\Ucommerce.Transactions.Payments.Adyen.csproj">
       <Project>{EBD1909A-3574-4C03-9157-22B9B2C0C792}</Project>
       <Name>Ucommerce.Transactions.Payments.Adyen</Name>

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\UC\UCommerce.Transactions.Payments\src" t="IncludeFlat">
+      <e p="Deploy" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="UCommerce.Transactions.Payments.Adyen" t="IncludeRecursive">
+        <e p="AdyenFields.cs" t="Include" />
+        <e p="AdyenGuardExtensions.cs" t="Include" />
+        <e p="AdyenHttpPaymentExtractor.cs" t="Include" />
+        <e p="AdyenPageBuilder.cs" t="Include" />
+        <e p="AdyenPaymentFlowSelection.cs" t="Include" />
+        <e p="AdyenPaymentMethodService.cs" t="Include" />
+        <e p="app.config" t="Include" />
+        <e p="AuthorizationResultMessageData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Adyen.config" t="Include" />
+        </e>
+        <e p="Connected Services\Adyen.Test.ModificationSoapService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="Payment.wsdl" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult.datasource" t="Include" />
+        </e>
+        <e p="Connected Services\Adyen.Test.NotificationSoapService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="Notification.wsdl" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+        </e>
+        <e p="Connected Services\Adyen.Test.RecurringSoapService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="Recurring.wsdl" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult.datasource" t="Include" />
+        </e>
+        <e p="EnumExtensions.cs" t="Include" />
+        <e p="HmacCalculator.cs" t="Include" />
+        <e p="HmacCalculatorSHA256.cs" t="Include" />
+        <e p="NotificationMessageData.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PaymentResultValidator.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Adyen.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Authorizedotnet" t="IncludeRecursive">
+        <e p="AuthorizedotnetMd5Computer.cs" t="Include" />
+        <e p="AuthorizedotnetPageBuilder.cs" t="Include" />
+        <e p="AuthorizedotnetPaymentMethodService.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Authorizedotnet.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Authorizedotnet.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Braintree" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BraintreePageBuilder.cs" t="Include" />
+        <e p="BraintreePaymentMethodService.cs" t="Include" />
+        <e p="Configuration" t="Include">
+          <e p="Braintree.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Braintree.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Dibs" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Dibs.config" t="Include" />
+        </e>
+        <e p="DibsMd5Computer.cs" t="Include" />
+        <e p="DibsPageBuilder.cs" t="Include" />
+        <e p="DibsPaymentMethodService.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Dibs.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.EPay" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="EPay.config" t="Include" />
+        </e>
+        <e p="Connected Services\EPay.EPayBackendService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="Payment.wsdl" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType.datasource" t="Include" />
+        </e>
+        <e p="EPayMd5Computer.cs" t="Include" />
+        <e p="EPayPageBuilder.cs" t="Include" />
+        <e p="EPayPaymentMethodService.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.EPay.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="Ucommerce.Transactions.Payments.EWay" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="EWay.config" t="Include" />
+        </e>
+        <e p="EWayExtensions.cs" t="Include" />
+        <e p="EWayPaymentMethodService.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Ucommerce.Transactions.Payments.EWay.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.GlobalCollect" t="IncludeRecursive">
+        <e p="Api" t="Include">
+          <e p="BasicRequest.cs" t="Include" />
+          <e p="CancelOrder.cs" t="Include" />
+          <e p="CancelPayment.cs" t="Include" />
+          <e p="DoRefund.cs" t="Include" />
+          <e p="ErrorChecker.cs" t="Include" />
+          <e p="GetDirectory.cs" t="Include" />
+          <e p="GetOrder.cs" t="Include" />
+          <e p="GetOrderStatus.cs" t="Include" />
+          <e p="GetPaymentProducts.cs" t="Include" />
+          <e p="IAddExtraData.cs" t="Include" />
+          <e p="IAddToStringBuilder.cs" t="Include" />
+          <e p="IApiDataPart.cs" t="Include" />
+          <e p="IApiDataPartReadOnly.cs" t="Include" />
+          <e p="InsertOrderWithPayment.cs" t="Include" />
+          <e p="Parts" t="Include">
+            <e p="Address.cs" t="Include" />
+            <e p="ApiAction.cs" t="Include" />
+            <e p="ApiOrder.cs" t="Include" />
+            <e p="ApiPayment.cs" t="Include" />
+            <e p="CanAddExtraData.cs" t="Include" />
+            <e p="ErrorRow.cs" t="Include" />
+            <e p="General.cs" t="Include" />
+            <e p="GetOrderStatusResponse.cs" t="Include" />
+            <e p="GetPaymentProductsResponse.cs" t="Include" />
+            <e p="InsertOrderWithPaymentResponse.cs" t="Include" />
+            <e p="Meta.cs" t="Include" />
+            <e p="OrderStatus.cs" t="Include" />
+            <e p="Params.cs" t="Include" />
+            <e p="PartsHelper.cs" t="Include" />
+            <e p="PaymentData.cs" t="Include" />
+            <e p="PaymentProductData.cs" t="Include" />
+            <e p="ResponseMeta.cs" t="Include" />
+            <e p="StatusErrorRow.cs" t="Include" />
+          </e>
+          <e p="SetPayment.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="GlobalCollect.config" t="Include" />
+        </e>
+        <e p="CreatePaymentRequestDto.cs" t="Include" />
+        <e p="GlobalCollectConstants.cs" t="Include" />
+        <e p="GlobalCollectException.cs" t="Include" />
+        <e p="GlobalCollectHttpPaymentExtractor.cs" t="Include" />
+        <e p="GlobalCollectOrderStatus.cs" t="Include" />
+        <e p="GlobalCollectPaymentMethodService.cs" t="Include" />
+        <e p="GlobalCollectPaymentStatus.cs" t="Include" />
+        <e p="GlobalCollectSecurityCheck.cs" t="Include" />
+        <e p="GlobalCollectService.cs" t="Include" />
+        <e p="IGlobalCollectService.cs" t="Include" />
+        <e p="IOrderStatus.cs" t="Include" />
+        <e p="IPaymentData.cs" t="Include" />
+        <e p="IPaymentProduct.cs" t="Include" />
+        <e p="ModifiedXmlDocument.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PaymentStatusHelper.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="ServiceApiCaller.cs" t="Include" />
+        <e p="UCommerce.Transactions.Payments.GlobalCollect.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Ideal" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Ideal.config" t="Include" />
+        </e>
+        <e p="IdealPageBuilder.cs" t="Include" />
+        <e p="IdealPaymentMethodService.cs" t="Include" />
+        <e p="IdealSha1Computer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Ideal.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.MultiSafepay" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="MultiSafepay.config" t="Include" />
+        </e>
+        <e p="MultiSafePayHttpRequester.cs" t="Include" />
+        <e p="MultiSafePayPaymentMethodService.cs" t="Include" />
+        <e p="MultiSafePayPaymentRequestBuilder.cs" t="Include" />
+        <e p="MultiSafePayStatusRequestBuilder.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.MultiSafepay.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Netaxept" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Netaxept.config" t="Include" />
+        </e>
+        <e p="Connected Services\Netaxept.NetaxeptBackendService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="Netaxept.wsdl" t="Include" />
+          <e p="Netaxept.xsd" t="Include" />
+          <e p="Netaxept1.wsdl" t="Include" />
+          <e p="Netaxept1.xsd" t="Include" />
+          <e p="Netaxept2.xsd" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse.datasource" t="Include" />
+        </e>
+        <e p="CurrencyExtension.cs" t="Include" />
+        <e p="NetaxeptPaymentMethodService.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Netaxept.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Ogone" t="IncludeRecursive">
+        <e p="AcquirePaymentShaSignIn.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CancelPaymentShaSignIn.cs" t="Include" />
+        <e p="Configuration" t="Include">
+          <e p="Ogone.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OgoneExtensions.cs" t="Include" />
+        <e p="OgonePageBuilder.cs" t="Include" />
+        <e p="OgonePaymentMethodService.cs" t="Include" />
+        <e p="OgoneSha1Computer.cs" t="Include" />
+        <e p="PaymentRequestShaSignIn.cs" t="Include" />
+        <e p="ProcessCallBackShaSignOut.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Ogone.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Payer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Payer.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PayerFalsePage.cs" t="Include" />
+        <e p="PayerMd5Computer.cs" t="Include" />
+        <e p="PayerPageBuilder.cs" t="Include" />
+        <e p="PayerPaymentMethodService.cs" t="Include" />
+        <e p="PayerTruePage.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Payer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.PayEx" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="PayEx.config" t="Include" />
+        </e>
+        <e p="Connected Services\PayEx.PayExBackendService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="pxorder.wsdl" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+          <e p="UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.AddMultipleOrderLinesResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.Initialize21.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.InitializeResponse.datasource" t="Include" />
+        </e>
+        <e p="Connected Services\PayEx.Test.PayExBackendService" t="Include">
+          <e p="configuration.svcinfo" t="Include" />
+          <e p="configuration91.svcinfo" t="Include" />
+          <e p="pxorder.wsdl" t="Include" />
+          <e p="Reference.cs" t="Include" />
+          <e p="Reference.svcmap" t="Include" />
+          <e p="UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21.datasource" t="Include" />
+          <e p="UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse.datasource" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PayExGuardExtensions.cs" t="Include" />
+        <e p="PayExMd5Computer.cs" t="Include" />
+        <e p="PayExPaymentMethodService.cs" t="Include" />
+        <e p="PayExXmlMessage.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.PayEx.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.PayPal" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ButtonEncrypter.cs" t="Include" />
+        <e p="Configuration" t="Include">
+          <e p="PayPal.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PayPalExpressPaymentMethodService.cs" t="Include" />
+        <e p="PaypalPaymentMethodService.cs" t="Include" />
+        <e p="PayPalRecurringPaymentMethodService.cs" t="Include" />
+        <e p="PayPalWebSitePaymentsStandardPageBuilder.cs" t="Include" />
+        <e p="PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.PayPal.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.Quickpay" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Quickpay.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="QuickPayGuardExtensions.cs" t="Include" />
+        <e p="QuickpayMd5Computer.cs" t="Include" />
+        <e p="QuickpayPageBuilder.cs" t="Include" />
+        <e p="QuickpayPaymentMethodService.cs" t="Include" />
+        <e p="UCommerce.Transactions.Payments.Quickpay.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.SagePay" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="SagePay.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SagePayExtensions.cs" t="Include" />
+        <e p="SagePayMd5Computer.cs" t="Include" />
+        <e p="SagePayPaymentMethodService.cs" t="Include" />
+        <e p="SagePayStatusCode.cs" t="Include" />
+        <e p="SagePayTransactionType.cs" t="Include" />
+        <e p="SagePayV3PaymentMethodService.cs" t="Include" />
+        <e p="UCommerce.Transactions.Payments.SagePay.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="Ucommerce.Transactions.Payments.Schibsted" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CallbackEntry.cs" t="Include" />
+        <e p="Configuration" t="Include">
+          <e p="Schibsted.config" t="Include" />
+        </e>
+        <e p="OAuthToken.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Order.cs" t="Include" />
+        <e p="OrderItem.cs" t="Include" />
+        <e p="PayLinkData.cs" t="Include" />
+        <e p="Product.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SchibstedPageBuilder.cs" t="Include" />
+        <e p="SchibstedPaymentMethodService.cs" t="Include" />
+        <e p="SchibstedRecurringPaymentMethodService.cs" t="Include" />
+        <e p="SchibstedSha256Computer.cs" t="Include" />
+        <e p="SchibstedUtil.cs" t="Include" />
+        <e p="SppCallbackContainer.cs" t="Include" />
+        <e p="SPPContainer.cs" t="Include" />
+        <e p="Ucommerce.Transactions.Payments.Schibsted.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.SecureTrading" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="SecureTrading.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecureTradingConstants.cs" t="Include" />
+        <e p="SecureTradingErrorCode.cs" t="Include" />
+        <e p="SecureTradingGuardExtensions.cs" t="Include" />
+        <e p="SecureTradingHttpPaymentExtractor.cs" t="Include" />
+        <e p="SecureTradingMd5Computer.cs" t="Include" />
+        <e p="SecureTradingPageBuilder.cs" t="Include" />
+        <e p="SecureTradingPaymentMethodService.cs" t="Include" />
+        <e p="SecureTradingRefundXmlResponse.cs" t="Include" />
+        <e p="SecureTradingResponse.cs" t="Include" />
+        <e p="SecureTradingSettlementStatus.cs" t="Include" />
+        <e p="SecureTradingTransactionQueryXmlResponse.cs" t="Include" />
+        <e p="SecureTradingTransactionUpdateXmlResponse.cs" t="Include" />
+        <e p="SecureTradingXmlRequester.cs" t="Include" />
+        <e p="UCommerce.Transactions.Payments.SecureTrading.csproj" t="IncludeRecursive" />
+        <e p="XmlHttpPost.cs" t="Include" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.sln" t="IncludeFlat" />
+      <e p="UCommerce.Transactions.Payments.Test" t="IncludeRecursive">
+        <e p="Adyen" t="Include">
+          <e p="HmacCalculationTests.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GlobalCollect" t="Include">
+          <e p="AddingExtraDataToRequest.cs" t="Include" />
+          <e p="ApiRequestResponseReadWrite.cs" t="Include" />
+          <e p="ModifiedXmlDocumentReading.cs" t="Include" />
+          <e p="TestApiCalls.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.Test.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UCommerce.Transactions.Payments.WorldPay" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="WorldPay.config" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UCommerce.Transactions.Payments.WorldPay.csproj" t="IncludeRecursive" />
+        <e p="WorldPayHashComputer.cs" t="Include" />
+        <e p="WorldPayPageBuilder.cs" t="Include" />
+        <e p="WorldPayPaymentMethodService.cs" t="Include" />
+      </e>
+    </e>
+    <e p="C:\UC\UCommerce.Transactions.Payments\tools\Deploy.As.Apps.ps1" t="Include" />
+    <e p="C:\UC\UCommerce.Transactions.Payments\tools\Get-FolderItem.ps1" t="Include" />
+    <e p="C:\UC\UCommerce.Transactions.Payments\tools\UpdateAssemblyInfo.ps1" t="Include" />
+    <e p="C:\Users\soren\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\soren\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\soren\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_UCommerce.Transactions.Payments.43232711.00" t="ExcludeRecursive" />
+  </component>
+</project>
