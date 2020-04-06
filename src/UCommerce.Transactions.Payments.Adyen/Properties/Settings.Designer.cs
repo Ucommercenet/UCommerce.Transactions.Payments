@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.Adyen.Properties {
+namespace Ucommerce.Transactions.Payments.Adyen.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

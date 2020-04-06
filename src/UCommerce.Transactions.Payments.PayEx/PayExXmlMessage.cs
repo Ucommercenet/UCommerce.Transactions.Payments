@@ -1,7 +1,7 @@
 using System;
 using System.Xml;
 
-namespace UCommerce.Transactions.Payments.PayEx
+namespace Ucommerce.Transactions.Payments.PayEx
 {
 	public class PayExXmlMessage
 	{

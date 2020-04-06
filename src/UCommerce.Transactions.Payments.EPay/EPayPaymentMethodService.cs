@@ -4,12 +4,12 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService;
 
-namespace UCommerce.Transactions.Payments.EPay
+namespace Ucommerce.Transactions.Payments.EPay
 {
 	/// <summary>
 	/// Implementation of the http://epay.dk payment provider

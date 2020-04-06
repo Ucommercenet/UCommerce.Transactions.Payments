@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.Extensions;
+using Ucommerce.Extensions;
 
-namespace UCommerce.Transactions.Payments.PayPal
+namespace Ucommerce.Transactions.Payments.PayPal
 {
 	/// <summary>
 	/// Page builder for generating encrypted PayPal buttons for subscriptions.

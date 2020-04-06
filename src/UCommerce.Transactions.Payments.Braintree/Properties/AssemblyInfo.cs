@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UCommerce.Transactions.Paymens.Braintree")]
+[assembly: AssemblyTitle("Ucommerce.Transactions.Paymens.Braintree")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UCommerce.Transactions.Paymens.Braintree")]
+[assembly: AssemblyProduct("Ucommerce.Transactions.Paymens.Braintree")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

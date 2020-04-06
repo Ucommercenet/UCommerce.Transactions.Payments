@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService {
+namespace Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,31 +23,31 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card cardField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card cardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elvField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elvField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> fraudOffsetField;
@@ -56,13 +56,13 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string merchantAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string orderReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string referenceField;
@@ -102,7 +102,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
             get {
                 return this.additionalAmountField;
             }
@@ -115,7 +115,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -128,7 +128,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
             get {
                 return this.amountField;
             }
@@ -141,7 +141,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccount {
             get {
                 return this.bankAccountField;
             }
@@ -154,7 +154,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
             get {
                 return this.browserInfoField;
             }
@@ -167,7 +167,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card card {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card card {
             get {
                 return this.cardField;
             }
@@ -180,7 +180,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
             get {
                 return this.dccQuoteField;
             }
@@ -193,7 +193,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
             get {
                 return this.deliveryAddressField;
             }
@@ -206,7 +206,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elv {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elv {
             get {
                 return this.elvField;
             }
@@ -245,7 +245,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiData {
             get {
                 return this.mpiDataField;
             }
@@ -271,7 +271,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
             get {
                 return this.recurringField;
             }
@@ -679,7 +679,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address billingAddressField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address billingAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
@@ -715,7 +715,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address billingAddress {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address billingAddress {
             get {
                 return this.billingAddressField;
             }
@@ -870,21 +870,21 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string accountTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount baseAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount baseAmountField;
         
         private int basePointsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount buyField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount buyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount interbankField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount interbankField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string referenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount sellField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount sellField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string signatureField;
@@ -934,7 +934,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount baseAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount baseAmount {
             get {
                 return this.baseAmountField;
             }
@@ -960,7 +960,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount buy {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount buy {
             get {
                 return this.buyField;
             }
@@ -973,7 +973,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount interbank {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount interbank {
             get {
                 return this.interbankField;
             }
@@ -999,7 +999,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount sell {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount sell {
             get {
                 return this.sellField;
             }
@@ -1497,41 +1497,41 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="anyType2anyTypeMap", Namespace="http://payment.services.adyen.com", ItemName="entry")]
     [System.SerializableAttribute()]
-    public class anyType2anyTypeMap : System.Collections.Generic.List<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.entry> {
+    public class anyType2anyTypeMap : System.Collections.Generic.List<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.entry> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="entry", Namespace="http://payment.services.adyen.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResponseCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Error))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResponseCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Error))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Type))]
     public partial class entry : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -1599,31 +1599,31 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card cardField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card cardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elvField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elvField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> fraudOffsetField;
@@ -1632,13 +1632,13 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string merchantAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string orderReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string referenceField;
@@ -1678,7 +1678,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
             get {
                 return this.additionalAmountField;
             }
@@ -1691,7 +1691,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -1704,7 +1704,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
             get {
                 return this.amountField;
             }
@@ -1717,7 +1717,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccount {
             get {
                 return this.bankAccountField;
             }
@@ -1730,7 +1730,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
             get {
                 return this.browserInfoField;
             }
@@ -1743,7 +1743,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card card {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Card card {
             get {
                 return this.cardField;
             }
@@ -1756,7 +1756,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
             get {
                 return this.dccQuoteField;
             }
@@ -1769,7 +1769,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
             get {
                 return this.deliveryAddressField;
             }
@@ -1782,7 +1782,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elv {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ELV elv {
             get {
                 return this.elvField;
             }
@@ -1821,7 +1821,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ThreeDSecureData mpiData {
             get {
                 return this.mpiDataField;
             }
@@ -1847,7 +1847,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
             get {
                 return this.recurringField;
             }
@@ -1996,16 +1996,16 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount currentBalanceField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount currentBalanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string pspReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResponseCode> responseCodeField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResponseCode> responseCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2018,7 +2018,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -2031,7 +2031,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount currentBalance {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount currentBalance {
             get {
                 return this.currentBalanceField;
             }
@@ -2057,7 +2057,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResponseCode> responseCode {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResponseCode> responseCode {
             get {
                 return this.responseCodeField;
             }
@@ -2106,25 +2106,25 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> fraudOffsetField;
@@ -2136,7 +2136,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string orderReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string referenceField;
@@ -2176,7 +2176,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
             get {
                 return this.additionalAmountField;
             }
@@ -2189,7 +2189,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -2202,7 +2202,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
             get {
                 return this.amountField;
             }
@@ -2215,7 +2215,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BankAccount bankAccount {
             get {
                 return this.bankAccountField;
             }
@@ -2228,7 +2228,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
             get {
                 return this.browserInfoField;
             }
@@ -2241,7 +2241,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
             get {
                 return this.dccQuoteField;
             }
@@ -2254,7 +2254,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
             get {
                 return this.deliveryAddressField;
             }
@@ -2306,7 +2306,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
             get {
                 return this.recurringField;
             }
@@ -2455,10 +2455,10 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResultField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResultField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string pspReferenceField;
@@ -2480,7 +2480,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -2493,7 +2493,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResult {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResult {
             get {
                 return this.fraudResultField;
             }
@@ -2640,7 +2640,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private int accountScoreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult[] resultsField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult[] resultsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2666,7 +2666,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult[] results {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudCheckResult[] results {
             get {
                 return this.resultsField;
             }
@@ -2698,7 +2698,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string authorisationCodeField;
@@ -2707,7 +2707,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string merchantAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string originalReferenceField;
@@ -2732,7 +2732,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -2771,7 +2771,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmount {
             get {
                 return this.modificationAmountField;
             }
@@ -2855,7 +2855,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string pspReferenceField;
@@ -2874,7 +2874,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -2932,7 +2932,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string authorisationCodeField;
@@ -2941,7 +2941,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string merchantAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string originalReferenceField;
@@ -2960,7 +2960,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -2999,7 +2999,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount modificationAmount {
             get {
                 return this.modificationAmountField;
             }
@@ -3057,7 +3057,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string pspReferenceField;
@@ -3076,7 +3076,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -3134,22 +3134,22 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuoteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> fraudOffsetField;
@@ -3167,7 +3167,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private string paResponseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string referenceField;
@@ -3207,7 +3207,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount additionalAmount {
             get {
                 return this.additionalAmountField;
             }
@@ -3220,7 +3220,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -3233,7 +3233,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount amount {
             get {
                 return this.amountField;
             }
@@ -3246,7 +3246,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BrowserInfo browserInfo {
             get {
                 return this.browserInfoField;
             }
@@ -3259,7 +3259,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ForexQuote dccQuote {
             get {
                 return this.dccQuoteField;
             }
@@ -3272,7 +3272,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Address deliveryAddress {
             get {
                 return this.deliveryAddressField;
             }
@@ -3350,7 +3350,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring recurring {
             get {
                 return this.recurringField;
             }
@@ -3499,19 +3499,19 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string authCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount dccAmountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount dccAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string dccSignatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResultField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResultField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string issuerUrlField;
@@ -3542,7 +3542,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -3568,7 +3568,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount dccAmount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount dccAmount {
             get {
                 return this.dccAmountField;
             }
@@ -3594,7 +3594,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResult {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FraudResult fraudResult {
             get {
                 return this.fraudResultField;
             }
@@ -3704,10 +3704,10 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Error> errorField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Error> errorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Type> typeField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Type> typeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3720,7 +3720,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Error> error {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Error> error {
             get {
                 return this.errorField;
             }
@@ -3733,7 +3733,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Type> type {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Type> type {
             get {
                 return this.typeField;
             }
@@ -3809,111 +3809,111 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
     public interface PaymentPortType {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authoriseAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise3d(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authorise3dAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authoriseAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult authoriseReferral(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise3d(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> authoriseReferralAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authorise3dAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult authoriseReferral(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> authoriseReferralAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult balanceCheck(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult> balanceCheckAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancel(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancelOrRefund(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelOrRefundAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult capture(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> captureAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult checkFraud(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> checkFraudAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse directdebit(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult balanceCheck(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse> directdebitAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult> balanceCheckAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancel(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancelOrRefund(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelOrRefundAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult capture(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> captureAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult checkFraud(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="paymentResult")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> checkFraudAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse directdebit(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse> directdebitAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult fundTransfer(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult fundTransfer(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult> fundTransferAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult> fundTransferAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult refund(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult refund(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> refundAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> refundAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult refundWithData(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult refundWithData(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> refundWithDataAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> refundWithDataAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface PaymentPortTypeChannel : UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentPortType, System.ServiceModel.IClientChannel {
+    public interface PaymentPortTypeChannel : Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentPortType, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PaymentPortTypeClient : System.ServiceModel.ClientBase<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentPortType>, UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentPortType {
+    public partial class PaymentPortTypeClient : System.ServiceModel.ClientBase<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentPortType>, Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentPortType {
         
         public PaymentPortTypeClient() {
         }
@@ -3934,99 +3934,99 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapServi
                 base(binding, remoteAddress) {
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
             return base.Channel.authorise(paymentRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authoriseAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authoriseAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
             return base.Channel.authoriseAsync(paymentRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise3d(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult authorise3d(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d) {
             return base.Channel.authorise3d(paymentRequest3d);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authorise3dAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> authorise3dAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest3d paymentRequest3d) {
             return base.Channel.authorise3dAsync(paymentRequest3d);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult authoriseReferral(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult authoriseReferral(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.authoriseReferral(modificationRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> authoriseReferralAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> authoriseReferralAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.authoriseReferralAsync(modificationRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult balanceCheck(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult balanceCheck(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request) {
             return base.Channel.balanceCheck(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult> balanceCheckAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult> balanceCheckAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckRequest request) {
             return base.Channel.balanceCheckAsync(request);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancel(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancel(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.cancel(modificationRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.cancelAsync(modificationRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancelOrRefund(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult cancelOrRefund(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.cancelOrRefund(modificationRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelOrRefundAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> cancelOrRefundAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.cancelOrRefundAsync(modificationRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult capture(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult capture(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.capture(modificationRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> captureAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> captureAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.captureAsync(modificationRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult checkFraud(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult checkFraud(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
             return base.Channel.checkFraud(paymentRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> checkFraudAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> checkFraudAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest paymentRequest) {
             return base.Channel.checkFraudAsync(paymentRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse directdebit(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse directdebit(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request) {
             return base.Channel.directdebit(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse> directdebitAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse> directdebitAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitRequest request) {
             return base.Channel.directdebitAsync(request);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult fundTransfer(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult fundTransfer(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request) {
             return base.Channel.fundTransfer(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult> fundTransferAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult> fundTransferAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferRequest request) {
             return base.Channel.fundTransferAsync(request);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult refund(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult refund(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.refund(modificationRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> refundAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult> refundAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationRequest modificationRequest) {
             return base.Channel.refundAsync(modificationRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult refundWithData(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult refundWithData(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request) {
             return base.Channel.refundWithData(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> refundWithDataAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult> refundWithDataAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentRequest request) {
             return base.Channel.refundWithDataAsync(request);
         }
     }

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.EPay
+namespace Ucommerce.Transactions.Payments.EPay
 {
 	/// <summary>
 	/// Builds a EPay redirect page.

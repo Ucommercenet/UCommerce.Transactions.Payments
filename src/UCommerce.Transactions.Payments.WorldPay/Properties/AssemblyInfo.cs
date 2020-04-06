@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UCommerce.Transactions.Payments.WorldPay")]
+[assembly: AssemblyTitle("Ucommerce.Transactions.Payments.WorldPay")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UCommerce.Transactions.Payments.WorldPay")]
+[assembly: AssemblyProduct("Ucommerce.Transactions.Payments.WorldPay")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -9,12 +9,12 @@ using System.Web;
 using com.paypal.sdk.profiles;
 using com.paypal.sdk.services;
 using com.paypal.sdk.util;
-using UCommerce.Extensions;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.Extensions;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.PayPal
+namespace Ucommerce.Transactions.Payments.PayPal
 {
 	public class PayPalPaymentMethodService : ExternalPaymentMethodService
 	{

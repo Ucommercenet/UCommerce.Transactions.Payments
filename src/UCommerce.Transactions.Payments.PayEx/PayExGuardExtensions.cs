@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Environment;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Environment;
 
-namespace UCommerce.Transactions.Payments.PayEx
+namespace Ucommerce.Transactions.Payments.PayEx
 {
 	public static class PayExGuardExtensions
 	{

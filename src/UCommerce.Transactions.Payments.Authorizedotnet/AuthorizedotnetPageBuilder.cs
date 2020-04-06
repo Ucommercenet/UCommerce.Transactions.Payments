@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Authorizedotnet
+namespace Ucommerce.Transactions.Payments.Authorizedotnet
 {
 	public class AuthorizedotnetPageBuilder : AbstractPageBuilder
 	{

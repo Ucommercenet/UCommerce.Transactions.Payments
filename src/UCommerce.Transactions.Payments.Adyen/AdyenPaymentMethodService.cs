@@ -5,18 +5,18 @@ using System.Linq;
 using System.Security;
 using System.ServiceModel;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService;
-using UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
-using Amount = UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount;
-using Recurring = UCommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService;
+using Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
+using Amount = Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Amount;
+using Recurring = Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.Recurring;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public class AdyenPaymentMethodService : ExternalPaymentMethodService
 	{

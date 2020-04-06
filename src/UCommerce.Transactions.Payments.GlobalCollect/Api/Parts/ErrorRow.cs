@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.Xslt.Resources;
+using Ucommerce.Xslt.Resources;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect.Api.Parts
+namespace Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts
 {
 	public class ErrorRow : IApiDataPartReadOnly
 	{

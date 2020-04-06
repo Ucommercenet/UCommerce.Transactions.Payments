@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect.Api.Parts
+namespace Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts
 {
 	public class ApiPayment : IApiDataPart, IAddExtraData
 	{

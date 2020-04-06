@@ -5,14 +5,14 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Transactions.Payments.Configuration;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Transactions.Payments.Configuration;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.PayPal
+namespace Ucommerce.Transactions.Payments.PayPal
 {
 	/// <summary>
 	/// PayPal Express payment provider.
@@ -122,8 +122,8 @@ namespace UCommerce.Transactions.Payments.PayPal
 			values.Add("SOLUTIONTYPE", "Sole");
 			values.Add("EMAIL", billingAddress.EmailAddress);
             
-            //Vendor code to identify uCommerce
-			values.Add("BUTTONSOURCE", "uCommerce_SP");
+            //Vendor code to identify Ucommerce
+			values.Add("BUTTONSOURCE", "Ucommerce_SP");
 
 			values.Add("PAYMENTREQUEST_0_SHIPTONAME",
 				Uri.EscapeDataString(string.Format("{0} {1}", orderAddress.FirstName, orderAddress.LastName)));

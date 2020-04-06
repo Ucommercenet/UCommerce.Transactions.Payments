@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using UCommerce.Transactions.Payments.GlobalCollect.Api.Parts;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect.Api
+namespace Ucommerce.Transactions.Payments.GlobalCollect.Api
 {
 	public class ErrorChecker : IApiDataPartReadOnly
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public enum AuthorizationResult
 	{

@@ -7,8 +7,8 @@
     <ProjectGuid>{029A0F68-11D9-4DB3-8A03-3C1FB1AC360B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UCommerce.Transactions.Payments.PayEx</RootNamespace>
-    <AssemblyName>UCommerce.Transactions.Payments.PayEx</AssemblyName>
+    <RootNamespace>Ucommerce.Transactions.Payments.PayEx</RootNamespace>
+    <AssemblyName>Ucommerce.Transactions.Payments.PayEx</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,35 +41,35 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UCommerce, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.dll</HintPath>
+    <Reference Include="Ucommerce, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Admin, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.Admin.dll</HintPath>
+    <Reference Include="Ucommerce.Admin, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.Admin.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Infrastructure, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.Infrastructure.dll</HintPath>
+    <Reference Include="Ucommerce.Infrastructure, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Installer, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.Installer.dll</HintPath>
+    <Reference Include="Ucommerce.Installer, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.Installer.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.NHibernate, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.NHibernate.dll</HintPath>
+    <Reference Include="Ucommerce.NHibernate, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Pipelines, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.Pipelines.dll</HintPath>
+    <Reference Include="Ucommerce.Pipelines, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.Pipelines.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Presentation, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.Presentation.dll</HintPath>
+    <Reference Include="Ucommerce.Presentation, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.Presentation.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.SystemHttp, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.SystemHttp.dll</HintPath>
+    <Reference Include="Ucommerce.SystemHttp, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.SystemHttp.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.SystemWeb, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.SystemWeb.dll</HintPath>
+    <Reference Include="Ucommerce.SystemWeb, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Web.Api, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uCommerce.Core.7.18.0.18185\lib\net45\UCommerce.Web.Api.dll</HintPath>
+    <Reference Include="Ucommerce.Web.Api, Version=7.18.0.18185, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ucommerce.Core.7.18.0.18185\lib\net45\Ucommerce.Web.Api.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -93,23 +93,23 @@
     <None Include="app.config" />
     <None Include="Configuration\PayEx.config" />
     <None Include="Connected Services\PayEx.PayExBackendService\pxorder.wsdl" />
-    <None Include="Connected Services\PayEx.PayExBackendService\UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.AddMultipleOrderLinesResponse.datasource">
+    <None Include="Connected Services\PayEx.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.AddMultipleOrderLinesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\PayEx.PayExBackendService\UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.Initialize21.datasource">
+    <None Include="Connected Services\PayEx.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.Initialize21.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\PayEx.PayExBackendService\UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.InitializeResponse.datasource">
+    <None Include="Connected Services\PayEx.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.InitializeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PayEx.Test.PayExBackendService\pxorder.wsdl" />
-    <None Include="Connected Services\PayEx.Test.PayExBackendService\UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse.datasource">
+    <None Include="Connected Services\PayEx.Test.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\PayEx.Test.PayExBackendService\UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21.datasource">
+    <None Include="Connected Services\PayEx.Test.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\PayEx.Test.PayExBackendService\UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse.datasource">
+    <None Include="Connected Services\PayEx.Test.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />

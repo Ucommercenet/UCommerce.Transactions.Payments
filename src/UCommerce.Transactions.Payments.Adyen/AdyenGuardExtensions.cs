@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Security;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public static class AdyenGuardExtensions
 	{

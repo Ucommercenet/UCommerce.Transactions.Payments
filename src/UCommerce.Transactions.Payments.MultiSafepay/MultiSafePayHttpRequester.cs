@@ -3,10 +3,10 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Xml;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
 
-namespace UCommerce.Transactions.Payments.MultiSafepay
+namespace Ucommerce.Transactions.Payments.MultiSafepay
 {
     /// <summary>
     /// Sends an XML request to MultiSafepay and returns an XML-element containing the response.

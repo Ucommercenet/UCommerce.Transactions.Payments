@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.Ogone
+namespace Ucommerce.Transactions.Payments.Ogone
 {
 
 	/// <summary>

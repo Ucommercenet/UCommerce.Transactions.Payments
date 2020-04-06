@@ -1,7 +1,7 @@
-﻿using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
+﻿using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
 
-namespace UCommerce.Transactions.Payments.SecureTrading
+namespace Ucommerce.Transactions.Payments.SecureTrading
 {
 	public class SecureTradingXmlRequester
 	{

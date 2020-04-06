@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace UCommerce.Transactions.Payments.Ogone
+namespace Ucommerce.Transactions.Payments.Ogone
 {
 	/// <summary>
 	/// Class used to build a string to hash when Ogone does a callback to our server.

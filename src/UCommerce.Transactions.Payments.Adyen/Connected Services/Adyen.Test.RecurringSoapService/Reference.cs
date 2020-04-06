@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService {
+namespace Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Amount amountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Amount amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string merchantAccountField;
@@ -54,7 +54,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Amount amount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Amount amount {
             get {
                 return this.amountField;
             }
@@ -284,10 +284,10 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Error> errorField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Error> errorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Type> typeField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Type> typeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -300,7 +300,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Error> error {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Error> error {
             get {
                 return this.errorField;
             }
@@ -313,7 +313,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Type> type {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Type> type {
             get {
                 return this.typeField;
             }
@@ -522,7 +522,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private string merchantAccountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurringField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string shopperReferenceField;
@@ -564,7 +564,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurring {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurring {
             get {
                 return this.recurringField;
             }
@@ -673,7 +673,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private System.Nullable<System.DateTime> creationDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetail[] detailsField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetail[] detailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string lastKnownShopperEmailField;
@@ -705,7 +705,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetail[] details {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetail[] details {
             get {
                 return this.detailsField;
             }
@@ -763,16 +763,16 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bankField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bankField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card cardField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card cardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> creationDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elvField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elvField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nameField;
@@ -794,7 +794,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bank {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bank {
             get {
                 return this.bankField;
             }
@@ -807,7 +807,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card card {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card card {
             get {
                 return this.cardField;
             }
@@ -833,7 +833,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elv {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elv {
             get {
                 return this.elvField;
             }
@@ -1045,7 +1045,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Address billingAddressField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Address billingAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string brandField;
@@ -1081,7 +1081,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Address billingAddress {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Address billingAddress {
             get {
                 return this.billingAddressField;
             }
@@ -1464,13 +1464,13 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bankField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bankField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card cardField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card cardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elvField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elvField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string merchantAccountField;
@@ -1479,7 +1479,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         private string nameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurringField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string shopperEmailField;
@@ -1498,7 +1498,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bank {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.BankAccount bank {
             get {
                 return this.bankField;
             }
@@ -1511,7 +1511,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card card {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Card card {
             get {
                 return this.cardField;
             }
@@ -1524,7 +1524,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elv {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ELV elv {
             get {
                 return this.elvField;
             }
@@ -1563,7 +1563,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurring {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.Recurring recurring {
             get {
                 return this.recurringField;
             }
@@ -1693,67 +1693,67 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
     public interface RecurringPortType {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult deactivateRecurring(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> deactivateRecurringAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult disable(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult> disableAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult initialiseRecurring(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult deactivateRecurring(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> initialiseRecurringAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> deactivateRecurringAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult listRecurringDetails(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult> listRecurringDetailsAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult storeToken(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult disable(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult> storeTokenAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult> disableAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
-        UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult submitRecurring(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult initialiseRecurring(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> submitRecurringAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> initialiseRecurringAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult listRecurringDetails(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult> listRecurringDetailsAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult storeToken(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult> storeTokenAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.ServiceException), Action="", Name="ServiceException")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
+        Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult submitRecurring(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="recurringResult")]
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> submitRecurringAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface RecurringPortTypeChannel : UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringPortType, System.ServiceModel.IClientChannel {
+    public interface RecurringPortTypeChannel : Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringPortType, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RecurringPortTypeClient : System.ServiceModel.ClientBase<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringPortType>, UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringPortType {
+    public partial class RecurringPortTypeClient : System.ServiceModel.ClientBase<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringPortType>, Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringPortType {
         
         public RecurringPortTypeClient() {
         }
@@ -1774,51 +1774,51 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService 
                 base(binding, remoteAddress) {
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult deactivateRecurring(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult deactivateRecurring(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
             return base.Channel.deactivateRecurring(recurringRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> deactivateRecurringAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> deactivateRecurringAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
             return base.Channel.deactivateRecurringAsync(recurringRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult disable(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult disable(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request) {
             return base.Channel.disable(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult> disableAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult> disableAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableRequest request) {
             return base.Channel.disableAsync(request);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult initialiseRecurring(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult initialiseRecurring(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
             return base.Channel.initialiseRecurring(recurringRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> initialiseRecurringAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> initialiseRecurringAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
             return base.Channel.initialiseRecurringAsync(recurringRequest);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult listRecurringDetails(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult listRecurringDetails(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request) {
             return base.Channel.listRecurringDetails(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult> listRecurringDetailsAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult> listRecurringDetailsAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsRequest request) {
             return base.Channel.listRecurringDetailsAsync(request);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult storeToken(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult storeToken(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request) {
             return base.Channel.storeToken(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult> storeTokenAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult> storeTokenAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenRequest request) {
             return base.Channel.storeTokenAsync(request);
         }
         
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult submitRecurring(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult submitRecurring(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
             return base.Channel.submitRecurring(recurringRequest);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> submitRecurringAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult> submitRecurringAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringRequest recurringRequest) {
             return base.Channel.submitRecurringAsync(recurringRequest);
         }
     }

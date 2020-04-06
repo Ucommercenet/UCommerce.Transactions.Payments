@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public enum PaymentEvent
 	{

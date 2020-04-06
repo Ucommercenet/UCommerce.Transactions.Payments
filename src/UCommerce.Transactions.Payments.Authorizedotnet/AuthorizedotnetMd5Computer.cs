@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace UCommerce.Transactions.Payments.Authorizedotnet
+namespace Ucommerce.Transactions.Payments.Authorizedotnet
 {
     public class AuthorizedotnetMd5Computer : AbstractMd5Computer
     {

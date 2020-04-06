@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
-using UCommerce.EntitiesV2;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.Ogone
+namespace Ucommerce.Transactions.Payments.Ogone
 {
 	/// <summary>
 	/// Builds a string to hash when a payment which needs to be authorized or instant captured.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect.Api.Parts
+namespace Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts
 {
 	public class PaymentProductData : IApiDataPartReadOnly, IPaymentProduct
 	{

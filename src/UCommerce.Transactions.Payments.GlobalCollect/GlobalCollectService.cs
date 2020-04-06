@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.GlobalCollect.Api;
-using UCommerce.Transactions.Payments.GlobalCollect.Api.Parts;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect
+namespace Ucommerce.Transactions.Payments.GlobalCollect
 {
 	public class GlobalCollectService : IGlobalCollectService
 	{

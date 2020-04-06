@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UCommerce.Transactions.Payments.Netaxept")]
+[assembly: AssemblyTitle("Ucommerce.Transactions.Payments.Netaxept")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UCommerce.Transactions.Payments.Netaxept")]
+[assembly: AssemblyProduct("Ucommerce.Transactions.Payments.Netaxept")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Configuration;
-using UCommerce.Extensions;
+using Ucommerce.Extensions;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public static class EnumExtensions
 	{

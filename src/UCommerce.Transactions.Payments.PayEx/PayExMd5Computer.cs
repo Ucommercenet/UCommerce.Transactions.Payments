@@ -1,7 +1,7 @@
-using UCommerce.Infrastructure.Configuration;
-using UCommerce.Transactions.Payments.Configuration;
+using Ucommerce.Infrastructure.Configuration;
+using Ucommerce.Transactions.Payments.Configuration;
 
-namespace UCommerce.Transactions.Payments.PayEx
+namespace Ucommerce.Transactions.Payments.PayEx
 {
 	public class PayExMd5Computer : AbstractMd5Computer
 	{

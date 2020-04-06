@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.Payer
+namespace Ucommerce.Transactions.Payments.Payer
 {
 	/// <summary>
 	/// Implementation of the http://payer.se payment provider

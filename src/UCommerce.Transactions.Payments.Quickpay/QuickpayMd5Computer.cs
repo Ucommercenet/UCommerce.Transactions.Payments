@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.Infrastructure.Configuration;
-using UCommerce.Transactions.Payments.Configuration;
+using Ucommerce.Infrastructure.Configuration;
+using Ucommerce.Transactions.Payments.Configuration;
 
-namespace UCommerce.Transactions.Payments.Quickpay
+namespace Ucommerce.Transactions.Payments.Quickpay
 {
     /// <summary>
     /// Computes md5 hashes for Quickpay md5 checks

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using UCommerce.EntitiesV2;
-using UCommerce.Transactions.Payments.GlobalCollect.Api.Parts;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect
+namespace Ucommerce.Transactions.Payments.GlobalCollect
 {
 	public interface IGlobalCollectService
 	{
