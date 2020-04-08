@@ -78,7 +78,7 @@ namespace Ucommerce.Transactions.Payments.PayPal
 			}
 
 			string windowUrl = string.Format(GetWindowUrlTemplate(paymentRequest.PaymentMethod), responseValues["TOKEN"]);
-            
+
             HttpContext.Current.Response.Redirect(windowUrl, true);
 
 			return payment;
@@ -121,9 +121,9 @@ namespace Ucommerce.Transactions.Payments.PayPal
 			values.Add("LOCALECODE", regionCode);
 			values.Add("SOLUTIONTYPE", "Sole");
 			values.Add("EMAIL", billingAddress.EmailAddress);
-            
+
             //Vendor code to identify Ucommerce
-			values.Add("BUTTONSOURCE", "Ucommerce_SP");
+            values.Add("BUTTONSOURCE", "uCommerce_SP");
 
 			values.Add("PAYMENTREQUEST_0_SHIPTONAME",
 				Uri.EscapeDataString(string.Format("{0} {1}", orderAddress.FirstName, orderAddress.LastName)));
@@ -217,7 +217,7 @@ namespace Ucommerce.Transactions.Payments.PayPal
 				payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Acquired);
 			else
 				payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Authorized);
-			
+
 			payment.TransactionId = transactionId;
 
 			ExecutePostProcessingPipeline(payment);
