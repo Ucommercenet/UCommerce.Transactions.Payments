@@ -6,13 +6,13 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Xml.Linq;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.EWay
+namespace Ucommerce.Transactions.Payments.EWay
 {
 	/// <summary>
 	/// eWay payment provider http://eway.com.au.

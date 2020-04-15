@@ -3,16 +3,16 @@ using System.Net;
 using System.Security;
 using System.Web;
 using System.Xml;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Logging;
-namespace UCommerce.Transactions.Payments.MultiSafepay
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Logging;
+namespace Ucommerce.Transactions.Payments.MultiSafepay
 {
 	/// <summary>
 	/// MultiSafepay Connect payment method service.
 	/// </summary>
 	/// <remarks>Setup to use the MtultiSafepay Connect option.</remarks>
-	public class MultiSafepayPaymentMethodService : ExternalPaymentMethodService
+	public class MultiSafepayPaymentMethodService : ExternalPaymentMethodService, IRequireRedirect
 	{
 		private readonly ILoggingService _loggingService;
 		public IOrderService OrderService { get; set; }
@@ -81,9 +81,9 @@ namespace UCommerce.Transactions.Payments.MultiSafepay
 
 			if (transactionIdXmlNode.InnerText != paymentRequest.Payment.ReferenceId)
 				throw new SecurityException("Transaction ID doesn't match internal reference id.");
-
-            HttpContext.Current.Items["UCommerceRedirectUrlForPayment"] = paymentUrlXmlNode.InnerText;
-
+			
+			paymentRequest.Payment["redirectUrl"] = paymentUrlXmlNode.InnerText;
+            
 			return paymentRequest.Payment;
 		}
 
@@ -240,6 +240,11 @@ namespace UCommerce.Transactions.Payments.MultiSafepay
 		protected override bool RefundPaymentInternal(Payment payment, out string status)
 		{
 			throw new NotSupportedException("Remote refund is not supported, use the backend office.");
+		}
+
+		public string GetRedirectUrl(Payment payment)
+		{
+			return payment["redirectUrl"];
 		}
 	}
 }

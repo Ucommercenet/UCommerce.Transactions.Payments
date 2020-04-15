@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.Schibsted
+namespace Ucommerce.Transactions.Payments.Schibsted
 {
     public class SchibstedSha256Computer : AbstractMd5Computer
     {

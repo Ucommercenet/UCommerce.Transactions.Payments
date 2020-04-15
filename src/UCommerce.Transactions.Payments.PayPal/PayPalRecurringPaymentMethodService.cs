@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Security;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure.Logging;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure.Logging;
 
-namespace UCommerce.Transactions.Payments.PayPal
+namespace Ucommerce.Transactions.Payments.PayPal
 {
 	/// <summary>
 	/// Support for recurring payments with PayPal.

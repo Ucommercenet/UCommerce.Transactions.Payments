@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect
+namespace Ucommerce.Transactions.Payments.GlobalCollect
 {
 	public class ServiceApiCaller
 	{

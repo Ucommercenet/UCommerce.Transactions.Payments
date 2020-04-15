@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.Payer
+namespace Ucommerce.Transactions.Payments.Payer
 {
 	public class PayerFalsePage : AbstractPageBuilder
 	{

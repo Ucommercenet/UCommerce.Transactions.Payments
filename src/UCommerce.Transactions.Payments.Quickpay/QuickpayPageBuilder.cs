@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure.Configuration;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Configuration;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Quickpay
+namespace Ucommerce.Transactions.Payments.Quickpay
 {
     /// <summary>
     /// Builds a Quickpay redirection page

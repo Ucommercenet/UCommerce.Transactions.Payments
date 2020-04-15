@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
 
-namespace UCommerce.Transactions.Payments.SecureTrading
+namespace Ucommerce.Transactions.Payments.SecureTrading
 {
 	public static class SecureTradingGuardExtensions
 	{

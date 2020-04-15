@@ -2,12 +2,12 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.MultiSafepay
+namespace Ucommerce.Transactions.Payments.MultiSafepay
 {
     /// <summary>
     /// Builds the XML document needed for the payment url request and returns it as a string.

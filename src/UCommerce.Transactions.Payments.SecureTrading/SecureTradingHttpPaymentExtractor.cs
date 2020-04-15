@@ -1,9 +1,9 @@
 ﻿using System.Configuration;
 using System.Linq;
 using System.Web;
-using UCommerce.EntitiesV2;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.SecureTrading
+namespace Ucommerce.Transactions.Payments.SecureTrading
 {
 	/// <summary>
 	/// Responsible for extracting a payment origin from secure trading.

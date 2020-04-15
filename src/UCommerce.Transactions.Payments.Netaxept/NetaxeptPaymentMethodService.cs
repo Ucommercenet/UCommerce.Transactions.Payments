@@ -2,16 +2,16 @@
 using System.ServiceModel;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Netaxept
+namespace Ucommerce.Transactions.Payments.Netaxept
 {
 	/// <summary>
 	/// Implementation of the Netaxept payment provider

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public class HmacCalculator
 	{

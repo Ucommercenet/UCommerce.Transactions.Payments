@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.Transactions.Payments.GlobalCollect.Api.Parts;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect
+namespace Ucommerce.Transactions.Payments.GlobalCollect
 {
 	public class CreatePaymentRequestDto
 	{

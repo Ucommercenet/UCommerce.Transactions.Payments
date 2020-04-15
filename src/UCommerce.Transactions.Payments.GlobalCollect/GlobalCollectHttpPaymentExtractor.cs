@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Security;
 using System.Web;
-using UCommerce.EntitiesV2;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect
+namespace Ucommerce.Transactions.Payments.GlobalCollect
 {
 	public class GlobalCollectHttpPaymentExtractor : UrlPaymentExtractor
 	{

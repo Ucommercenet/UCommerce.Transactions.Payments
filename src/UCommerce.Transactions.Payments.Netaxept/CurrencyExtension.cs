@@ -1,8 +1,8 @@
 ﻿using System;
-using UCommerce.Infrastructure;
-using UCommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.Netaxept
+namespace Ucommerce.Transactions.Payments.Netaxept
 {
     public static class CurrencyExtension
     {

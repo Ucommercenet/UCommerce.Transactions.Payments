@@ -3,14 +3,14 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Environment;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Environment;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.Dibs
+namespace Ucommerce.Transactions.Payments.Dibs
 {
 	/// <summary>
 	/// Implementation of the http://dibs.dk payment provider.

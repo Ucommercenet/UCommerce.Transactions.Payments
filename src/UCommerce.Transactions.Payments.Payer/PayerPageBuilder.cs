@@ -2,13 +2,13 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Payer
+namespace Ucommerce.Transactions.Payments.Payer
 {
 	/// <summary>
 	/// Builds a Payer redirect page.

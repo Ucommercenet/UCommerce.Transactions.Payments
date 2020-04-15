@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using UCommerce.Transactions.Payments.Adyen;
+using Ucommerce.Transactions.Payments.Adyen;
 
-namespace UCommerce.Transactions.Payments.Test.Adyen
+namespace Ucommerce.Transactions.Payments.Test.Adyen
 {
 	[TestFixture]
 	public class HmacCalculationTests

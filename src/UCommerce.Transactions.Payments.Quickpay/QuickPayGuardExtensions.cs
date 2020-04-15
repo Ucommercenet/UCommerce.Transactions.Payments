@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using UCommerce.Infrastructure;
+using Ucommerce.Infrastructure;
 
-namespace UCommerce.Transactions.Payments.Quickpay
+namespace Ucommerce.Transactions.Payments.Quickpay
 {
 	public static class QuickPayGuardExtensions
 	{

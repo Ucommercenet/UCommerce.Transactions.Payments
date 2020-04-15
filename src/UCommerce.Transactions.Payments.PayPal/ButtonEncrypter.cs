@@ -5,10 +5,10 @@ using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Security.Cryptography.X509Certificates;
 using System.Web.Hosting;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
 
-namespace UCommerce.Transactions.Payments.PayPal
+namespace Ucommerce.Transactions.Payments.PayPal
 {
 	public class ButtonEncrypter
 	{

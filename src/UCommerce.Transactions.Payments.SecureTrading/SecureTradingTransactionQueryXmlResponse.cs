@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml;
 
-namespace UCommerce.Transactions.Payments.SecureTrading
+namespace Ucommerce.Transactions.Payments.SecureTrading
 {
 
 	public class SecureTradingTransactionQueryXmlResponse : SecureTradingResponse

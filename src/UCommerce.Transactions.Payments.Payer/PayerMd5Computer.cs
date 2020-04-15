@@ -1,4 +1,4 @@
-﻿namespace UCommerce.Transactions.Payments.Payer
+﻿namespace Ucommerce.Transactions.Payments.Payer
 {
 	/// <summary>
 	/// Computes md5 hashes when MD5-key control is enabled.

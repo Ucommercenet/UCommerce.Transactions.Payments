@@ -5,9 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using NUnit.Framework;
-using UCommerce.Transactions.Payments.GlobalCollect;
+using Ucommerce.Transactions.Payments.GlobalCollect;
 
-namespace UCommerce.Transactions.Payments.Test.GlobalCollect
+namespace Ucommerce.Transactions.Payments.Test.GlobalCollect
 {
 	[TestFixture]
 	public class ModifiedXmlDocumentReading

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
 
-namespace UCommerce.Transactions.Payments.SecureTrading
+namespace Ucommerce.Transactions.Payments.SecureTrading
 {
 	/// <summary>
 	/// Provides functionality to build the form needed to post to SecureTrading:

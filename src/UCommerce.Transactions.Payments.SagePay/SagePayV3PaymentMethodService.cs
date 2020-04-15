@@ -6,13 +6,13 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.SagePay
+namespace Ucommerce.Transactions.Payments.SagePay
 {
 	public class SagePayV3PaymentMethodService : SagePayPaymentMethodService
 	{

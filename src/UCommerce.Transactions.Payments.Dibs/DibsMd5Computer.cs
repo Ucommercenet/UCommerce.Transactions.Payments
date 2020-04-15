@@ -1,5 +1,5 @@
 ﻿
-namespace UCommerce.Transactions.Payments.Dibs
+namespace Ucommerce.Transactions.Payments.Dibs
 {
     /// <summary>
     /// Computes md5 hashes when MD5-key control is enabled.

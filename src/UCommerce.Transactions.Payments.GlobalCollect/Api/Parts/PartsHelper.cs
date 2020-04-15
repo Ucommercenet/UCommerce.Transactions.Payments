@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
 using System.Text;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect.Api.Parts
+namespace Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts
 {
 	public static class PartsHelper
 	{

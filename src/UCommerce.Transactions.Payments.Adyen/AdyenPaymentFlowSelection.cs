@@ -1,4 +1,4 @@
-﻿namespace UCommerce.Transactions.Payments.Adyen
+﻿namespace Ucommerce.Transactions.Payments.Adyen
 {
 	public enum AdyenPaymentFlowSelection
 	{

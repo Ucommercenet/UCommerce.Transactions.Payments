@@ -1,4 +1,4 @@
-﻿namespace UCommerce.Transactions.Payments.GlobalCollect
+﻿namespace Ucommerce.Transactions.Payments.GlobalCollect
 {
 	public class GlobalCollectConstants
 	{
