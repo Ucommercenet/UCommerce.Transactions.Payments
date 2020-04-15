@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Xml.Linq;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Environment;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Environment;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.Quickpay
+namespace Ucommerce.Transactions.Payments.Quickpay
 {
     /// <summary>
     /// Quickpay integration via hosted payment form.

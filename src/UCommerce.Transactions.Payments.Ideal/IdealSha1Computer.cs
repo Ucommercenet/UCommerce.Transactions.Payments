@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.Ideal
+namespace Ucommerce.Transactions.Payments.Ideal
 {
     public class IdealSha1Computer
     {

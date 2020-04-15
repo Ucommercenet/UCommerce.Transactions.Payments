@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using UCommerce.Extensions;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Ideal
+namespace Ucommerce.Transactions.Payments.Ideal
 {
     public class IdealPageBuilder : AbstractPageBuilder
     {

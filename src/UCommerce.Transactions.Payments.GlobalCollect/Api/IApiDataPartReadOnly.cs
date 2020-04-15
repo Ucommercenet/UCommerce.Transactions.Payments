@@ -1,4 +1,4 @@
-﻿namespace UCommerce.Transactions.Payments.GlobalCollect.Api
+﻿namespace Ucommerce.Transactions.Payments.GlobalCollect.Api
 {
 	public interface IApiDataPartReadOnly
 	{

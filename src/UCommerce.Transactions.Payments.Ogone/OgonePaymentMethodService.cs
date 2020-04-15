@@ -7,14 +7,14 @@ using System.Security;
 using System.Text;
 using System.Web;
 using System.Xml.Linq;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Configuration;
-using UCommerce.Infrastructure.Environment;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Transactions.Payments.Configuration;
-namespace UCommerce.Transactions.Payments.Ogone
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Configuration;
+using Ucommerce.Infrastructure.Environment;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Transactions.Payments.Configuration;
+namespace Ucommerce.Transactions.Payments.Ogone
 {
 	/// <summary>
 	/// Implementation of the Ogone Payment provider.

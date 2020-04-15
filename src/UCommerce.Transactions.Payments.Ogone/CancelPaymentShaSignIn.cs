@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.Ogone
+namespace Ucommerce.Transactions.Payments.Ogone
 {
 	/// <summary>
 	/// Class used to build a string to hash when a payment needs to be cancelled.

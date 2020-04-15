@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using UCommerce.Transactions.Payments.GlobalCollect;
-using UCommerce.Transactions.Payments.GlobalCollect.Api;
+using Ucommerce.Transactions.Payments.GlobalCollect;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api;
 
-namespace UCommerce.Transactions.Payments.Test.GlobalCollect
+namespace Ucommerce.Transactions.Payments.Test.GlobalCollect
 {
 	[TestFixture]
 	public class TestApiCalls

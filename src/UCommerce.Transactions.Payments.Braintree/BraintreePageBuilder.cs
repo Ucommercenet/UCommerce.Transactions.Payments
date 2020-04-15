@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading;
 using System.Web;
 using Braintree;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Web;
 using Environment = Braintree.Environment;
 
-namespace UCommerce.Transactions.Payments.Braintree
+namespace Ucommerce.Transactions.Payments.Braintree
 {
 	public class BraintreePageBuilder : AbstractPageBuilder
 	{

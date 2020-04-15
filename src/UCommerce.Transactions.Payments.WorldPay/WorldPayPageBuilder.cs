@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.WorldPay
+namespace Ucommerce.Transactions.Payments.WorldPay
 {
 	public class WorldPayPageBuilder : AbstractPageBuilder
 	{

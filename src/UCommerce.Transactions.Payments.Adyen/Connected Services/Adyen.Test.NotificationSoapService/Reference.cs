@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService {
+namespace Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService {
     using System.Runtime.Serialization;
     using System;
     
@@ -26,7 +26,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         private bool liveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[] notificationItemsField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[] notificationItemsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -52,7 +52,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[] notificationItems {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[] notificationItems {
             get {
                 return this.notificationItemsField;
             }
@@ -84,10 +84,10 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap additionalDataField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap additionalDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount amountField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string eventCodeField;
@@ -102,7 +102,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         private string merchantReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString operationsField;
+        private Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString operationsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string originalReferenceField;
@@ -130,7 +130,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap additionalData {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap additionalData {
             get {
                 return this.additionalDataField;
             }
@@ -143,7 +143,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount amount {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount amount {
             get {
                 return this.amountField;
             }
@@ -208,7 +208,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString operations {
+        public Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString operations {
             get {
                 return this.operationsField;
             }
@@ -360,7 +360,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="anyType2anyTypeMap", Namespace="http://notification.services.adyen.com", ItemName="entry")]
     [System.SerializableAttribute()]
-    public class anyType2anyTypeMap : System.Collections.Generic.List<UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.entry> {
+    public class anyType2anyTypeMap : System.Collections.Generic.List<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.entry> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -374,15 +374,15 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="entry", Namespace="http://notification.services.adyen.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ServiceException))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ServiceException))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type))]
     public partial class entry : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -444,21 +444,21 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceException", Namespace="http://common.services.adyen.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequestItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ArrayOfString))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.anyType2anyTypeMap))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Amount))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type))]
     public partial class ServiceException : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error> errorField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error> errorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string faultActorField;
@@ -473,7 +473,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         private string faultStringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type> typeField;
+        private System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type> typeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -486,7 +486,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error> error {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Error> error {
             get {
                 return this.errorField;
             }
@@ -551,7 +551,7 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type> type {
+        public System.Nullable<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.Type> type {
             get {
                 return this.typeField;
             }
@@ -1083,22 +1083,22 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
     public interface NotificationPortType {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ServiceException), Action="", Name="ServiceException")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.ServiceException), Action="", Name="ServiceException")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="notificationResponse")]
-        string sendNotification(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification);
+        string sendNotification(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="notificationResponse")]
-        System.Threading.Tasks.Task<string> sendNotificationAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification);
+        System.Threading.Tasks.Task<string> sendNotificationAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface NotificationPortTypeChannel : UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationPortType, System.ServiceModel.IClientChannel {
+    public interface NotificationPortTypeChannel : Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationPortType, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class NotificationPortTypeClient : System.ServiceModel.ClientBase<UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationPortType>, UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationPortType {
+    public partial class NotificationPortTypeClient : System.ServiceModel.ClientBase<Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationPortType>, Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationPortType {
         
         public NotificationPortTypeClient() {
         }
@@ -1119,11 +1119,11 @@ namespace UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapServi
                 base(binding, remoteAddress) {
         }
         
-        public string sendNotification(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification) {
+        public string sendNotification(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification) {
             return base.Channel.sendNotification(notification);
         }
         
-        public System.Threading.Tasks.Task<string> sendNotificationAsync(UCommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification) {
+        public System.Threading.Tasks.Task<string> sendNotificationAsync(Ucommerce.Transactions.Payments.Adyen.Adyen.Test.NotificationSoapService.NotificationRequest notification) {
             return base.Channel.sendNotificationAsync(notification);
         }
     }

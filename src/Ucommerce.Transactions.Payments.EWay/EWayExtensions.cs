@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
-using UCommerce.Infrastructure;
+using Ucommerce.Infrastructure;
 
-namespace UCommerce.Transactions.Payments.EWay
+namespace Ucommerce.Transactions.Payments.EWay
 {
 	/// <summary>
 	/// Extensions for use in the EWay payment provider.

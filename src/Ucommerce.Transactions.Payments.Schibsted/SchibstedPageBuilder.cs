@@ -5,16 +5,16 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure.Configuration;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Infrastructure.Logging;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Transactions.Payments.Configuration;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Configuration;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Transactions.Payments.Configuration;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Schibsted
+namespace Ucommerce.Transactions.Payments.Schibsted
 {
     public class SchibstedPageBuilder : AbstractPageBuilder
     {

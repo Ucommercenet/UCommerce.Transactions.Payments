@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.EntitiesV2;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.Ogone
+namespace Ucommerce.Transactions.Payments.Ogone
 {
 	/// <summary>
 	/// Extensions for working with Ogone

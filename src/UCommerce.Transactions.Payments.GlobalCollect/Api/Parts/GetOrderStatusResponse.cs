@@ -1,4 +1,4 @@
-﻿namespace UCommerce.Transactions.Payments.GlobalCollect.Api.Parts
+﻿namespace Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts
 {
 	public class GetOrderStatusResponse : IApiDataPartReadOnly
 	{

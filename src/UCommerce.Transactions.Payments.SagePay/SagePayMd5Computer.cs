@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using UCommerce.Transactions.Payments.Configuration;
+using Ucommerce.Transactions.Payments.Configuration;
 using System.Linq;
 
-namespace UCommerce.Transactions.Payments.SagePay
+namespace Ucommerce.Transactions.Payments.SagePay
 {
     /// <summary>
     /// Computes md5 hashes when MD5-key control is enabled.

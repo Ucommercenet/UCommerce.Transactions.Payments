@@ -1,9 +1,9 @@
 ﻿using System.Text;
 using NUnit.Framework;
-using UCommerce.Transactions.Payments.GlobalCollect.Api;
-using UCommerce.Transactions.Payments.GlobalCollect.Api.Parts;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api;
+using Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts;
 
-namespace UCommerce.Transactions.Payments.Test.GlobalCollect
+namespace Ucommerce.Transactions.Payments.Test.GlobalCollect
 {
 	[TestFixture]
 	public class AddingExtraDataToRequest
@@ -15,11 +15,11 @@ namespace UCommerce.Transactions.Payments.Test.GlobalCollect
 			var payment = new ApiPayment {PaymentProductId = 123, LanguageCode = "da", MerchantReference = "JustMyLuck"};
 
 			// Act
-			payment.AddExtraData("uCommerce", "ECOM");
+			payment.AddExtraData("Ucommerce", "ECOM");
 			var text = ConvertApiDataPartToString(payment);
 
 			// Assert
-			Assert.IsTrue(text.Contains("<ECOM>uCommerce</ECOM>"));
+			Assert.IsTrue(text.Contains("<ECOM>Ucommerce</ECOM>"));
 		}
 
 		[Test]
@@ -29,11 +29,11 @@ namespace UCommerce.Transactions.Payments.Test.GlobalCollect
 			var order = new ApiOrder { OrderId = 123, LanguageCode = "da", MerchantReference = "JustMyLuck" };
 
 			// Act
-			order.AddExtraData("uCommerce", "ECOM");
+			order.AddExtraData("Ucommerce", "ECOM");
 			var text = ConvertApiDataPartToString(order);
 
 			// Assert
-			Assert.IsTrue(text.Contains("<ECOM>uCommerce</ECOM>"));
+			Assert.IsTrue(text.Contains("<ECOM>Ucommerce</ECOM>"));
 		}
 
 		private static string ConvertApiDataPartToString(IApiDataPart part)

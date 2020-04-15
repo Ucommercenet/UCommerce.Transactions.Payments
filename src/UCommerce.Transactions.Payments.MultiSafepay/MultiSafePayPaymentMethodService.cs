@@ -3,10 +3,10 @@ using System.Net;
 using System.Security;
 using System.Web;
 using System.Xml;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Logging;
-namespace UCommerce.Transactions.Payments.MultiSafepay
+using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Logging;
+namespace Ucommerce.Transactions.Payments.MultiSafepay
 {
 	/// <summary>
 	/// MultiSafepay Connect payment method service.

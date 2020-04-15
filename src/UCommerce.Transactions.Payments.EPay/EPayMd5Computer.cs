@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace UCommerce.Transactions.Payments.EPay
+namespace Ucommerce.Transactions.Payments.EPay
 {
     /// <summary>
     /// Computes md5 hashes when MD5-key control is enabled.

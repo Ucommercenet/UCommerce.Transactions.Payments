@@ -3,9 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using UCommerce.EntitiesV2;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.Ideal
+namespace Ucommerce.Transactions.Payments.Ideal
 {
     public class IdealPaymentMethodService : ExternalPaymentMethodService
     {

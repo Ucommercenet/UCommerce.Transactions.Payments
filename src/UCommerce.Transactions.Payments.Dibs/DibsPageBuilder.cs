@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using UCommerce.Content;
-using UCommerce.Extensions;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Web;
+using Ucommerce.Content;
+using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.Dibs
+namespace Ucommerce.Transactions.Payments.Dibs
 {
     public class DibsPageBuilder : AbstractPageBuilder
     {

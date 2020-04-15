@@ -7,10 +7,10 @@ using System.Security;
 using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
-using UCommerce.EntitiesV2;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.Schibsted
+namespace Ucommerce.Transactions.Payments.Schibsted
 {
     public class SchibstedUtil
     {

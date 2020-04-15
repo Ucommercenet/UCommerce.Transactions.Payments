@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Transactions.Payments.Configuration;
-using UCommerce.Transactions.Payments.Common;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Configuration;
+using Ucommerce.Transactions.Payments.Common;
 
-namespace UCommerce.Transactions.Payments.PayPal
+namespace Ucommerce.Transactions.Payments.PayPal
 {
 	public class PayPalWebSitePaymentsStandardPageBuilder : AbstractPageBuilder
 	{
@@ -76,8 +76,8 @@ namespace UCommerce.Transactions.Payments.PayPal
 						paymentRequest.Payment.PurchaseOrder).ToString()
 				},
 				{"rm", ((int) rm).ToString()},
-                // Vendor code to identify uCommerce
-                {"bn", "uCommerce_SP" },
+                // Vendor code to identify Ucommerce
+                {"bn", "Ucommerce_SP" },
 				{"currency_code", currency},
 				{"no_shipping", "1"},
 				{"paymentaction", pa.ToString().ToLower()},

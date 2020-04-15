@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
+namespace Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,10 +63,10 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
         // CODEGEN: Generating message contract since the wrapper name (Initialize2) of message Initialize2 does not match the default value (Initialize)
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/Initialize2", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21 Initialize(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request);
+        Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21 Initialize(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/Initialize2", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21> InitializeAsync(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21> InitializeAsync(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/Initialize3", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -239,10 +239,10 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
         // CODEGEN: Generating message contract since the wrapper name (Initialize) of message InitializeRequest does not match the default value (Initialize1)
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/Initialize", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse Initialize1(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request);
+        Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse Initialize1(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/Initialize", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse> Initialize1Async(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse> Initialize1Async(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/InitializeBasic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -443,10 +443,10 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
         // CODEGEN: Parameter 'orderDetails' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlArrayItemAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/AddMultipleOrderLines", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse AddMultipleOrderLines(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request);
+        Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse AddMultipleOrderLines(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/AddMultipleOrderLines", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse> AddMultipleOrderLinesAsync(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse> AddMultipleOrderLinesAsync(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://external.payex.com/PxOrder/PrepareSaleDD", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1279,12 +1279,12 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface PxOrderSoapChannel : UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap, System.ServiceModel.IClientChannel {
+    public interface PxOrderSoapChannel : Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PxOrderSoapClient : System.ServiceModel.ClientBase<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap>, UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap {
+    public partial class PxOrderSoapClient : System.ServiceModel.ClientBase<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap>, Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap {
         
         public PxOrderSoapClient() {
         }
@@ -1352,7 +1352,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21 UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.Initialize(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request) {
+        Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21 Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.Initialize(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request) {
             return base.Channel.Initialize(request);
         }
         
@@ -1377,7 +1377,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
                     string expireDate, 
                     int expireDateType, 
                     string hash) {
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 inValue = new UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2();
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 inValue = new Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2();
             inValue.accountNumber = accountNumber;
             inValue.orderType = orderType;
             inValue.purchaseOperation = purchaseOperation;
@@ -1398,16 +1398,16 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
             inValue.expireDate = expireDate;
             inValue.expireDateType = expireDateType;
             inValue.hash = hash;
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21 retVal = ((UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).Initialize(inValue);
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21 retVal = ((Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).Initialize(inValue);
             return retVal.Initialize2Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21> UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.InitializeAsync(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21> Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.InitializeAsync(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 request) {
             return base.Channel.InitializeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21> InitializeAsync(
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21> InitializeAsync(
                     long accountNumber, 
                     string orderType, 
                     string purchaseOperation, 
@@ -1428,7 +1428,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
                     string expireDate, 
                     int expireDateType, 
                     string hash) {
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 inValue = new UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2();
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2 inValue = new Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize2();
             inValue.accountNumber = accountNumber;
             inValue.orderType = orderType;
             inValue.purchaseOperation = purchaseOperation;
@@ -1449,7 +1449,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
             inValue.expireDate = expireDate;
             inValue.expireDateType = expireDateType;
             inValue.hash = hash;
-            return ((UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).InitializeAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).InitializeAsync(inValue);
         }
         
         public string Initialize3(
@@ -1625,7 +1625,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.Initialize1(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request) {
+        Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.Initialize1(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request) {
             return base.Channel.Initialize1(request);
         }
         
@@ -1647,7 +1647,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
                     int checkPeriod, 
                     string externalID, 
                     string hash) {
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest inValue = new UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest();
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest inValue = new Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest();
             inValue.accountNumber = accountNumber;
             inValue.orderType = orderType;
             inValue.purchaseOperation = purchaseOperation;
@@ -1665,16 +1665,16 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
             inValue.checkPeriod = checkPeriod;
             inValue.externalID = externalID;
             inValue.hash = hash;
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse retVal = ((UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).Initialize1(inValue);
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse retVal = ((Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).Initialize1(inValue);
             return retVal.InitializeResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse> UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.Initialize1Async(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse> Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.Initialize1Async(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest request) {
             return base.Channel.Initialize1Async(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse> Initialize1Async(
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse> Initialize1Async(
                     long accountNumber, 
                     string orderType, 
                     string purchaseOperation, 
@@ -1692,7 +1692,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
                     int checkPeriod, 
                     string externalID, 
                     string hash) {
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest inValue = new UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest();
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest inValue = new Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeRequest();
             inValue.accountNumber = accountNumber;
             inValue.orderType = orderType;
             inValue.purchaseOperation = purchaseOperation;
@@ -1710,7 +1710,7 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
             inValue.checkPeriod = checkPeriod;
             inValue.externalID = externalID;
             inValue.hash = hash;
-            return ((UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).Initialize1Async(inValue);
+            return ((Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).Initialize1Async(inValue);
         }
         
         public string InitializeBasic(long accountNumber, string purchaseOperation, string orderID, string productNumber, string priceArgList, string description, string returnURL, string hash) {
@@ -1938,34 +1938,34 @@ namespace UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.AddMultipleOrderLines(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request) {
+        Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.AddMultipleOrderLines(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request) {
             return base.Channel.AddMultipleOrderLines(request);
         }
         
         public string AddMultipleOrderLines(long accountNumber, string orderRef, int numberOfItems, string[][] orderDetails, string hash) {
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest inValue = new UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest();
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest inValue = new Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest();
             inValue.accountNumber = accountNumber;
             inValue.orderRef = orderRef;
             inValue.numberOfItems = numberOfItems;
             inValue.orderDetails = orderDetails;
             inValue.hash = hash;
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse retVal = ((UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).AddMultipleOrderLines(inValue);
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse retVal = ((Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).AddMultipleOrderLines(inValue);
             return retVal.AddMultipleOrderLinesResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse> UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.AddMultipleOrderLinesAsync(UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse> Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap.AddMultipleOrderLinesAsync(Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest request) {
             return base.Channel.AddMultipleOrderLinesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse> AddMultipleOrderLinesAsync(long accountNumber, string orderRef, int numberOfItems, string[][] orderDetails, string hash) {
-            UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest inValue = new UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse> AddMultipleOrderLinesAsync(long accountNumber, string orderRef, int numberOfItems, string[][] orderDetails, string hash) {
+            Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest inValue = new Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesRequest();
             inValue.accountNumber = accountNumber;
             inValue.orderRef = orderRef;
             inValue.numberOfItems = numberOfItems;
             inValue.orderDetails = orderDetails;
             inValue.hash = hash;
-            return ((UCommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).AddMultipleOrderLinesAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.PxOrderSoap)(this)).AddMultipleOrderLinesAsync(inValue);
         }
         
         public string PrepareSaleDD(long accountNumber, string orderRef, int userType, string userRef, string bankName, string clientIPAddress, string clientIdentifier, string hash) {

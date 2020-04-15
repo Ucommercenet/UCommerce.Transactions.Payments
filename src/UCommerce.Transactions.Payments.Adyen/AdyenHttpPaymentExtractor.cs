@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using System.Web;
-using UCommerce.EntitiesV2;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.Adyen
+namespace Ucommerce.Transactions.Payments.Adyen
 {
 	/// <summary>
 	/// Responsible for extracting payment from Adyen requests.
 	/// </summary>
-	public class AdyenHttpPaymentExtractor : UCommerce.Transactions.Payments.IHttpPaymentExtractor
+	public class AdyenHttpPaymentExtractor : Ucommerce.Transactions.Payments.IHttpPaymentExtractor
 	{
 		private const string ParameterName = "merchantReference";
 		

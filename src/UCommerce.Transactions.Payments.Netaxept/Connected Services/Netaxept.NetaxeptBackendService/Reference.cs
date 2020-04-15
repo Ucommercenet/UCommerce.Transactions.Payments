@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService {
+namespace Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService {
     using System.Runtime.Serialization;
     using System;
     
@@ -26,49 +26,49 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         private string AcquirerInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiro AvtaleGiroField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiro AvtaleGiroField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInfo CardInfoField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInfo CardInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Customer CustomerField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Customer CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPayment DnBNorDirectPaymentField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPayment DnBNorDirectPaymentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Environment EnvironmentField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Environment EnvironmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Fraud FraudField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Fraud FraudField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.LoyaltyInformation LoyaltyInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.LoyaltyInformation LoyaltyInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MicroPayment MicroPaymentField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MicroPayment MicroPaymentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Order OrderField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Order OrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitatorField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring RecurringField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring RecurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Terminal TerminalField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Terminal TerminalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Token TokenField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Token TokenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TransactionIdField;
@@ -100,7 +100,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiro AvtaleGiro {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiro AvtaleGiro {
             get {
                 return this.AvtaleGiroField;
             }
@@ -113,7 +113,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInfo CardInfo {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInfo CardInfo {
             get {
                 return this.CardInfoField;
             }
@@ -126,7 +126,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Customer Customer {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Customer Customer {
             get {
                 return this.CustomerField;
             }
@@ -152,7 +152,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPayment DnBNorDirectPayment {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPayment DnBNorDirectPayment {
             get {
                 return this.DnBNorDirectPaymentField;
             }
@@ -165,7 +165,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Environment Environment {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Environment Environment {
             get {
                 return this.EnvironmentField;
             }
@@ -178,7 +178,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Fraud Fraud {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Fraud Fraud {
             get {
                 return this.FraudField;
             }
@@ -191,7 +191,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.LoyaltyInformation LoyaltyInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.LoyaltyInformation LoyaltyInformation {
             get {
                 return this.LoyaltyInformationField;
             }
@@ -204,7 +204,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MicroPayment MicroPayment {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MicroPayment MicroPayment {
             get {
                 return this.MicroPaymentField;
             }
@@ -217,7 +217,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Order Order {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Order Order {
             get {
                 return this.OrderField;
             }
@@ -230,7 +230,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitator {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitator {
             get {
                 return this.PaymentFacilitatorField;
             }
@@ -243,7 +243,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring Recurring {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring Recurring {
             get {
                 return this.RecurringField;
             }
@@ -269,7 +269,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Terminal Terminal {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Terminal Terminal {
             get {
                 return this.TerminalField;
             }
@@ -282,7 +282,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Token Token {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Token Token {
             get {
                 return this.TokenField;
             }
@@ -1224,7 +1224,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         private string Force3DSecureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] GoodsField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] GoodsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderNumberField;
@@ -1298,7 +1298,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] Goods {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] Goods {
             get {
                 return this.GoodsField;
             }
@@ -1614,7 +1614,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         private string PaymentDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentMethodAction[] PaymentMethodActionListField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentMethodAction[] PaymentMethodActionListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PaymentMethodListField;
@@ -1629,7 +1629,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         private string SinglePageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.KeyValuePair[] TemplateDataField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.KeyValuePair[] TemplateDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VatField;
@@ -1765,7 +1765,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentMethodAction[] PaymentMethodActionList {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentMethodAction[] PaymentMethodActionList {
             get {
                 return this.PaymentMethodActionListField;
             }
@@ -1830,7 +1830,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.KeyValuePair[] TemplateData {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.KeyValuePair[] TemplateData {
             get {
                 return this.TemplateDataField;
             }
@@ -2420,7 +2420,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Result ResultField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Result ResultField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2446,7 +2446,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Result Result {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Result Result {
             get {
                 return this.ResultField;
             }
@@ -3136,7 +3136,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QueryResponse", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentInfo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentInfo))]
     public partial class QueryResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3246,64 +3246,64 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PaymentInfo", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class PaymentInfo : UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse {
+    public partial class PaymentInfo : Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationInformation AuthenticationInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationInformation AuthenticationInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiroInformation AvtaleGiroInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiroInformation AvtaleGiroInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInformation CardInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInformation CardInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CustomerInformation CustomerInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CustomerInformation CustomerInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPaymentInformation DnBNorDirectPaymentInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPaymentInformation DnBNorDirectPaymentInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError ErrorField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError ErrorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError[] ErrorLogField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError[] ErrorLogField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TransactionLogLine[] HistoryField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TransactionLogLine[] HistoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.InvoiceInformation InvoiceInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.InvoiceInformation InvoiceInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.OrderInformation OrderInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.OrderInformation OrderInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring RecurringField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring RecurringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityInformation SecurityInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityInformation SecurityInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FinancialSummary SummaryField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FinancialSummary SummaryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TerminalInformation TerminalInformationField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TerminalInformation TerminalInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FraudAnalysis FraudAnalysisField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FraudAnalysis FraudAnalysisField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MobileInformation MobileField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MobileInformation MobileField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitatorField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.WalletInformation WalletField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.WalletInformation WalletField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationInformation AuthenticationInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationInformation AuthenticationInformation {
             get {
                 return this.AuthenticationInformationField;
             }
@@ -3316,7 +3316,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiroInformation AvtaleGiroInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AvtaleGiroInformation AvtaleGiroInformation {
             get {
                 return this.AvtaleGiroInformationField;
             }
@@ -3329,7 +3329,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInformation CardInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CardInformation CardInformation {
             get {
                 return this.CardInformationField;
             }
@@ -3342,7 +3342,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CustomerInformation CustomerInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.CustomerInformation CustomerInformation {
             get {
                 return this.CustomerInformationField;
             }
@@ -3355,7 +3355,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPaymentInformation DnBNorDirectPaymentInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.DnBNorDirectPaymentInformation DnBNorDirectPaymentInformation {
             get {
                 return this.DnBNorDirectPaymentInformationField;
             }
@@ -3368,7 +3368,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError Error {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError Error {
             get {
                 return this.ErrorField;
             }
@@ -3381,7 +3381,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError[] ErrorLog {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentError[] ErrorLog {
             get {
                 return this.ErrorLogField;
             }
@@ -3394,7 +3394,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TransactionLogLine[] History {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TransactionLogLine[] History {
             get {
                 return this.HistoryField;
             }
@@ -3407,7 +3407,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.InvoiceInformation InvoiceInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.InvoiceInformation InvoiceInformation {
             get {
                 return this.InvoiceInformationField;
             }
@@ -3420,7 +3420,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.OrderInformation OrderInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.OrderInformation OrderInformation {
             get {
                 return this.OrderInformationField;
             }
@@ -3433,7 +3433,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring Recurring {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Recurring Recurring {
             get {
                 return this.RecurringField;
             }
@@ -3446,7 +3446,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityInformation SecurityInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityInformation SecurityInformation {
             get {
                 return this.SecurityInformationField;
             }
@@ -3459,7 +3459,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FinancialSummary Summary {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FinancialSummary Summary {
             get {
                 return this.SummaryField;
             }
@@ -3472,7 +3472,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TerminalInformation TerminalInformation {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.TerminalInformation TerminalInformation {
             get {
                 return this.TerminalInformationField;
             }
@@ -3485,7 +3485,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FraudAnalysis FraudAnalysis {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.FraudAnalysis FraudAnalysis {
             get {
                 return this.FraudAnalysisField;
             }
@@ -3498,7 +3498,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MobileInformation Mobile {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MobileInformation Mobile {
             get {
                 return this.MobileField;
             }
@@ -3511,7 +3511,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitator {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.PaymentFacilitatorInformation PaymentFacilitator {
             get {
                 return this.PaymentFacilitatorField;
             }
@@ -3524,7 +3524,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.WalletInformation Wallet {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.WalletInformation Wallet {
             get {
                 return this.WalletField;
             }
@@ -5217,7 +5217,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] GoodsField;
+        private Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] GoodsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LoyaltyAmountField;
@@ -5277,7 +5277,7 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] Goods {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.Item[] Goods {
             get {
                 return this.GoodsField;
             }
@@ -5831,57 +5831,57 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
     public interface INetaxept {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Register", ReplyAction="http://BBS.EPayment/INetaxept/RegisterResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.BBSException), Action="http://BBS.EPayment/INetaxept/RegisterBBSExceptionFault", Name="BBSException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/RegisterAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/RegisterMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.UniqueTransactionIdException), Action="http://BBS.EPayment/INetaxept/RegisterUniqueTransactionIdExceptionFault", Name="UniqueTransactionIdException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/RegisterGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ValidationException), Action="http://BBS.EPayment/INetaxept/RegisterValidationExceptionFault", Name="ValidationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityException), Action="http://BBS.EPayment/INetaxept/RegisterSecurityExceptionFault", Name="SecurityException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse Register(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.BBSException), Action="http://BBS.EPayment/INetaxept/RegisterBBSExceptionFault", Name="BBSException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/RegisterAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/RegisterMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.UniqueTransactionIdException), Action="http://BBS.EPayment/INetaxept/RegisterUniqueTransactionIdExceptionFault", Name="UniqueTransactionIdException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/RegisterGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ValidationException), Action="http://BBS.EPayment/INetaxept/RegisterValidationExceptionFault", Name="ValidationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityException), Action="http://BBS.EPayment/INetaxept/RegisterSecurityExceptionFault", Name="SecurityException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse Register(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Register", ReplyAction="http://BBS.EPayment/INetaxept/RegisterResponse")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse> RegisterAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse> RegisterAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Query", ReplyAction="http://BBS.EPayment/INetaxept/QueryResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryException), Action="http://BBS.EPayment/INetaxept/QueryQueryExceptionFault", Name="QueryException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/QueryAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse Query(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryException), Action="http://BBS.EPayment/INetaxept/QueryQueryExceptionFault", Name="QueryException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/QueryAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse Query(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Query", ReplyAction="http://BBS.EPayment/INetaxept/QueryResponse")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse> QueryAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse> QueryAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Process", ReplyAction="http://BBS.EPayment/INetaxept/ProcessResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.BBSException), Action="http://BBS.EPayment/INetaxept/ProcessBBSExceptionFault", Name="BBSException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/ProcessMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/ProcessAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/ProcessGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.NotSupportedException), Action="http://BBS.EPayment/INetaxept/ProcessNotSupportedExceptionFault", Name="NotSupportedException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ValidationException), Action="http://BBS.EPayment/INetaxept/ProcessValidationExceptionFault", Name="ValidationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse Process(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.BBSException), Action="http://BBS.EPayment/INetaxept/ProcessBBSExceptionFault", Name="BBSException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/ProcessMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/ProcessAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/ProcessGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.NotSupportedException), Action="http://BBS.EPayment/INetaxept/ProcessNotSupportedExceptionFault", Name="NotSupportedException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ValidationException), Action="http://BBS.EPayment/INetaxept/ProcessValidationExceptionFault", Name="ValidationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse Process(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Process", ReplyAction="http://BBS.EPayment/INetaxept/ProcessResponse")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse> ProcessAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse> ProcessAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Batch", ReplyAction="http://BBS.EPayment/INetaxept/BatchResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/BatchMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/BatchAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/BatchGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[] Batch(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/BatchMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/BatchAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/BatchGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[] Batch(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Batch", ReplyAction="http://BBS.EPayment/INetaxept/BatchResponse")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[]> BatchAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[]> BatchAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Recon", ReplyAction="http://BBS.EPayment/INetaxept/ReconResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/ReconAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/ReconMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/ReconGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ValidationException), Action="http://BBS.EPayment/INetaxept/ReconValidationExceptionFault", Name="ValidationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityException), Action="http://BBS.EPayment/INetaxept/ReconSecurityExceptionFault", Name="SecurityException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
-        UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse Recon(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.AuthenticationException), Action="http://BBS.EPayment/INetaxept/ReconAuthenticationExceptionFault", Name="AuthenticationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.MerchantTranslationException), Action="http://BBS.EPayment/INetaxept/ReconMerchantTranslationExceptionFault", Name="MerchantTranslationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.GenericError), Action="http://BBS.EPayment/INetaxept/ReconGenericErrorFault", Name="GenericError", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ValidationException), Action="http://BBS.EPayment/INetaxept/ReconValidationExceptionFault", Name="ValidationException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.SecurityException), Action="http://BBS.EPayment/INetaxept/ReconSecurityExceptionFault", Name="SecurityException", Namespace="http://schemas.datacontract.org/2004/07/BBS.EPayment.ServiceLibrary")]
+        Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse Recon(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/Recon", ReplyAction="http://BBS.EPayment/INetaxept/ReconResponse")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse> ReconAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse> ReconAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://BBS.EPayment/INetaxept/CheckAvailability", ReplyAction="http://BBS.EPayment/INetaxept/CheckAvailabilityResponse")]
         string CheckAvailability();
@@ -5891,12 +5891,12 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface INetaxeptChannel : UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.INetaxept, System.ServiceModel.IClientChannel {
+    public interface INetaxeptChannel : Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.INetaxept, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class NetaxeptClient : System.ServiceModel.ClientBase<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.INetaxept>, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.INetaxept {
+    public partial class NetaxeptClient : System.ServiceModel.ClientBase<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.INetaxept>, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.INetaxept {
         
         public NetaxeptClient() {
         }
@@ -5917,43 +5917,43 @@ namespace UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendServi
                 base(binding, remoteAddress) {
         }
         
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse Register(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request) {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse Register(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request) {
             return base.Channel.Register(merchantId, token, request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse> RegisterAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse> RegisterAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterRequest request) {
             return base.Channel.RegisterAsync(merchantId, token, request);
         }
         
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse Query(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request) {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse Query(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request) {
             return base.Channel.Query(merchantId, token, request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse> QueryAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse> QueryAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryRequest request) {
             return base.Channel.QueryAsync(merchantId, token, request);
         }
         
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse Process(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request) {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse Process(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request) {
             return base.Channel.Process(merchantId, token, request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse> ProcessAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse> ProcessAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest request) {
             return base.Channel.ProcessAsync(merchantId, token, request);
         }
         
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[] Batch(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests) {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[] Batch(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests) {
             return base.Channel.Batch(merchantId, token, requests);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[]> BatchAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse[]> BatchAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessRequest[] requests) {
             return base.Channel.BatchAsync(merchantId, token, requests);
         }
         
-        public UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse Recon(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request) {
+        public Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse Recon(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request) {
             return base.Channel.Recon(merchantId, token, request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse> ReconAsync(string merchantId, string token, UCommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request) {
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse> ReconAsync(string merchantId, string token, Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconRequest request) {
             return base.Channel.ReconAsync(merchantId, token, request);
         }
         

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UCommerce.EntitiesV2;
+using Ucommerce.EntitiesV2;
 
-namespace UCommerce.Transactions.Payments.SagePay
+namespace Ucommerce.Transactions.Payments.SagePay
 {
     public enum FieldCode
     {

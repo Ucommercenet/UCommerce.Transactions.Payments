@@ -3,16 +3,16 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Web;
-using UCommerce.EntitiesV2;
-using UCommerce.Extensions;
-using UCommerce.Infrastructure;
-using UCommerce.Infrastructure.Environment;
-using UCommerce.Infrastructure.Globalization;
-using UCommerce.Transactions.Payments.Common;
-using UCommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService;
-using UCommerce.Web;
+using Ucommerce.EntitiesV2;
+using Ucommerce.Extensions;
+using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Environment;
+using Ucommerce.Infrastructure.Globalization;
+using Ucommerce.Transactions.Payments.Common;
+using Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService;
+using Ucommerce.Web;
 
-namespace UCommerce.Transactions.Payments.PayEx
+namespace Ucommerce.Transactions.Payments.PayEx
 {
 	/// <summary>
 	/// Implementation of the http://payex.com payment provider.

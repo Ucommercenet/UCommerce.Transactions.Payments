@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
+namespace Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     using System.Runtime.Serialization;
     using System;
     
@@ -49,17 +49,17 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         
         private System.DateTime crediteddateField;
         
-        private UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus statusField;
+        private Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus statusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionHistoryInfo[] historyField;
+        private Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionHistoryInfo[] historyField;
         
         private long transactionidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string cardholderField;
         
-        private UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PayMode modeField;
+        private Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PayMode modeField;
         
         private bool mscField;
         
@@ -72,7 +72,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         
         private bool splitpaymentField;
         
-        private UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.AcquirerType acquirerField;
+        private Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.AcquirerType acquirerField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -241,7 +241,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status {
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status {
             get {
                 return this.statusField;
             }
@@ -254,7 +254,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionHistoryInfo[] history {
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionHistoryInfo[] history {
             get {
                 return this.historyField;
             }
@@ -293,7 +293,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PayMode mode {
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PayMode mode {
             get {
                 return this.modeField;
             }
@@ -371,7 +371,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.AcquirerType acquirer {
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.AcquirerType acquirer {
             get {
                 return this.acquirerField;
             }
@@ -656,70 +656,70 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public interface PaymentSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getPbsError", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse getPbsError(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse getPbsError(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getPbsError", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse> getPbsErrorAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse> getPbsErrorAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getEpayError", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse getEpayError(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse getEpayError(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getEpayError", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse> getEpayErrorAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse> getEpayErrorAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/capture", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse capture(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse capture(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/capture", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse> captureAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse> captureAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/move_as_captured", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse move_as_captured(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse move_as_captured(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/move_as_captured", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse> move_as_capturedAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse> move_as_capturedAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/delete", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse delete(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse delete(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/delete", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse> deleteAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse> deleteAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/credit", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse credit(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse credit(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/credit", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse> creditAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse> creditAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getcardtype", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse getcardtype(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse getcardtype(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getcardtype", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse> getcardtypeAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse> getcardtypeAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/gettransaction", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse gettransaction(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse gettransaction(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/gettransaction", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse> gettransactionAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse> gettransactionAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/gettransactionlist", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse gettransactionlist(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse gettransactionlist(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/gettransactionlist", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse> gettransactionlistAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse> gettransactionlistAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getcardinfo", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse getcardinfo(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse getcardinfo(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/getcardinfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse> getcardinfoAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse> getcardinfoAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/renew", ReplyAction="*")]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse renew(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request);
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse renew(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ssl.ditonlinebetalingssystem.dk/remote/payment/renew", ReplyAction="*")]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse> renewAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request);
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse> renewAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -728,12 +728,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getPbsErrorRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getPbsError", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody Body;
         
         public getPbsErrorRequest() {
         }
         
-        public getPbsErrorRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody Body) {
+        public getPbsErrorRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -780,12 +780,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getPbsErrorResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getPbsErrorResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponseBody Body;
         
         public getPbsErrorResponse() {
         }
         
-        public getPbsErrorResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponseBody Body) {
+        public getPbsErrorResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -820,12 +820,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getEpayErrorRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getEpayError", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody Body;
         
         public getEpayErrorRequest() {
         }
         
-        public getEpayErrorRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody Body) {
+        public getEpayErrorRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -872,12 +872,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getEpayErrorResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getEpayErrorResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponseBody Body;
         
         public getEpayErrorResponse() {
         }
         
-        public getEpayErrorResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponseBody Body) {
+        public getEpayErrorResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -912,12 +912,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class captureRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="capture", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody Body;
         
         public captureRequest() {
         }
         
-        public captureRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody Body) {
+        public captureRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -968,12 +968,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class captureResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="captureResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponseBody Body;
         
         public captureResponse() {
         }
         
-        public captureResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponseBody Body) {
+        public captureResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1008,12 +1008,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class move_as_capturedRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="move_as_captured", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody Body;
         
         public move_as_capturedRequest() {
         }
         
-        public move_as_capturedRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody Body) {
+        public move_as_capturedRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1056,12 +1056,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class move_as_capturedResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="move_as_capturedResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponseBody Body;
         
         public move_as_capturedResponse() {
         }
         
-        public move_as_capturedResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponseBody Body) {
+        public move_as_capturedResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1092,12 +1092,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class deleteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="delete", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody Body;
         
         public deleteRequest() {
         }
         
-        public deleteRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody Body) {
+        public deleteRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1140,12 +1140,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class deleteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="deleteResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponseBody Body;
         
         public deleteResponse() {
         }
         
-        public deleteResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponseBody Body) {
+        public deleteResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1176,12 +1176,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class creditRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="credit", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody Body;
         
         public creditRequest() {
         }
         
-        public creditRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody Body) {
+        public creditRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1232,12 +1232,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class creditResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="creditResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponseBody Body;
         
         public creditResponse() {
         }
         
-        public creditResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponseBody Body) {
+        public creditResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1272,12 +1272,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getcardtypeRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getcardtype", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody Body;
         
         public getcardtypeRequest() {
         }
         
-        public getcardtypeRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody Body) {
+        public getcardtypeRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1320,12 +1320,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getcardtypeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getcardtypeResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponseBody Body;
         
         public getcardtypeResponse() {
         }
         
-        public getcardtypeResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponseBody Body) {
+        public getcardtypeResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1364,12 +1364,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class gettransactionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="gettransaction", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody Body;
         
         public gettransactionRequest() {
         }
         
-        public gettransactionRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody Body) {
+        public gettransactionRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1389,7 +1389,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public string pwd;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
         public int epayresponse;
@@ -1397,7 +1397,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public gettransactionRequestBody() {
         }
         
-        public gettransactionRequestBody(int merchantnumber, long transactionid, string pwd, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, int epayresponse) {
+        public gettransactionRequestBody(int merchantnumber, long transactionid, string pwd, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, int epayresponse) {
             this.merchantnumber = merchantnumber;
             this.transactionid = transactionid;
             this.pwd = pwd;
@@ -1412,12 +1412,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class gettransactionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="gettransactionResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponseBody Body;
         
         public gettransactionResponse() {
         }
         
-        public gettransactionResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponseBody Body) {
+        public gettransactionResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1431,7 +1431,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public bool gettransactionResult;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
         public int epayresponse;
@@ -1439,7 +1439,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public gettransactionResponseBody() {
         }
         
-        public gettransactionResponseBody(bool gettransactionResult, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, int epayresponse) {
+        public gettransactionResponseBody(bool gettransactionResult, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, int epayresponse) {
             this.gettransactionResult = gettransactionResult;
             this.transactionInformation = transactionInformation;
             this.epayresponse = epayresponse;
@@ -1452,12 +1452,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class gettransactionlistRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="gettransactionlist", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody Body;
         
         public gettransactionlistRequest() {
         }
         
-        public gettransactionlistRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody Body) {
+        public gettransactionlistRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1471,7 +1471,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public int merchantnumber;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
         public System.DateTime searchdatestart;
@@ -1489,7 +1489,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public string pwd;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
         public int epayresponse;
@@ -1497,7 +1497,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public gettransactionlistRequestBody() {
         }
         
-        public gettransactionlistRequestBody(int merchantnumber, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status, System.DateTime searchdatestart, System.DateTime searchdateend, string searchorderid, string searchgroup, string pwd, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, int epayresponse) {
+        public gettransactionlistRequestBody(int merchantnumber, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status, System.DateTime searchdatestart, System.DateTime searchdateend, string searchorderid, string searchgroup, string pwd, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, int epayresponse) {
             this.merchantnumber = merchantnumber;
             this.status = status;
             this.searchdatestart = searchdatestart;
@@ -1516,12 +1516,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class gettransactionlistResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="gettransactionlistResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponseBody Body;
         
         public gettransactionlistResponse() {
         }
         
-        public gettransactionlistResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponseBody Body) {
+        public gettransactionlistResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1535,7 +1535,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public bool gettransactionlistResult;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
         public int epayresponse;
@@ -1543,7 +1543,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public gettransactionlistResponseBody() {
         }
         
-        public gettransactionlistResponseBody(bool gettransactionlistResult, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, int epayresponse) {
+        public gettransactionlistResponseBody(bool gettransactionlistResult, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, int epayresponse) {
             this.gettransactionlistResult = gettransactionlistResult;
             this.transactionInformationAry = transactionInformationAry;
             this.epayresponse = epayresponse;
@@ -1556,12 +1556,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getcardinfoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getcardinfo", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody Body;
         
         public getcardinfoRequest() {
         }
         
-        public getcardinfoRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody Body) {
+        public getcardinfoRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1590,7 +1590,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public int fee;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string cardtypetext;
@@ -1601,7 +1601,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public getcardinfoRequestBody() {
         }
         
-        public getcardinfoRequestBody(int merchantnumber, string cardno_prefix, int amount, int currency, int acquirer, int fee, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, string cardtypetext, int epayresponse) {
+        public getcardinfoRequestBody(int merchantnumber, string cardno_prefix, int amount, int currency, int acquirer, int fee, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, string cardtypetext, int epayresponse) {
             this.merchantnumber = merchantnumber;
             this.cardno_prefix = cardno_prefix;
             this.amount = amount;
@@ -1620,12 +1620,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class getcardinfoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="getcardinfoResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponseBody Body;
         
         public getcardinfoResponse() {
         }
         
-        public getcardinfoResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponseBody Body) {
+        public getcardinfoResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1645,7 +1645,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public int fee;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string cardtypetext;
@@ -1656,7 +1656,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         public getcardinfoResponseBody() {
         }
         
-        public getcardinfoResponseBody(bool getcardinfoResult, int acquirer, int fee, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, string cardtypetext, int epayresponse) {
+        public getcardinfoResponseBody(bool getcardinfoResult, int acquirer, int fee, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, string cardtypetext, int epayresponse) {
             this.getcardinfoResult = getcardinfoResult;
             this.acquirer = acquirer;
             this.fee = fee;
@@ -1672,12 +1672,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class renewRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="renew", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody Body;
         
         public renewRequest() {
         }
         
-        public renewRequest(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody Body) {
+        public renewRequest(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1724,12 +1724,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     public partial class renewResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="renewResponse", Namespace="https://ssl.ditonlinebetalingssystem.dk/remote/payment", Order=0)]
-        public UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponseBody Body;
+        public Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponseBody Body;
         
         public renewResponse() {
         }
         
-        public renewResponse(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponseBody Body) {
+        public renewResponse(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1759,12 +1759,12 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface PaymentSoapChannel : UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap, System.ServiceModel.IClientChannel {
+    public interface PaymentSoapChannel : Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PaymentSoapClient : System.ServiceModel.ClientBase<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap>, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap {
+    public partial class PaymentSoapClient : System.ServiceModel.ClientBase<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap>, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap {
         
         public PaymentSoapClient() {
         }
@@ -1786,87 +1786,87 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getPbsError(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getPbsError(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request) {
             return base.Channel.getPbsError(request);
         }
         
         public bool getPbsError(int merchantnumber, int language, int pbsresponsecode, string pwd, ref string pbsresponsestring, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.language = language;
             inValue.Body.pbsresponsecode = pbsresponsecode;
             inValue.Body.pwd = pwd;
             inValue.Body.pbsresponsestring = pbsresponsestring;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getPbsError(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getPbsError(inValue);
             pbsresponsestring = retVal.Body.pbsresponsestring;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.getPbsErrorResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getPbsErrorAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getPbsErrorAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest request) {
             return base.Channel.getPbsErrorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse> getPbsErrorAsync(int merchantnumber, int language, int pbsresponsecode, string pwd, string pbsresponsestring, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse> getPbsErrorAsync(int merchantnumber, int language, int pbsresponsecode, string pwd, string pbsresponsestring, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.language = language;
             inValue.Body.pbsresponsecode = pbsresponsecode;
             inValue.Body.pwd = pwd;
             inValue.Body.pbsresponsestring = pbsresponsestring;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getPbsErrorAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getPbsErrorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getEpayError(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getEpayError(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request) {
             return base.Channel.getEpayError(request);
         }
         
         public bool getEpayError(int merchantnumber, int language, int epayresponsecode, string pwd, ref string epayresponsestring, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.language = language;
             inValue.Body.epayresponsecode = epayresponsecode;
             inValue.Body.pwd = pwd;
             inValue.Body.epayresponsestring = epayresponsestring;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getEpayError(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getEpayError(inValue);
             epayresponsestring = retVal.Body.epayresponsestring;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.getEpayErrorResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getEpayErrorAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getEpayErrorAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest request) {
             return base.Channel.getEpayErrorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse> getEpayErrorAsync(int merchantnumber, int language, int epayresponsecode, string pwd, string epayresponsestring, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse> getEpayErrorAsync(int merchantnumber, int language, int epayresponsecode, string pwd, string epayresponsestring, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.language = language;
             inValue.Body.epayresponsecode = epayresponsecode;
             inValue.Body.pwd = pwd;
             inValue.Body.epayresponsestring = epayresponsestring;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getEpayErrorAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getEpayErrorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.capture(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.capture(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request) {
             return base.Channel.capture(request);
         }
         
         public bool capture(int merchantnumber, long transactionid, int amount, string group, string pwd, ref int pbsResponse, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.amount = amount;
@@ -1874,20 +1874,20 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.pwd = pwd;
             inValue.Body.pbsResponse = pbsResponse;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).capture(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).capture(inValue);
             pbsResponse = retVal.Body.pbsResponse;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.captureResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.captureAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.captureAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest request) {
             return base.Channel.captureAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse> captureAsync(int merchantnumber, long transactionid, int amount, string group, string pwd, int pbsResponse, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse> captureAsync(int merchantnumber, long transactionid, int amount, string group, string pwd, int pbsResponse, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.amount = amount;
@@ -1895,85 +1895,85 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.pwd = pwd;
             inValue.Body.pbsResponse = pbsResponse;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).captureAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).captureAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.move_as_captured(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.move_as_captured(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request) {
             return base.Channel.move_as_captured(request);
         }
         
         public bool move_as_captured(int merchantnumber, long transactionid, string group, string pwd, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.group = group;
             inValue.Body.pwd = pwd;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).move_as_captured(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).move_as_captured(inValue);
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.move_as_capturedResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.move_as_capturedAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.move_as_capturedAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest request) {
             return base.Channel.move_as_capturedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse> move_as_capturedAsync(int merchantnumber, long transactionid, string group, string pwd, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse> move_as_capturedAsync(int merchantnumber, long transactionid, string group, string pwd, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.group = group;
             inValue.Body.pwd = pwd;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).move_as_capturedAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).move_as_capturedAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.delete(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.delete(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request) {
             return base.Channel.delete(request);
         }
         
         public bool delete(int merchantnumber, long transactionid, string group, string pwd, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.group = group;
             inValue.Body.pwd = pwd;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).delete(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).delete(inValue);
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.deleteResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.deleteAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.deleteAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest request) {
             return base.Channel.deleteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse> deleteAsync(int merchantnumber, long transactionid, string group, string pwd, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse> deleteAsync(int merchantnumber, long transactionid, string group, string pwd, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.group = group;
             inValue.Body.pwd = pwd;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).deleteAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).deleteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.credit(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.credit(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request) {
             return base.Channel.credit(request);
         }
         
         public bool credit(int merchantnumber, long transactionid, int amount, string group, string pwd, ref int pbsresponse, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.amount = amount;
@@ -1981,20 +1981,20 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.pwd = pwd;
             inValue.Body.pbsresponse = pbsresponse;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).credit(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).credit(inValue);
             pbsresponse = retVal.Body.pbsresponse;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.creditResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.creditAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.creditAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest request) {
             return base.Channel.creditAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse> creditAsync(int merchantnumber, long transactionid, int amount, string group, string pwd, int pbsresponse, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse> creditAsync(int merchantnumber, long transactionid, int amount, string group, string pwd, int pbsresponse, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.amount = amount;
@@ -2002,23 +2002,23 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.pwd = pwd;
             inValue.Body.pbsresponse = pbsresponse;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).creditAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).creditAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardtype(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardtype(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request) {
             return base.Channel.getcardtype(request);
         }
         
         public bool getcardtype(int merchantnumber, string cardnumber, ref int cardtypeid, ref string cardname, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.cardnumber = cardnumber;
             inValue.Body.cardtypeid = cardtypeid;
             inValue.Body.cardname = cardname;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardtype(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardtype(inValue);
             cardtypeid = retVal.Body.cardtypeid;
             cardname = retVal.Body.cardname;
             epayresponse = retVal.Body.epayresponse;
@@ -2026,64 +2026,64 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardtypeAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardtypeAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest request) {
             return base.Channel.getcardtypeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse> getcardtypeAsync(int merchantnumber, string cardnumber, int cardtypeid, string cardname, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse> getcardtypeAsync(int merchantnumber, string cardnumber, int cardtypeid, string cardname, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.cardnumber = cardnumber;
             inValue.Body.cardtypeid = cardtypeid;
             inValue.Body.cardname = cardname;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardtypeAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardtypeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransaction(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransaction(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request) {
             return base.Channel.gettransaction(request);
         }
         
-        public bool gettransaction(int merchantnumber, long transactionid, string pwd, ref UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody();
+        public bool gettransaction(int merchantnumber, long transactionid, string pwd, ref Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, ref int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.pwd = pwd;
             inValue.Body.transactionInformation = transactionInformation;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransaction(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransaction(inValue);
             transactionInformation = retVal.Body.transactionInformation;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.gettransactionResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransactionAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransactionAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest request) {
             return base.Channel.gettransactionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse> gettransactionAsync(int merchantnumber, long transactionid, string pwd, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse> gettransactionAsync(int merchantnumber, long transactionid, string pwd, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType transactionInformation, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.pwd = pwd;
             inValue.Body.transactionInformation = transactionInformation;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransactionAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransactionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransactionlist(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransactionlist(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request) {
             return base.Channel.gettransactionlist(request);
         }
         
-        public bool gettransactionlist(int merchantnumber, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status, System.DateTime searchdatestart, System.DateTime searchdateend, string searchorderid, string searchgroup, string pwd, ref UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody();
+        public bool gettransactionlist(int merchantnumber, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status, System.DateTime searchdatestart, System.DateTime searchdateend, string searchorderid, string searchgroup, string pwd, ref Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, ref int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.status = status;
             inValue.Body.searchdatestart = searchdatestart;
@@ -2093,20 +2093,20 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.pwd = pwd;
             inValue.Body.transactionInformationAry = transactionInformationAry;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransactionlist(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransactionlist(inValue);
             transactionInformationAry = retVal.Body.transactionInformationAry;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.gettransactionlistResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransactionlistAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.gettransactionlistAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest request) {
             return base.Channel.gettransactionlistAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse> gettransactionlistAsync(int merchantnumber, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status, System.DateTime searchdatestart, System.DateTime searchdateend, string searchorderid, string searchgroup, string pwd, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse> gettransactionlistAsync(int merchantnumber, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionStatus status, System.DateTime searchdatestart, System.DateTime searchdateend, string searchorderid, string searchgroup, string pwd, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType[] transactionInformationAry, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.status = status;
             inValue.Body.searchdatestart = searchdatestart;
@@ -2116,17 +2116,17 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.pwd = pwd;
             inValue.Body.transactionInformationAry = transactionInformationAry;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransactionlistAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).gettransactionlistAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardinfo(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardinfo(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request) {
             return base.Channel.getcardinfo(request);
         }
         
-        public bool getcardinfo(int merchantnumber, string cardno_prefix, int amount, int currency, ref int acquirer, ref int fee, ref UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, ref string cardtypetext, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody();
+        public bool getcardinfo(int merchantnumber, string cardno_prefix, int amount, int currency, ref int acquirer, ref int fee, ref Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, ref string cardtypetext, ref int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.cardno_prefix = cardno_prefix;
             inValue.Body.amount = amount;
@@ -2136,7 +2136,7 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.cardtype = cardtype;
             inValue.Body.cardtypetext = cardtypetext;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardinfo(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardinfo(inValue);
             acquirer = retVal.Body.acquirer;
             fee = retVal.Body.fee;
             cardtype = retVal.Body.cardtype;
@@ -2146,13 +2146,13 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardinfoAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.getcardinfoAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest request) {
             return base.Channel.getcardinfoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse> getcardinfoAsync(int merchantnumber, string cardno_prefix, int amount, int currency, int acquirer, int fee, UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, string cardtypetext, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse> getcardinfoAsync(int merchantnumber, string cardno_prefix, int amount, int currency, int acquirer, int fee, Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType cardtype, string cardtypetext, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.cardno_prefix = cardno_prefix;
             inValue.Body.amount = amount;
@@ -2162,44 +2162,44 @@ namespace UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService {
             inValue.Body.cardtype = cardtype;
             inValue.Body.cardtypetext = cardtypetext;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardinfoAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).getcardinfoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.renew(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request) {
+        Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.renew(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request) {
             return base.Channel.renew(request);
         }
         
         public bool renew(int merchantnumber, long transactionid, string group, string pwd, ref int pbsResponse, ref int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody();
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.group = group;
             inValue.Body.pwd = pwd;
             inValue.Body.pbsResponse = pbsResponse;
             inValue.Body.epayresponse = epayresponse;
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse retVal = ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).renew(inValue);
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse retVal = ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).renew(inValue);
             pbsResponse = retVal.Body.pbsResponse;
             epayresponse = retVal.Body.epayresponse;
             return retVal.Body.renewResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse> UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.renewAsync(UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request) {
+        System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse> Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap.renewAsync(Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest request) {
             return base.Channel.renewAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse> renewAsync(int merchantnumber, long transactionid, string group, string pwd, int pbsResponse, int epayresponse) {
-            UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest inValue = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest();
-            inValue.Body = new UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody();
+        public System.Threading.Tasks.Task<Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse> renewAsync(int merchantnumber, long transactionid, string group, string pwd, int pbsResponse, int epayresponse) {
+            Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest inValue = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequest();
+            inValue.Body = new Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewRequestBody();
             inValue.Body.merchantnumber = merchantnumber;
             inValue.Body.transactionid = transactionid;
             inValue.Body.group = group;
             inValue.Body.pwd = pwd;
             inValue.Body.pbsResponse = pbsResponse;
             inValue.Body.epayresponse = epayresponse;
-            return ((UCommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).renewAsync(inValue);
+            return ((Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.PaymentSoap)(this)).renewAsync(inValue);
         }
     }
 }

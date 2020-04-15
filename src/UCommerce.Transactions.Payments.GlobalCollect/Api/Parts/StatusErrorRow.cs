@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UCommerce.Transactions.Payments.GlobalCollect.Api.Parts
+namespace Ucommerce.Transactions.Payments.GlobalCollect.Api.Parts
 {
 	public class StatusErrorRow : IApiDataPartReadOnly
 	{
