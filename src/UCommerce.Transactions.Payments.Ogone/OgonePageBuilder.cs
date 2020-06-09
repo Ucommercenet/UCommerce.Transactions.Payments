@@ -85,7 +85,7 @@ namespace Ucommerce.Transactions.Payments.Ogone
 			dictionary["pspid"] = pspId;
 			dictionary["orderId"] = paymentRequest.Payment.ReferenceId;
 			dictionary["amount"] = paymentRequest.Payment.Amount.ToCents().ToString();
-			dictionary["currency"] = paymentRequest.Amount.Currency.ISOCode;
+			dictionary["currency"] = paymentRequest.Amount.CurrencyIsoCode;
 			dictionary["language"] = paymentRequest.PurchaseOrder.OgoneCultureCode();
 			dictionary["cn"] = billingAddress.FullCustomerName();
 			dictionary["email"] = billingAddress.EmailAddress;

@@ -41,7 +41,7 @@ namespace Ucommerce.Transactions.Payments.Ideal
 			const string description = "Order total";
 			string purchaseId = paymentRequest.Payment.ReferenceId;
 			string amountInCents = paymentRequest.Payment.Amount.ToCents().ToString();
-			string currencyIsoCode = paymentRequest.Amount.Currency.ISOCode;
+			string currencyIsoCode = paymentRequest.Amount.CurrencyIsoCode;
 			string orderId = paymentRequest.Payment.ReferenceId;
 			string validUntil = string.Format("{0:s}0Z", paymentRequest.Payment.Created.AddMinutes(20));
 

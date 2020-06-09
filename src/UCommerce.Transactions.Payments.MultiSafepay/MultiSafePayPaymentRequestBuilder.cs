@@ -40,7 +40,7 @@ namespace Ucommerce.Transactions.Payments.MultiSafepay
 
             string ipAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
             string forwardedIp = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-            byte[] hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes(paymentRequest.Amount.Value.ToCents() + paymentRequest.Amount.Currency.ISOCode + accountId + siteId + paymentRequest.Payment.ReferenceId));
+            byte[] hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes(paymentRequest.Amount.Value.ToCents() + paymentRequest.Amount.CurrencyIsoCode + accountId + siteId + paymentRequest.Payment.ReferenceId));
             string signature = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             
             requestBuilder.AppendFormat(@"<?xml version='1.0' encoding='utf-8'?>");
@@ -71,7 +71,7 @@ namespace Ucommerce.Transactions.Payments.MultiSafepay
             requestBuilder.AppendFormat(@"  </customer>");
             requestBuilder.AppendFormat(@"  <transaction>");
             requestBuilder.AppendFormat(@"    <id>{0}</id>", paymentRequest.Payment.ReferenceId);
-            requestBuilder.AppendFormat(@"    <currency>{0}</currency>", paymentRequest.Amount.Currency.ISOCode);
+            requestBuilder.AppendFormat(@"    <currency>{0}</currency>", paymentRequest.Amount.CurrencyIsoCode);
             requestBuilder.AppendFormat(@"    <amount>{0}</amount>", paymentRequest.Amount.Value.ToCents());
             requestBuilder.AppendFormat(@"    <description>{0}</description>", paymentRequest.Payment.ReferenceId);
 

@@ -431,7 +431,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 			var billingAddress = paymentRequest.PurchaseOrder.BillingAddress;
 			var shipment = paymentRequest.PurchaseOrder.Shipments.FirstOrDefault();
 			var amount = paymentRequest.Amount.Value.ToCents();
-			var currency = paymentRequest.Amount.Currency.ISOCode;
+			var currency = paymentRequest.Amount.CurrencyIsoCode;
 			var language = paymentRequest.Amount.Culture.TwoLetterISOLanguageName;
 			var country = TryGetCountryFromCustomerOrPayment(paymentRequest);
 			var merchantReference = GetMerchantReference(payment);

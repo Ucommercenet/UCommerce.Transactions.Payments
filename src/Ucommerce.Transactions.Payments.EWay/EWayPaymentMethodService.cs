@@ -154,7 +154,7 @@ namespace Ucommerce.Transactions.Payments.EWay
 			parameters.Add("UserName", userName);
 			parameters.Add("Amount", paymentRequest.Amount.Value.ToInvariantString());
 
-			string currencyIsoCode = paymentRequest.Amount.Currency.ISOCode;
+			string currencyIsoCode = paymentRequest.Amount.CurrencyIsoCode;
 			if (currencyIsoCode.ToUpper() != "AUD")
 				throw new NotSupportedException("Only Australian dollars is supported by Eway. Please make sure to use Currency AUD.");
 			parameters.Add("Currency", currencyIsoCode);

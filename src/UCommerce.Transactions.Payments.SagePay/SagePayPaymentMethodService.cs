@@ -84,7 +84,7 @@ namespace Ucommerce.Transactions.Payments.SagePay
 
 			dictionary.Add("VendorTxCode", payment.ReferenceId);
 			dictionary.Add("Amount", payment.Amount.ToString("0.00", CultureInfo.InvariantCulture));
-			dictionary.Add("Currency", paymentRequest.Amount.Currency.ISOCode);
+			dictionary.Add("Currency", paymentRequest.Amount.CurrencyIsoCode);
 			dictionary.Add("Description", PaymentMessages.PurchaseDescription);
 
 			dictionary.Add("SuccessURL", new Uri(_absoluteUrlService.GetAbsoluteUrl(successUrl)).AddOrderGuidParameter(payment.PurchaseOrder).ToString());

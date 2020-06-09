@@ -60,7 +60,7 @@ namespace Ucommerce.Transactions.Payments.PayPal
 
 		protected virtual IDictionary<string, string> GetParameters(PaymentRequest paymentRequest)
 		{
-			var currency = paymentRequest.Amount.Currency.ISOCode;
+			var currency = paymentRequest.Amount.CurrencyIsoCode;
 			// For dynamics, we have to call the extension method as a normal method.
 			ReturnMethod rm = EnumExtensions.ParseReturnMethodThrowExceptionOnFailure(paymentRequest.PaymentMethod.DynamicProperty<string>().ReturnMethod);
 			PaymentAction pa = EnumExtensions.ParsePaymentActionThrowExceptionOnFailure(paymentRequest.PaymentMethod.DynamicProperty<string>().PaymentAction);

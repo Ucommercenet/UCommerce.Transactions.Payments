@@ -44,7 +44,7 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
         public override Payment RequestPayment(PaymentRequest paymentRequest)
         {
 
-            string currencyIsoCode = paymentRequest.Amount.Currency.ISOCode;
+            string currencyIsoCode = paymentRequest.Amount.CurrencyIsoCode;
             if (currencyIsoCode.ToLower() != "usd")
                 throw new InvalidOperationException(string.Format("Authorize.Net doesn't support {0} as currency, only USD is supported. To use Authorize.Net please change PaymentRequest to use USD.", currencyIsoCode));
 

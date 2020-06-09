@@ -44,7 +44,7 @@ namespace Ucommerce.Transactions.Payments.Dibs
 			bool calculateFee = paymentRequest.PaymentMethod.DynamicProperty<bool>().CalculateFee;
 			bool useMd5 = paymentRequest.PaymentMethod.DynamicProperty<bool>().UseMd5;
 
-			var currency = paymentRequest.Amount.Currency.ISOCode;
+			var currency = paymentRequest.Amount.CurrencyIsoCode;
 			string amount = paymentRequest.Payment.Amount.ToCents().ToString();
 
 			var parametersToReturn = new Dictionary<string, string>();
