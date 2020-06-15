@@ -38,7 +38,7 @@ namespace Ucommerce.Transactions.Payments.Ogone
 			concatString.Append(BuildStringSection("backurl", backUrl, shaSignIn));
 			concatString.Append(BuildStringSection("cancelurl", cancelUrl, shaSignIn));
 			concatString.Append(BuildStringSection("cn", billingAddress.FullCustomerName(),shaSignIn));
-			concatString.Append(BuildStringSection("currency", paymentRequest.Amount.Currency.ISOCode, shaSignIn));
+			concatString.Append(BuildStringSection("currency", paymentRequest.Amount.CurrencyIsoCode, shaSignIn));
 			concatString.Append(BuildStringSection("declineurl", declineUrl, shaSignIn));
 			concatString.Append(BuildStringSection("email", billingAddress.EmailAddress, shaSignIn));
 			concatString.Append(BuildStringSection("exceptionurl", exceptionUrl, shaSignIn));

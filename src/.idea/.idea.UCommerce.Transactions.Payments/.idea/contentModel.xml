@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Repositories\UCommerce.Transactions.Payments\src" t="IncludeFlat">
+    <e p="C:\UC\UCommerce.Transactions.Payments\src" t="IncludeFlat">
       <e p="Deploy" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Ucommerce.Transactions.Payments.Adyen" t="IncludeRecursive">
@@ -17,36 +17,30 @@
         <e p="Configuration" t="Include">
           <e p="Adyen.config" t="Include" />
         </e>
-        <e p="Connected Services\Adyen.Test.ModificationSoapService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="Payment.wsdl" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult.datasource" t="Include" />
-        </e>
-        <e p="Connected Services\Adyen.Test.NotificationSoapService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="Notification.wsdl" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-        </e>
-        <e p="Connected Services\Adyen.Test.RecurringSoapService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="Recurring.wsdl" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult.datasource" t="Include" />
-        </e>
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Payment.wsdl" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Reference.cs" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.NotificationSoapService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\Adyen.Test.NotificationSoapService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\Adyen.Test.NotificationSoapService\Notification.wsdl" t="Include" />
+        <e p="Connected Services\Adyen.Test.NotificationSoapService\Reference.cs" t="Include" />
+        <e p="Connected Services\Adyen.Test.NotificationSoapService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Recurring.wsdl" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Reference.cs" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult.datasource" t="Include" />
+        <e p="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult.datasource" t="Include" />
         <e p="EnumExtensions.cs" t="Include" />
         <e p="HmacCalculator.cs" t="Include" />
         <e p="HmacCalculatorSHA256.cs" t="Include" />
@@ -111,26 +105,24 @@
         <e p="Configuration" t="Include">
           <e p="EPay.config" t="Include" />
         </e>
-        <e p="Connected Services\EPay.EPayBackendService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="Payment.wsdl" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType.datasource" t="Include" />
-        </e>
+        <e p="Connected Services\EPay.EPayBackendService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Payment.wsdl" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Reference.cs" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.captureResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.CardType.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.creditResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.deleteResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardinfoResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getcardtypeResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getEpayErrorResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.getPbsErrorResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionlistResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.gettransactionResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.move_as_capturedResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.renewResponse.datasource" t="Include" />
+        <e p="Connected Services\EPay.EPayBackendService\Ucommerce.Transactions.Payments.EPay.EPay.EPayBackendService.TransactionInformationType.datasource" t="Include" />
         <e p="EPayMd5Computer.cs" t="Include" />
         <e p="EPayPageBuilder.cs" t="Include" />
         <e p="EPayPaymentMethodService.cs" t="Include" />
@@ -257,21 +249,19 @@
         <e p="Configuration" t="Include">
           <e p="Netaxept.config" t="Include" />
         </e>
-        <e p="Connected Services\Netaxept.NetaxeptBackendService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="Netaxept.wsdl" t="Include" />
-          <e p="Netaxept.xsd" t="Include" />
-          <e p="Netaxept1.wsdl" t="Include" />
-          <e p="Netaxept1.xsd" t="Include" />
-          <e p="Netaxept2.xsd" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse.datasource" t="Include" />
-        </e>
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Netaxept.wsdl" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Netaxept.xsd" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Netaxept1.wsdl" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Netaxept1.xsd" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Netaxept2.xsd" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Reference.cs" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ProcessResponse.datasource" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.QueryResponse.datasource" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.ReconResponse.datasource" t="Include" />
+        <e p="Connected Services\Netaxept.NetaxeptBackendService\Ucommerce.Transactions.Payments.Netaxept.Netaxept.NetaxeptBackendService.RegisterResponse.datasource" t="Include" />
         <e p="CurrencyExtension.cs" t="Include" />
         <e p="NetaxeptPaymentMethodService.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
@@ -324,26 +314,22 @@
         <e p="Configuration" t="Include">
           <e p="PayEx.config" t="Include" />
         </e>
-        <e p="Connected Services\PayEx.PayExBackendService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="pxorder.wsdl" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.AddMultipleOrderLinesResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.Initialize21.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.InitializeResponse.datasource" t="Include" />
-        </e>
-        <e p="Connected Services\PayEx.Test.PayExBackendService" t="Include">
-          <e p="configuration.svcinfo" t="Include" />
-          <e p="configuration91.svcinfo" t="Include" />
-          <e p="pxorder.wsdl" t="Include" />
-          <e p="Reference.cs" t="Include" />
-          <e p="Reference.svcmap" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21.datasource" t="Include" />
-          <e p="Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse.datasource" t="Include" />
-        </e>
+        <e p="Connected Services\PayEx.PayExBackendService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\pxorder.wsdl" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\Reference.cs" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.AddMultipleOrderLinesResponse.datasource" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.Initialize21.datasource" t="Include" />
+        <e p="Connected Services\PayEx.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.PayExBackendService.InitializeResponse.datasource" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\pxorder.wsdl" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\Reference.cs" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\Reference.svcmap" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.AddMultipleOrderLinesResponse.datasource" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.Initialize21.datasource" t="Include" />
+        <e p="Connected Services\PayEx.Test.PayExBackendService\Ucommerce.Transactions.Payments.PayEx.PayEx.Test.PayExBackendService.InitializeResponse.datasource" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="PayExGuardExtensions.cs" t="Include" />
@@ -493,12 +479,11 @@
         <e p="WorldPayPaymentMethodService.cs" t="Include" />
       </e>
     </e>
-    <e p="C:\Repositories\UCommerce.Transactions.Payments\tools\Deploy.As.Apps.ps1" t="Include" />
-    <e p="C:\Repositories\UCommerce.Transactions.Payments\tools\Get-FolderItem.ps1" t="Include" />
-    <e p="C:\Repositories\UCommerce.Transactions.Payments\tools\UpdateAssemblyInfo.ps1" t="Include" />
-    <e p="C:\Users\david\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\david\.Rider2019.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\david\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\david\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_UCommerce.Transactions.Payments.-658208735.00" t="ExcludeRecursive" />
+    <e p="C:\UC\UCommerce.Transactions.Payments\tools\Deploy.As.Apps.ps1" t="Include" />
+    <e p="C:\UC\UCommerce.Transactions.Payments\tools\Get-FolderItem.ps1" t="Include" />
+    <e p="C:\UC\UCommerce.Transactions.Payments\tools\UpdateAssemblyInfo.ps1" t="Include" />
+    <e p="C:\Users\soren\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\soren\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_UCommerce.Transactions.Payments.43232711.00" t="ExcludeRecursive" />
+    <e p="C:\Users\soren\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
   </component>
 </project>

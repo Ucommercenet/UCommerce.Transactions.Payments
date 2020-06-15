@@ -158,7 +158,7 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 		    parametersToAdd["language"] = twoLetterLanguageCode;
 			parametersToAdd["ordernumber"] = paymentRequest.Payment.ReferenceId;
 		    parametersToAdd["amount"] = amount;
-		    parametersToAdd["currency"] = paymentRequest.Amount.Currency.ISOCode;
+		    parametersToAdd["currency"] = paymentRequest.Amount.CurrencyIsoCode;
 		    parametersToAdd["continueurl"] = acceptUrl;
 		    parametersToAdd["cancelurl"] = cancelUrl;
 			parametersToAdd["callbackurl"] = callbackUrl;
@@ -170,7 +170,7 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 			    twoLetterLanguageCode,
 			    paymentRequest.Payment.ReferenceId,
 			    amount,
-			    paymentRequest.Amount.Currency.ISOCode,
+			    paymentRequest.Amount.CurrencyIsoCode,
 			    acceptUrl,
 			    cancelUrl,
 			    callbackUrl,

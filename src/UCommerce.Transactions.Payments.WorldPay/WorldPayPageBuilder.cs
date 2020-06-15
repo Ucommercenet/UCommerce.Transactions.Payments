@@ -67,7 +67,7 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 
 			// All required fields
 			var amount = paymentRequest.Payment.Amount.ToString("0.00", CultureInfo.InvariantCulture);
-			var currency = paymentRequest.Amount.Currency.ISOCode;
+			var currency = paymentRequest.Amount.CurrencyIsoCode;
 
 			dict.Add("testMode", (testMode ? 100 : 0).ToString());
 

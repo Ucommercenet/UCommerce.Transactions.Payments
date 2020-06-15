@@ -101,7 +101,7 @@ namespace Ucommerce.Transactions.Payments.EPay
 			bool splitPayment = paymentRequest.PaymentMethod.DynamicProperty<bool>().SplitPayment;
 
 			string amount = paymentRequest.Payment.Amount.ToCents().ToString();
-			string currency = paymentRequest.Amount.Currency.ISOCode;
+			string currency = paymentRequest.Amount.CurrencyIsoCode;
 
 			var parameters = new Dictionary<string, string>
 			{

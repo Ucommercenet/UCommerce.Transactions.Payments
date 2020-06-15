@@ -28,7 +28,7 @@ namespace Ucommerce.Transactions.Payments.Ideal
         /// <returns></returns>
         public override Payment RequestPayment(PaymentRequest paymentRequest)
         {
-            string currencyIsoCode = paymentRequest.Amount.Currency.ISOCode;
+            string currencyIsoCode = paymentRequest.Amount.CurrencyIsoCode;
             if (currencyIsoCode.ToLower() != "eur")
                 throw new InvalidOperationException(
                     string.Format(
@@ -101,7 +101,7 @@ namespace Ucommerce.Transactions.Payments.Ideal
         /// Extracts <see cref="Payment"/> from the body of the HTTP request performed during callback from iDEAL.
         /// </summary>
         /// <remarks>
-        /// iDEAL is special because it’s URL is static thus only contains the paymentMethodId.
+        /// iDEAL is special because itï¿½s URL is static thus only contains the paymentMethodId.
         /// To find the payment in question the method will extract the body of the HTTP request and find the purchaseID in the XML payload.
         /// Payment will contain the full XML response from iDEAL ING in a custom property called "response".
         /// </remarks>
