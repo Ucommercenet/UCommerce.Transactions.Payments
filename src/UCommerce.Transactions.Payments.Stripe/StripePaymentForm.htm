@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Stripe</title>
+	</head>
+	<body>
+		<form id="paymentForm" method="post" action="##ACTIONURL##" autocomplete="off">
+			<input type="hidden" name="tr_data" value="##TRDATA##" />
+			##ERRORMESSAGES##
+			
+			<input type="submit" name="submitForm" value="Make Payment" />
+	</form>
+	<script src="https://js.stripe.com/v3/"></script>
+	##SCRIPT##
+	</body>
+</html>
