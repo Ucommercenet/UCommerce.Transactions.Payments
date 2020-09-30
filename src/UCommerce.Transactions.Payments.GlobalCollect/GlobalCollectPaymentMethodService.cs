@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security;
@@ -20,6 +19,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 		private readonly IHttpPaymentExtractor _paymentExtractor;
 		private readonly IRepository<PaymentStatus> _paymentStatusRepository;
 		private readonly IAbsoluteUrlService _absoluteUrlService;
+		private readonly ICallbackUrl _callbackUrl;
 		private readonly IOrderService _orderService;
 
 		public GlobalCollectPaymentMethodService(
@@ -27,7 +27,8 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 			IGlobalCollectService globalCollectService,
 			IHttpPaymentExtractor paymentExtractor,
 			IRepository<PaymentStatus> paymentStatusRepository,
-			IAbsoluteUrlService absoluteUrlService,
+			IAbsoluteUrlService absoluteUrlService, 
+			ICallbackUrl callbackUrl,
 			IOrderService orderService)
 		{
 			_loggingService = loggingService;
@@ -35,6 +36,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 			_paymentExtractor = paymentExtractor;
 			_paymentStatusRepository = paymentStatusRepository;
 			_absoluteUrlService = absoluteUrlService;
+			_callbackUrl = callbackUrl;
 			_orderService = orderService;
 		}
 
@@ -427,6 +429,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 			Guard.Against.Null(paymentRequest.Payment.PurchaseOrder.BillingAddress, "PurchaseOrder.BillingAddress must be supplied for Global Collect payments. Please make sure that you update the property prior to initiating payment either by using the API TransactionLibrary.EditBillingInformation() or setting the property directly.");
 			var payment = paymentRequest.Payment;
 			var paymentMethod = payment.PaymentMethod;
+			string callBackUrl = paymentMethod.DynamicProperty<string>().CallbackUrl;
 			var paymentProductId = TryGetPaymentProductIdFromPayment(payment);
 			var billingAddress = paymentRequest.PurchaseOrder.BillingAddress;
 			var shipment = paymentRequest.PurchaseOrder.Shipments.FirstOrDefault();
@@ -441,7 +444,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 
 			// NB! When I used the character "&" to add the "ADDITIONALREFERENCE" value, the parsing of the resulting XML would fail :-S
 			// I changed it to "&amp;" instead, and it appears to be ok. But since we have never seen a response yet, I do not know if the value actually would be added.
-			var returnUrl = AbstractPageBuilder.GetCallbackUrl(paymentMethod.DynamicProperty<string>().CallbackUrl, paymentRequest.Payment);
+			var returnUrl = _callbackUrl.GetCallbackUrl(callBackUrl, paymentRequest.Payment);
 
 			var globalCollectBillingAddress = new GlobalCollect.Api.Parts.Address()
 			{
