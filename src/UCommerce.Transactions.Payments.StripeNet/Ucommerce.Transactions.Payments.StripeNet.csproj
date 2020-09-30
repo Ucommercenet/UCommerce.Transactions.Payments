@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Ucommerce.Transactions.Payments.StripeNet</RootNamespace>
+    <AssemblyName>Ucommerce.Transactions.Payments.StripeNet</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

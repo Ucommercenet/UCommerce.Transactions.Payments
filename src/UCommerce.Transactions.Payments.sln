@@ -50,7 +50,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Paym
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.Braintree", "Ucommerce.Transactions.Payments.Braintree\Ucommerce.Transactions.Payments.Braintree.csproj", "{4999C8AC-A1EC-4230-994A-BB4A13BAF1C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ucommerce.Transactions.Payments.Stripe", "UCommerce.Transactions.Payments.Stripe\Ucommerce.Transactions.Payments.Stripe.csproj", "{1D439B26-5351-40CB-A332-42DB75AA71A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ucommerce.Transactions.Payments.StripeNet", "UCommerce.Transactions.Payments.StripeNet\Ucommerce.Transactions.Payments.StripeNet.csproj", "{20069F3D-CB90-4002-92CD-61A2ACA20DC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -138,10 +138,10 @@ Global
 		{4999C8AC-A1EC-4230-994A-BB4A13BAF1C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4999C8AC-A1EC-4230-994A-BB4A13BAF1C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4999C8AC-A1EC-4230-994A-BB4A13BAF1C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D439B26-5351-40CB-A332-42DB75AA71A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D439B26-5351-40CB-A332-42DB75AA71A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D439B26-5351-40CB-A332-42DB75AA71A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D439B26-5351-40CB-A332-42DB75AA71A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20069F3D-CB90-4002-92CD-61A2ACA20DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20069F3D-CB90-4002-92CD-61A2ACA20DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20069F3D-CB90-4002-92CD-61A2ACA20DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20069F3D-CB90-4002-92CD-61A2ACA20DC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
