@@ -28,6 +28,8 @@ namespace Ucommerce.Transactions.Payments.StripeNet
 	    private ChargeService ChargeService;
 	    private RefundService RefundService;
 	    private IAbsoluteUrlService _absoluteUrlService;
+		private readonly string PaymentIntentKey = "paymentIntent";
+		private readonly string SecretKey = "SecretKey";
 
 	    public StripePaymentMethodService(StripePageBuilder stripePageBuilder, IAbsoluteUrlService absoluteUrlService)
 	    {
@@ -42,52 +44,48 @@ namespace Ucommerce.Transactions.Payments.StripeNet
 
 	    private void InitClient(Payment payment)
 	    {
-		    Client = new StripeClient(payment.PaymentMethod.GetProperty("secretKey").GetValue().ToString());
+		    Client = new StripeClient(payment.PaymentMethod.GetProperty(SecretKey).GetValue().ToString());
 		    ChargeService = new ChargeService(Client);
 		    PaymentIntentService = new PaymentIntentService(Client);
 		    RefundService = new RefundService(Client);
 	    }
 
-	    public override void ProcessCallback(Payment payment)
-	    {
-		    string paymentFormUrl = payment.PaymentMethod.DynamicProperty<string>().PaymentFormUrl;
-		    string acceptUrl = payment.PaymentMethod.DynamicProperty<string>().AcceptUrl;
-		    string declineUrl = payment.PaymentMethod.DynamicProperty<string>().DeclineUrl;
-			var paymentIntent = payment.PaymentProperties.First(p => p.Key == "paymentIntent").Value;
+		public override void ProcessCallback(Payment payment)
+		{
+			InitClient(payment);
+			// BH: Normally, our payment processor would "ping" this endpoint.
+			// However, we're going to do it from AJAX ourselves, thus negating the need for a Stripe webhook.
+			var paymentIntent = payment.PaymentProperties.First(p => p.Key == PaymentIntentKey).Value;
 
-		    var pi = new PaymentIntentCreateOptions() { Amount = Convert.ToInt64(payment.Amount) };
 			// Just confirm the payment intent exists
-			var confirmResult = PaymentIntentService.Confirm(paymentIntent);
+			var confirmResult = PaymentIntentService.Get(paymentIntent);
 
-		    if (confirmResult.Status != StripeStatus.Succeeded)
-			    HttpContext.Current.Response.Redirect(paymentFormUrl == "(auto)"
-				    ? $"/{payment.PaymentMethod.PaymentMethodId}/{payment["paymentGuid"]}/PaymentRequest.axd?errorMessage={confirmResult.Status}"
-				    : $"{paymentFormUrl}?paymentGuid={payment["paymentGuid"]}&errorMessage={confirmResult.Status}");
+			if (confirmResult.Status != StripeStatus.Succeeded)
+				throw new InvalidOperationException("Payment intent capture not successful");
 
-		    var transaction = confirmResult.Charges.First();
+			var transaction = confirmResult.Charges.First();
 
-		    if (transaction.Currency != payment.PurchaseOrder.BillingCurrency.ISOCode.ToLower())
-			    throw new InvalidOperationException($"The payment currency ({payment.PurchaseOrder.BillingCurrency.ISOCode.ToUpper()}) and the currency configured for the merchant account ({transaction.Currency.ToUpper()}) doesn't match. Make sure that the payment currency matches the currency selected in the merchant account.");
+			if (transaction.Currency != payment.PurchaseOrder.BillingCurrency.ISOCode.ToLower())
+				throw new InvalidOperationException($"The payment currency ({payment.PurchaseOrder.BillingCurrency.ISOCode.ToUpper()}) and the currency configured for the merchant account ({transaction.Currency.ToUpper()}) doesn't match. Make sure that the payment currency matches the currency selected in the merchant account.");
 
-		    var paymentStatus = PaymentStatusCode.Declined;
-		    if (confirmResult.Status == StripeStatus.Succeeded)
-		    {
-			    if (string.IsNullOrEmpty(transaction.Id))
-				    throw new ArgumentException(@"transactionId must be present in query string.");
-			    payment.TransactionId = transaction.Id;
-			    paymentStatus = PaymentStatusCode.Authorized;
-		    }
+			var paymentStatus = PaymentStatusCode.Declined;
+			if (confirmResult.Status == StripeStatus.Succeeded)
+			{
+				if (string.IsNullOrEmpty(transaction.Id))
+					throw new ArgumentException(@"Charge ID must be present in the PaymentIntent object.");
+				payment.TransactionId = transaction.Id;
+				paymentStatus = PaymentStatusCode.Authorized;
+			}
 
-		    payment.PaymentStatus = PaymentStatus.Get((int)paymentStatus);
-		    ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
-		    HttpContext.Current.Response.Redirect(paymentStatus == PaymentStatusCode.Authorized 
-			    ? new Uri(_absoluteUrlService.GetAbsoluteUrl(acceptUrl)).AddOrderGuidParameter(payment.PurchaseOrder).ToString() 
-			    : new Uri(_absoluteUrlService.GetAbsoluteUrl(declineUrl)).AddOrderGuidParameter(payment.PurchaseOrder).ToString());
-	    }
+			payment.PaymentStatus = PaymentStatus.Get((int)paymentStatus);
+			ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
+			HttpContext.Current.Response.StatusCode = 200;
+		}
 
-	    protected override bool CancelPaymentInternal(Payment payment, out string status)
+		protected override bool CancelPaymentInternal(Payment payment, out string status)
 	    {
-		    var paymentIntent = payment.PaymentProperties.First(p => p.Key == "paymentIntent").Value;
+			InitClient(payment);
+		    var paymentIntent = payment.PaymentProperties.First(p => p.Key == PaymentIntentKey).Value;
 		    var result = PaymentIntentService.Cancel(paymentIntent);
 		    status = result.Status;
 		    return result.Status == StripeStatus.Canceled;
@@ -95,7 +93,8 @@ namespace Ucommerce.Transactions.Payments.StripeNet
 
 	    protected override bool AcquirePaymentInternal(Payment payment, out string status)
 	    {
-		    var paymentIntent = payment.PaymentProperties.First(p => p.Key == "paymentIntent").Value;
+			InitClient(payment);
+			var paymentIntent = payment.PaymentProperties.First(p => p.Key == PaymentIntentKey).Value;
 		    var captureResult = PaymentIntentService.Capture(paymentIntent);
 		    var succeeded = false;
 		    switch (captureResult.Status)
@@ -129,7 +128,8 @@ namespace Ucommerce.Transactions.Payments.StripeNet
 
 	    protected override bool RefundPaymentInternal(Payment payment, out string status)
 	    {
-		    var chargeId = payment.PaymentProperties.First(p => p.Key == "paymentIntent").Value;
+			InitClient(payment);
+			var chargeId = payment.PaymentProperties.First(p => p.Key == PaymentIntentKey).Value;
 			var refundOptions = new RefundCreateOptions() { Charge = chargeId };
 			var refundResult = RefundService.Create(refundOptions);
 			status = refundResult.Status;
@@ -141,7 +141,7 @@ namespace Ucommerce.Transactions.Payments.StripeNet
 			return refunded;
 	    }
 
-	    private static class StripeStatus
+        private static class StripeStatus
 	    {
 		    public const string Succeeded = "succeeded";
 		    public const string Canceled = "canceled";
