@@ -9,9 +9,10 @@ using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
 using Ucommerce.Pipelines.Transactions.Baskets.Basket;
 using Ucommerce.Web;
+using s = global::Stripe;
 using File = System.IO.File;
 
-namespace Ucommerce.Transactions.Payments.StripeNet
+namespace Ucommerce.Transactions.Payments.Stripe
 {
 	public class StripePageBuilder : AbstractPageBuilder
     {
@@ -48,7 +49,7 @@ namespace Ucommerce.Transactions.Payments.StripeNet
 
 			var billingDetails = new ChargeBillingDetails() {
 				Name = $"{paymentRequest.PurchaseOrder.BillingAddress.FirstName} {paymentRequest.PurchaseOrder.BillingAddress.LastName}",
-				Address = new Stripe.Address() {
+				Address = new s.Address() {
 					Line1 = paymentRequest.PurchaseOrder.BillingAddress.Line1,
 					Line2 = paymentRequest.PurchaseOrder.BillingAddress.Line2,
 					City = paymentRequest.PurchaseOrder.BillingAddress.City,

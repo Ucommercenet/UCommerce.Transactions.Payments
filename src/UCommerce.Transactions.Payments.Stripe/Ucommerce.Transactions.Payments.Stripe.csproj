@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="StripePaymentForm.htm" />
+    <Compile Remove="StripeSubscriptionPaymentMethodService.cs" />
   </ItemGroup>
 
   <ItemGroup>
