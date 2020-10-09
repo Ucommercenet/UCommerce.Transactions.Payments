@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="StripeSubscriptionPaymentMethodService.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Stripe.net" Version="39.4.0" />
     <PackageReference Include="UCommerce.Core" Version="9.1.0.20154" />
   </ItemGroup>
