@@ -51,11 +51,11 @@ namespace Ucommerce.Transactions.Payments.Netaxept
 			return new NetaxeptClient(binding, endpointAddress);
 		}
 
-		private const string TEST_ENDPOINT = "https://epayment-test.bbs.no/netaxept.svc";
-		private const string LIVE_ENDPOINT = "https://epayment.bbs.no/netaxept.svc";
+		private const string TEST_ENDPOINT = "https://test.epayment.nets.eu/netaxept.svc";
+		private const string LIVE_ENDPOINT = "https://epayment.nets.eu/netaxept.svc";
 
-		private const string BASE_REDIRECT_URL_TEST = "https://epayment-test.bbs.no/Terminal/default.aspx";
-		private const string BASE_REDIRECT_URL_LIVE = "https://epayment.bbs.no/terminal/default.aspx";
+		private const string BASE_REDIRECT_URL_TEST = "https://test.epayment.nets.eu/Terminal/default.aspx";
+		private const string BASE_REDIRECT_URL_LIVE = "https://epayment.nets.eu/Terminal/default.aspx";
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NetaxeptPaymentMethodService"/> class.
