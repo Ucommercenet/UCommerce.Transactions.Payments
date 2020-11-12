@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Ucommerce.Transactions.Payments.Stripe</RootNamespace>
+    <AssemblyName>Ucommerce.Transactions.Payments.Stripe</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Stripe.net" Version="39.4.0" />
+    <PackageReference Include="UCommerce.Core" Version="9.1.0.20154" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+</Project>
