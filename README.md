@@ -1,5 +1,9 @@
 # Ucommerce Payment Provider Integrations
 
+NEW: Stripe payment provider integration. Courtesy of [@jamiehowarth0](https://github.com/jamiehowarth0). As of now there are a few manual steps necessary: 
+- Creating the definition for the payment provider (to match the name of the service used - eg. "Stripe.com")
+- Adding the definition fields used by the service (PublicKey, SecretKey, AcceptUrl, PaymentFormTemplate)
+
 ### What is this repository for? ###
 
 This project contains all payment provider integrations shipped with Ucommerce out of the box. It is often easier to use a payment provider if the integration code is openly available. The code for the existing integrations is also great inspiration for those looking to create custom integrations with other payment providers not supported by Ucommerce out of the box.
