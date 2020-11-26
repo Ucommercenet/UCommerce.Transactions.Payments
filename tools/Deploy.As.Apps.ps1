@@ -11,7 +11,7 @@ Param(
 # Payment providers registered here will be moved by this Deploy script.
 Function Get-Registered-Payment-Providers {
 
-	$paymentProviders = @("Adyen","Authorizedotnet","Braintree","Dibs","EPay","EWay","GlobalCollect","Ideal","MultiSafepay","Netaxept","Ogone","Payer","PayEx","PayPal","Quickpay","SagePay","Schibsted","SecureTrading","WorldPay");
+	$paymentProviders = @("Adyen","Authorizedotnet","Braintree","Dibs","EPay","EWay","GlobalCollect","Ideal","MultiSafepay","Netaxept","Ogone","Payer","PayEx","PayPal","Quickpay","SagePay","Schibsted","SecureTrading","WorldPay","Stripe");
 
 	return $paymentProviders;
 }
@@ -49,6 +49,13 @@ function Run-It () {
 		if($element -eq "Braintree"){
 			Copy-Item "$src/Ucommerce.Transactions.Payments.$element\bin\$Configuration\Braintree-2.22.0.dll" -Destination "$TargetPath\$element\bin" -Force
 			Copy-Item "$src/Ucommerce.Transactions.Payments.$element\BraintreePaymentForm.htm" -Destination "$TargetPath\$element" -Force
+		}
+
+		# DLL Dependency necessary for Stripe
+		if($element -eq "Stripe"){
+			Copy-Item "$src/Ucommerce.Transactions.Payments.$element\bin\$Configuration\Stripe.net.dll" -Destination "$TargetPath\$element\bin" -Force
+			Copy-Item "$src/Ucommerce.Transactions.Payments.$element\bin\$Configuration\Microsoft.Bcl.AsyncInterfaces.dll" -Destination "$TargetPath\$element\bin" -Force
+			Copy-Item "$src/Ucommerce.Transactions.Payments.$element\StripePaymentForm.htm" -Destination "$TargetPath\$element" -Force
 		}
 
 		Write-Host "Deployed > $element"
