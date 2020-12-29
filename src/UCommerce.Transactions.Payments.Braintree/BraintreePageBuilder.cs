@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web;
+using System.Web.Script.Serialization;
 using Braintree;
 using Ucommerce.Extensions;
 using Ucommerce.Web;
@@ -54,6 +55,8 @@ namespace Ucommerce.Transactions.Payments.Braintree
 
 			var callbackUrlWithPayment = _callbackUrl.GetCallbackUrl(callbackUrl, paymentRequest.Payment);
 			page.Replace(@"##CALLBACK_URL##", $@"{callbackUrlWithPayment}");
+			
+			AddThreeDSecureParameters(page, paymentRequest);
 
 			//Braintree will redirect back in case of errors and we will have to display them.
 			string errorMessages = HttpContext.Current.Request.QueryString["errorMessage"];
@@ -81,6 +84,41 @@ namespace Ucommerce.Transactions.Payments.Braintree
 					page.AppendLine(streamReader.ReadLine());
 			}
 		}
+		
+		/// <summary>
+        /// To use 3DS, you will need to pass an object with relevant customer and transaction data.
+		/// into the threeDSecure field of the requestPaymentMethod options in order to minimize the need
+		/// for issuing banks to present authentication challenges to customers.
+		///
+		/// This object must contain the `amount` field.
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="paymentRequest"></param>
+        private void AddThreeDSecureParameters(StringBuilder page, PaymentRequest paymentRequest)
+        {
+            var billingAddress = paymentRequest.PurchaseOrder.BillingAddress;
+            
+            var threeDSecureParameters = new Dictionary<string, object>()
+            {
+	            // Braintree throws an error "Invalid Amount", if the amount has more than two digits.
+                ["amount"] = Math.Round(paymentRequest.Payment.Amount, 2),
+                ["email"] = billingAddress.EmailAddress,
+                ["billingAddress"] = new Dictionary<string, string>()
+                {
+                    ["givenName"] = billingAddress.FirstName,
+                    ["surname"] = billingAddress.LastName,
+                    ["streetAddress"] = billingAddress.Line1,
+                    ["extendedAddress"] = billingAddress.Line2,
+                    ["locality"] = billingAddress.City,
+                    ["postalCode"] = billingAddress.PostalCode,
+                    ["phoneNumber"] = billingAddress.PhoneNumber
+                }
+            };
+
+            var jsSerializer = new JavaScriptSerializer();
+            var json = jsSerializer.Serialize(threeDSecureParameters);
+            page.Replace(@"##THREE_D_SECURE_PARAMETERS##", $@"{json}");
+        }
 
 		/// <summary>
 		/// Create a html option with value and text 

@@ -18,15 +18,19 @@
 <script type="text/javascript">
 	const form = document.getElementById('payment-form');
 	const serverErrorsHTML = '##ERROR_MESSAGES##';
+	const threeDSecureParameters = JSON.parse('##THREE_D_SECURE_PARAMETERS##');
 
 	braintree.dropin.create({
 		authorization: '##CLIENT_TOKEN##',
-		container: '#dropin-container'
+		container: '#dropin-container',
+		threeDSecure: true
 	}).then(dropinInstance => {
 		form.addEventListener('submit', event => {
 			event.preventDefault();
 
-			dropinInstance.requestPaymentMethod().then((payload) => {
+			dropinInstance.requestPaymentMethod({
+				threeDSecure: threeDSecureParameters
+			}).then((payload) => {
 				document.getElementById('nonce').value = payload.nonce;
 				form.submit();
 			}).catch(error => {
