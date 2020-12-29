@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
+using System.Threading;
 using System.Web;
 using Braintree;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
+using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
 using Environment = Braintree.Environment;
-using Ucommerce.Transactions.Payments.Common;
+using PaymentMethod = Ucommerce.EntitiesV2.PaymentMethod;
 
 namespace Ucommerce.Transactions.Payments.Braintree
 {
@@ -23,20 +26,15 @@ namespace Ucommerce.Transactions.Payments.Braintree
 	    private readonly IAbsoluteUrlService _absoluteUrlService;
 	    private BraintreePageBuilder BraintreePageBuilder { get; set; }
 
-	    private BraintreeGateway GetBraintreeGateway(PaymentMethod paymentMethod)
-	    {
-			bool testMode = paymentMethod.DynamicProperty<bool>().TestMode;
+	    public BraintreeGateway GetBraintreeGateway(PaymentMethod paymentMethod)
+        {
 			string merchantId = paymentMethod.DynamicProperty<string>().MerchantId;
 			string publicKey = paymentMethod.DynamicProperty<string>().PublicKey;
 			string privateKey = paymentMethod.DynamicProperty<string>().PrivateKey;
-			
-			return new BraintreeGateway
-                            {
-                                Configuration =
-                                    new global::Braintree.Configuration(
-                                    testMode ? Environment.SANDBOX : Environment.PRODUCTION,
-                                    merchantId, publicKey, privateKey)
-                            };
+			bool testMode = paymentMethod.DynamicProperty<bool>().TestMode;
+            var environment = testMode ? Environment.SANDBOX : Environment.PRODUCTION;
+
+            return new BraintreeGateway(environment, merchantId, publicKey, privateKey);
 	    }
 
 	    public BraintreePaymentMethodService(BraintreePageBuilder braintreePageBuilder, IAbsoluteUrlService absoluteUrlService)
@@ -58,30 +56,44 @@ namespace Ucommerce.Transactions.Payments.Braintree
             return BraintreePageBuilder.Build(paymentRequest);
         }
 
-        /// <summary>
-        /// Redirect to the configured payment form.
-        /// </summary>
-        /// <param name="paymentRequest"></param>
-        /// <returns></returns>
-        public override Payment RequestPayment(PaymentRequest paymentRequest)
+        private Result<Transaction> CreateBraintreeTransaction(Payment payment)
         {
-	        string paymentFormUrl = paymentRequest.PaymentMethod.DynamicProperty<string>().PaymentFormUrl;
+            var nonce = HttpContext.Current.Request["payment_method_nonce"];
 
-            if (paymentFormUrl == "(auto)")
-                return base.RequestPayment(paymentRequest);
+            var billingAddress = payment.PurchaseOrder.BillingAddress;
+            var orderNumber = payment.PurchaseOrder.OrderNumber;
+            
+            var request = new TransactionRequest
+            {
+                // Braintree throws an error "Invalid Amount", if the amount has more than two digits.
+                Amount = Math.Round(payment.Amount, 2),
+                PaymentMethodNonce = nonce,
+                
+                OrderId = payment.ReferenceId,
+                PurchaseOrderNumber = string.IsNullOrEmpty(orderNumber) ? "" : orderNumber,
+                BillingAddress = new AddressRequest
+                {
+                    FirstName = billingAddress.FirstName,
+                    LastName = billingAddress.LastName,
+                    StreetAddress = billingAddress.Line1,
+                    ExtendedAddress = billingAddress.Line2,
+                    Locality = billingAddress.City,
+                    PostalCode = billingAddress.PostalCode,
+                    CountryName = billingAddress.Country.Name,
+                    Company = billingAddress.CompanyName
+                }
+            };
 
-            if (paymentRequest.Payment == null)
-                paymentRequest.Payment = CreatePayment(paymentRequest);
+            // Braintree code will convert decimal to string using current thread culture, but reqiures invarinat format.
+            // Set culture temporarily in 'en-us'
+            var currentCulture = Thread.CurrentThread.CurrentCulture;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
 
-            paymentRequest.Payment["paymentGuid"] = Guid.NewGuid().ToString();
+            var gateway = GetBraintreeGateway(payment.PaymentMethod);
+            Result<Transaction> result = gateway.Transaction.Sale(request);
 
-            Payment payment = paymentRequest.Payment;
-
-            var redirectUrl = string.Format("{0}?paymentGuid={1}", paymentFormUrl, payment["paymentGuid"]);
-
-            HttpContext.Current.Response.Redirect(redirectUrl);
-
-            return payment;
+            Thread.CurrentThread.CurrentCulture = currentCulture;
+            return result;
         }
 
         /// <summary>
@@ -90,14 +102,15 @@ namespace Ucommerce.Transactions.Payments.Braintree
         /// <param name="payment">The payment to process.</param>
         public override void ProcessCallback(Payment payment)
         {
+            if (payment.PaymentStatus.PaymentStatusId != (int)PaymentStatusCode.PendingAuthorization)
+                return;
+
 			string paymentFormUrl = payment.PaymentMethod.DynamicProperty<string>().PaymentFormUrl;
 			string acceptUrl = payment.PaymentMethod.DynamicProperty<string>().AcceptUrl;
 			string declineUrl = payment.PaymentMethod.DynamicProperty<string>().DeclineUrl;
-			
-			if (payment.PaymentStatus.PaymentStatusId != (int)PaymentStatusCode.PendingAuthorization)
-                return;
 
-            Result<Transaction> result = GetBraintreeGateway(payment.PaymentMethod).TransparentRedirect.ConfirmTransaction(HttpContext.Current.Request.Url.Query);
+            var result = CreateBraintreeTransaction(payment);
+
             if (!result.IsSuccess())
                 HttpContext.Current.Response.Redirect(paymentFormUrl == "(auto)"
                     ? string.Format("/{0}/{1}/PaymentRequest.axd?errorMessage={2}", payment.PaymentMethod.PaymentMethodId, payment["paymentGuid"], result.Message.Replace('\n', ';'))

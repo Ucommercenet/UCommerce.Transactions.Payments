@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Threading;
 using System.Web;
 using Braintree;
-using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
 using Ucommerce.Web;
 using Environment = Braintree.Environment;
@@ -48,52 +45,15 @@ namespace Ucommerce.Transactions.Payments.Braintree
 			string callbackUrl = paymentRequest.PaymentMethod.DynamicProperty<string>().CallbackUrl;
 			string paymentFormTemplate = paymentRequest.PaymentMethod.DynamicProperty<string>().PaymentFormTemplate;
 
-			var gateway = new BraintreeGateway
-							  {
-								  Configuration =
-									  new global::Braintree.Configuration(
-									  testMode ? Environment.SANDBOX : Environment.PRODUCTION,
-									  merchantId, publicKey, privateKey)
-							  };
-
 			AddPaymentForm(page, paymentFormTemplate);
+			
+			var environment = testMode ? Environment.SANDBOX : Environment.PRODUCTION;
+			var gateway = new BraintreeGateway(environment, merchantId, publicKey, privateKey);
+			var clientToken = gateway.ClientToken.Generate();
+			page.Replace(@"##CLIENT_TOKEN##", $@"{clientToken}");
 
-			page.Replace(@"##ACTIONURL##", string.Format(@"{0}", gateway.TransparentRedirect.Url));
-
-			OrderAddress billingAddress = paymentRequest.Payment.PurchaseOrder.BillingAddress;
-
-			//Braintree code will convert decimal to string using current thread culture, but reqiures invarinat format.
-			//Set culture temporarily in 'en-us'
-			var currentCulture = Thread.CurrentThread.CurrentCulture;
-			Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
-			string trData = gateway.Transaction.SaleTrData(
-				new TransactionRequest
-					{
-						Amount = Math.Round(paymentRequest.Payment.Amount, 2), // Braintree throws an error "Invalid Amount", if the amount has more than two digits.
-						OrderId = paymentRequest.Payment.ReferenceId,
-						PurchaseOrderNumber = string.IsNullOrEmpty(paymentRequest.Payment.PurchaseOrder.OrderNumber) ? "" : paymentRequest.Payment.PurchaseOrder.OrderNumber,
-						BillingAddress =
-							new AddressRequest
-								{
-									FirstName = billingAddress.FirstName,
-									LastName = billingAddress.LastName,
-									StreetAddress = billingAddress.Line1,
-									ExtendedAddress = billingAddress.Line2,
-									PostalCode = billingAddress.PostalCode,
-									CountryName = billingAddress.Country.Name,
-									Company = billingAddress.CompanyName
-								},
-					},
-				_callbackUrl.GetCallbackUrl(callbackUrl, paymentRequest.Payment));
-			Thread.CurrentThread.CurrentCulture = currentCulture;
-			page.Replace(@"##TRDATA##", string.Format(@"{0}", trData));
-
-			page.Replace(@"##EXPMONTH##", string.Format(@"{0}", CreateSelectOptions(new[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" })));
-
-			var years = new string[10];
-			for (int i = 0; i < 10; i++)
-				years[i] = (DateTime.Now.Year + i).ToString(CultureInfo.InvariantCulture);
-			page.Replace(@"##EXPYEAR##", string.Format(@"{0}", CreateSelectOptions(years)));
+			var callbackUrlWithPayment = _callbackUrl.GetCallbackUrl(callbackUrl, paymentRequest.Payment);
+			page.Replace(@"##CALLBACK_URL##", $@"{callbackUrlWithPayment}");
 
 			//Braintree will redirect back in case of errors and we will have to display them.
 			string errorMessages = HttpContext.Current.Request.QueryString["errorMessage"];
@@ -101,11 +61,11 @@ namespace Ucommerce.Transactions.Payments.Braintree
 			{
 				var errorMessageBuilder = new StringBuilder();
 				foreach (string errorMessage in errorMessages.Split(';'))
-					errorMessageBuilder.Append(string.Format("<li>{0}</li>", errorMessage));
-				page.Replace(@"##ERRORMESSAGES##", string.Format(@"<ul>{0}</ul>", errorMessageBuilder));
+					errorMessageBuilder.Append($"<li>{errorMessage}</li>");
+				page.Replace(@"##ERROR_MESSAGES##", $@"<ul>{errorMessageBuilder}</ul>");
 			}
 			else
-				page.Replace(@"##ERRORMESSAGES##", "");
+				page.Replace(@"##ERROR_MESSAGES##", "");
 		}
 
 		/// <summary>
@@ -131,7 +91,7 @@ namespace Ucommerce.Transactions.Payments.Braintree
 		{
 			var stringBuilder = new StringBuilder();
 			foreach (var value in values)
-				stringBuilder.Append(string.Format("<option value=\"{0}\" >{0}</option>", value));
+				stringBuilder.Append($"<option value=\"{value}\" >{value}</option>");
 			return stringBuilder.ToString();
 		}
 	}
