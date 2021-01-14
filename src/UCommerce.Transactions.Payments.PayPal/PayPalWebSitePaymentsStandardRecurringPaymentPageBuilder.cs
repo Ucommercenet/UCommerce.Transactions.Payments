@@ -2,69 +2,74 @@
 using System.Linq;
 using System.Text;
 using Ucommerce.Extensions;
+using Ucommerce.Web;
 
 namespace Ucommerce.Transactions.Payments.PayPal
 {
-	/// <summary>
-	/// Page builder for generating encrypted PayPal buttons for subscriptions.
-	/// </summary>
-	public class PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder : PayPalWebSitePaymentsStandardPageBuilder
-	{
-		public PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder() {}
+    /// <summary>
+    /// Page builder for generating encrypted PayPal buttons for subscriptions.
+    /// </summary>
+    public class PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder : PayPalWebSitePaymentsStandardPageBuilder
+    {
+        public PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder(IAbsoluteUrlService absoluteUrlService,
+            ICallbackUrl callbackUrl) : base(absoluteUrlService, callbackUrl)
+        {
+        }
 
-		protected override IDictionary<string, string> GetParameters(PaymentRequest paymentRequest)
-		{
-			var dict = base.GetParameters(paymentRequest);
-			dict["cmd"] = "_xclick-subscriptions";
-			
-			// Subscription name
-			dict.Add("item_name", string.Join(", ", paymentRequest.Payment.PurchaseOrder.OrderLines.Select(x => x.ProductName)));
+        protected override IDictionary<string, string> GetParameters(PaymentRequest paymentRequest)
+        {
+            var dict = base.GetParameters(paymentRequest);
+            dict["cmd"] = "_xclick-subscriptions";
 
-			// Subscription amount
-			dict.Add("a3", paymentRequest.Payment.Amount.ToInvariantString());
+            // Subscription name
+            dict.Add("item_name",
+                string.Join(", ", paymentRequest.Payment.PurchaseOrder.OrderLines.Select(x => x.ProductName)));
 
-			// Add all custom properties from the payment to the form.
-			// This includes variable information about recurrence.
-			foreach (var property in paymentRequest.Payment.PaymentProperties)
-				dict[property.Key] = property.Value;
+            // Subscription amount
+            dict.Add("a3", paymentRequest.Payment.Amount.ToInvariantString());
 
-			// Should PayPal retry failed recurring payments
-			dict.Add("sra", "1");
+            // Add all custom properties from the payment to the form.
+            // This includes variable information about recurrence.
+            foreach (var property in paymentRequest.Payment.PaymentProperties)
+                dict[property.Key] = property.Value;
 
-			// No note for customers
-			dict.Add("no_note", "1");
+            // Should PayPal retry failed recurring payments
+            dict.Add("sra", "1");
 
-			// Can user manage subscription (0/1)
-			dict.Add("usr_manage", "0");
+            // No note for customers
+            dict.Add("no_note", "1");
 
-			return dict;
-		}
+            // Can user manage subscription (0/1)
+            dict.Add("usr_manage", "0");
 
-		protected override void BuildBody(StringBuilder page, PaymentRequest paymentRequest)
-		{
-			page.Append(@"<form method=""post"" action=""" + GetPostUrl(paymentRequest.PaymentMethod) + @""">");
+            return dict;
+        }
 
-			// All required fields
-			IDictionary<string, string> dict = GetParameters(paymentRequest);
+        protected override void BuildBody(StringBuilder page, PaymentRequest paymentRequest)
+        {
+            page.Append(@"<form method=""post"" action=""" + GetPostUrl(paymentRequest.PaymentMethod) + @""">");
 
-			if (Debug)
-				AddSubmitButton(page, "ac", "Post it");
+            // All required fields
+            IDictionary<string, string> dict = GetParameters(paymentRequest);
 
-			if (paymentRequest.PaymentMethod.DynamicProperty<bool>().UseEncryption)
-			{
-				var encrypter = new ButtonEncrypter(paymentRequest.PaymentMethod);
-				AddHiddenField(page, "cmd", "_s-xclick");
-				AddHiddenField(page, "encrypted", encrypter.SignAndEncrypt(dict));
-			}
-			else
-			{
-				foreach (var pair in dict)
-				{
-					AddHiddenField(page, pair.Key, pair.Value);
-				}
-			}
+            if (Debug)
+                AddSubmitButton(page, "ac", "Post it");
 
-			page.Append("</form>");
-		}
-	}
+            if (paymentRequest.PaymentMethod.DynamicProperty<bool>().UseEncryption)
+            {
+                var encrypter = new ButtonEncrypter(paymentRequest.PaymentMethod);
+                AddHiddenField(page, "cmd", "_s-xclick");
+                AddHiddenField(page, "encrypted", encrypter.SignAndEncrypt(dict));
+            }
+            else
+            {
+                foreach (var pair in dict)
+                {
+                    AddHiddenField(page, pair.Key, pair.Value);
+                }
+            }
+
+            page.Append("</form>");
+        }
+    }
 }
