@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Components.Windsor;
 using Ucommerce.Transactions.Payments.Configuration;
 using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
@@ -12,8 +13,8 @@ namespace Ucommerce.Transactions.Payments.PayPal
 {
     public class PayPalWebSitePaymentsStandardPageBuilder : AbstractPageBuilder
     {
-        private readonly IAbsoluteUrlService _absoluteUrlService;
-        private readonly ICallbackUrl _callbackUrl;
+        [Mandatory] public IAbsoluteUrlService AbsoluteUrlService { get; set; }
+        [Mandatory] public ICallbackUrl CallbackUrl { get; set; }
 
         private const string URL_SANDBOX = "https://www.sandbox.paypal.com/cgi-bin/webscr";
         private const string URL_PRODUCTION = "https://www.paypal.com/cgi-bin/webscr";
@@ -23,13 +24,6 @@ namespace Ucommerce.Transactions.Payments.PayPal
             return paymentMethod.DynamicProperty<bool>().Sandbox
                 ? URL_SANDBOX
                 : URL_PRODUCTION;
-        }
-
-        public PayPalWebSitePaymentsStandardPageBuilder(IAbsoluteUrlService absoluteUrlService,
-            ICallbackUrl callbackUrl)
-        {
-            _absoluteUrlService = absoluteUrlService;
-            _callbackUrl = callbackUrl;
         }
 
         protected override void BuildHead(StringBuilder page, PaymentRequest paymentRequest)
@@ -86,7 +80,7 @@ namespace Ucommerce.Transactions.Payments.PayPal
                 {"business", paymentRequest.PaymentMethod.DynamicProperty<string>().Business},
                 {
                     "return",
-                    new Uri(_absoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()
+                    new Uri(AbsoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()
                             .Return))
                         .AddOrderGuidParameter(
                             paymentRequest.Payment.PurchaseOrder).ToString()
@@ -99,12 +93,12 @@ namespace Ucommerce.Transactions.Payments.PayPal
                 {"paymentaction", pa.ToString().ToLower()},
                 {
                     "cancel_return",
-                    _absoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()
+                    AbsoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()
                         .CancelReturn)
                 },
                 {
                     "notify_url",
-                    _callbackUrl.GetCallbackUrl(paymentRequest.PaymentMethod.DynamicProperty<string>().NotifyUrl,
+                    CallbackUrl.GetCallbackUrl(paymentRequest.PaymentMethod.DynamicProperty<string>().NotifyUrl,
                         paymentRequest.Payment)
                 },
                 {"invoice", paymentRequest.Payment.ReferenceId},

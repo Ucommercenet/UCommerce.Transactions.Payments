@@ -11,11 +11,6 @@ namespace Ucommerce.Transactions.Payments.PayPal
     /// </summary>
     public class PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder : PayPalWebSitePaymentsStandardPageBuilder
     {
-        public PayPalWebSitePaymentsStandardRecurringPaymentPageBuilder(IAbsoluteUrlService absoluteUrlService,
-            ICallbackUrl callbackUrl) : base(absoluteUrlService, callbackUrl)
-        {
-        }
-
         protected override IDictionary<string, string> GetParameters(PaymentRequest paymentRequest)
         {
             var dict = base.GetParameters(paymentRequest);
