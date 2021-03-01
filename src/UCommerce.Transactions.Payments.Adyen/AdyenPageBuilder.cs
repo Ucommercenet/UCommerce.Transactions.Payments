@@ -133,7 +133,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			}
 
 			dict.Add("merchantReference", paymentRequest.Payment.ReferenceId);
-			dict.Add("currencyCode", paymentRequest.Amount.Currency.ISOCode);
+			dict.Add("currencyCode", paymentRequest.Amount.CurrencyIsoCode);
 			dict.Add("shipBeforeDate", BuildFutureTimestamp(paymentRequest.PaymentMethod.DynamicProperty<int>().ShipBeforeDatePlusDays, paymentRequest.PaymentMethod.DynamicProperty<int>().ShipBeforeDatePlusHours, paymentRequest.PaymentMethod.DynamicProperty<int>().ShipBeforeDatePlusMinutes));
 			dict.Add("skinCode", paymentRequest.PaymentMethod.DynamicProperty<string>().SkinCode);
 			dict.Add("merchantAccount", paymentRequest.PaymentMethod.DynamicProperty<string>().MerchantAccount);

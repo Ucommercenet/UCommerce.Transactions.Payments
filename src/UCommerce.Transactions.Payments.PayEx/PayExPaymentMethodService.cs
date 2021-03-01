@@ -93,7 +93,7 @@ namespace Ucommerce.Transactions.Payments.PayEx
 			const string creditcard = "CREDITCARD";
 			var clientLanguage = LocalizationContext.CurrentCultureCode;
 
-			string cancelUrl = AbstractPageBuilder.GetAbsoluteUrl(cancelUrlForPaymentMethod);
+			string cancelUrl = _absoluteUrlService.GetAbsoluteUrl(cancelUrlForPaymentMethod);
 
 			string value =	accountNumber +
 							purchaseOperation +

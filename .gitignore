@@ -28,10 +28,6 @@ _ReSharper*
 *.ReSharper
 *.orig
 ._*
-src/.vs/config/applicationhost.config
-database/clean/*
-src/UCommerceWeb/node_modules/**
-src/uCommerce.sln.ide/*.*
-src/UCommerceWeb/node_modules/*
 src/packages/*
+src/.idea/*
 src/.vs/*

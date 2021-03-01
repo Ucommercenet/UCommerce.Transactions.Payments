@@ -18,11 +18,10 @@ function Run-It () {
 	$scriptPath = Split-Path -parent $PSCommandPath;
 	$src = Resolve-Path "$scriptPath\..\src";
 
-	$hgChangeSetHash = hg identify
 
 	$assemblyVersion = 'AssemblyVersion("' + $version + '")';
     $fileVersion = 'AssemblyFileVersion("' + $version + '")';
-	$assemblyInformationalVersion = 'AssemblyInformationalVersion("' + $version + ' ' + $hgChangeSetHash + '")';
+	$assemblyInformationalVersion = 'AssemblyInformationalVersion("' + $version + '")';
 
 	 Get-FolderItem -Path $src -Filter AssemblyInfo.cs | ForEach-Object {
             $filename = $_.FullName
