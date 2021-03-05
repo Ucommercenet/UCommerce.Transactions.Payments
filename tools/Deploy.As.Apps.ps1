@@ -54,6 +54,8 @@ function Run-It () {
 		}
 
 		New-Item -Type Directory "$TargetPath\$element\bin" -Force
+		New-Item -Type Directory "$TargetPath\$element\banana" -Force
+
 		Copy-Item "$projectPath\bin\$Configuration\Ucommerce.Transactions.Payments.$element.dll" -Destination "$TargetPath\$element\bin" -Force
 		Copy-Item "$projectPath\Configuration" -Destination "$TargetPath\$element\Configuration" -Force -Recurse
 
