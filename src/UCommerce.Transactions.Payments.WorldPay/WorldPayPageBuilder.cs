@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Web;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
 using Ucommerce.Web;
@@ -78,7 +79,6 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 
 			var hash = Md5Computer.GetHash(payment.Amount, payment.ReferenceId, payment.PurchaseOrder.BillingCurrency.ISOCode, key);
 			var cartId = paymentRequest.Payment.ReferenceId;
-			var callbackUrl = _callbackUrl.GetCallbackUrl(callback, paymentRequest.Payment);
 
 			dict.Add("MC_hash", hash);
 			dict.Add("instId", instId);
@@ -151,10 +151,22 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			//dict.Add("CM_", order); // "Prefix for parameters used in the both the result page and payment responses
 
 
+			var callbackUrl = GetLocalhostSafeCallbackUrl(paymentRequest, callback);
+
 			dict.Add("signature", CalculateSignature(instId, amount, currency, cartId, callbackUrl, signature));
 			dict.Add("MC_callback", callbackUrl);
 
 			return dict;
+		}
+
+		private string GetLocalhostSafeCallbackUrl(PaymentRequest paymentRequest, string callback)
+		{
+			var callbackUrl = _callbackUrl.GetCallbackUrl(callback, paymentRequest.Payment);
+
+			var request = HttpContext.Current.Request;
+			callbackUrl = callbackUrl.Replace("://localhost/", $"://localhost:{request.Url.Port}/");
+
+			return callbackUrl;
 		}
 
 		private string CalculateSignature(string instId, string amount, string currency, string cartId, string callbackUrl, string signature)
