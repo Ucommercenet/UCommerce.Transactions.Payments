@@ -166,7 +166,7 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			var request = HttpContext.Current.Request;
 			callbackUrl = callbackUrl.Replace("://localhost/", $"://localhost:{request.Url.Port}/");
 
-			return callbackUrl;
+			return callbackUrl.ToLower();
 		}
 
 		private string CalculateSignature(string instId, string amount, string currency, string cartId, string callbackUrl, string signature)
