@@ -96,11 +96,11 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			dict.Add("region", billingAddress.State); // "Region/County/State
 			dict.Add("postcode", billingAddress.PostalCode); // "Post/Zip Code
 			dict.Add("country", billingAddress.Country.TwoLetterISORegionName); // "Country
-																				//dict.Add("desc", order); // "Description of purchase
-																				//dict.Add("resultfile", order); // "Final landing Page for shopper
-																				//dict.Add("accId1", order); // "Tells us which merchant code to use (if more than one)
-																				//dict.Add("authValidFrom", order); // "Time window for purchase to complete (from)
-																				//dict.Add("authValidTo", order); // "Time window for purchase to complete (to)
+			dict.Add("desc", order.OrderNumber); // "Description of purchase
+												 //dict.Add("resultfile", order); // "Final landing Page for shopper
+												 //dict.Add("accId1", order); // "Tells us which merchant code to use (if more than one)
+												 //dict.Add("authValidFrom", order); // "Time window for purchase to complete (from)
+												 //dict.Add("authValidTo", order); // "Time window for purchase to complete (to)
 			dict.Add("name", $"{billingAddress.FirstName} {billingAddress.LastName}"); // "Shopper's full name <!-- Accepts test values to simulate transaction outcome-->
 			dict.Add("tel", billingAddress.PhoneNumber); // "Shopper's telephone number
 														 //dict.Add("fax", order); // "Shopper's fax number
