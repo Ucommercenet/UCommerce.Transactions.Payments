@@ -79,7 +79,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
 	        if (!currentRequest.IsSecureConnection)
 	        {
-	            LoggingService.Log<PaymentResultValidator>("Adyen uses basic auth for sending payment notification. Request validated as insecure. Has your application been configured for SSL?");
+	            LoggingService.Information<PaymentResultValidator>("Adyen uses basic auth for sending payment notification. Request validated as insecure. Has your application been configured for SSL?");
 	        }
 
 	        string authHeader = currentRequest.Headers["Authorization"];
@@ -112,7 +112,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 		{
 			if (!dict.ContainsKey("merchantSig"))
 			{
-				LoggingService.Log<PaymentResultValidator>("Dictionary does not contain the key 'merchantSig'");
+				LoggingService.Debug<PaymentResultValidator>("Dictionary does not contain the key 'merchantSig'");
 				return false;
 			}
 
@@ -121,7 +121,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
 			if (signature != referenceSignature)
 			{
-				LoggingService.Log<PaymentResultValidator>(string.Format("The calculated signature '{0}' does not match the expected '{1}'.", signature, referenceSignature));
+				LoggingService.Debug<PaymentResultValidator>(string.Format("The calculated signature '{0}' does not match the expected '{1}'.", signature, referenceSignature));
 				return false;
 			}
 

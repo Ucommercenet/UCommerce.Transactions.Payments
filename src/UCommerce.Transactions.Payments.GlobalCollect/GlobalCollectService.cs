@@ -194,14 +194,14 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 		{
 			var caller = new ServiceApiCaller(url);
 
-			_loggingService.Log<GlobalCollectService>("Sending: " + text);
+			_loggingService.Debug<GlobalCollectService>("Sending: " + text);
 			var responseText = caller.Send(text);
-			_loggingService.Log<GlobalCollectService>("Receiving: " + responseText);
+			_loggingService.Debug<GlobalCollectService>("Receiving: " + responseText);
 
 			var checker = new ErrorChecker(responseText);
 			if (checker.Result != "OK")
 			{
-				_loggingService.Log<GlobalCollectService>(responseText);
+				_loggingService.Debug<GlobalCollectService>(responseText);
 
 				if (checker.Errors.Count == 1)
 				{

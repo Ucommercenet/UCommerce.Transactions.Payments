@@ -298,7 +298,7 @@ namespace Ucommerce.Transactions.Payments.Schibsted
         {
             // Logging JSON error response
             var sr = new StreamReader(ex.Response.GetResponseStream());
-            LoggingService.Log<SchibstedPaymentMethodService>("JSON Error Response: " + sr.ReadToEnd());
+            LoggingService.Error<SchibstedPaymentMethodService>(ex, "JSON Error Response: " + sr.ReadToEnd());
         }
 
         private string GetCallStatusMessage(int status)
