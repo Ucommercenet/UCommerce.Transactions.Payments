@@ -77,7 +77,7 @@ namespace Ucommerce.Transactions.Payments.PayPal
 			if (!IsValidCallback(payment.PaymentMethod))
 			{
 				string message = string.Format("Could not validate IPN from PayPal. TransactionId {0}. Request received {1} at {2}.", request["txn_id"], request.Form, request.RawUrl);
-				LoggingService.Log<PayPalPaymentMethodService>(message);
+				LoggingService.Debug<PayPalPaymentMethodService>(message);
 				throw new SecurityException(message);
 			}
 

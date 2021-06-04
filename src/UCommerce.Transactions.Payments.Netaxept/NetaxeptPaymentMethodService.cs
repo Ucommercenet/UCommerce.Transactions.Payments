@@ -203,7 +203,7 @@ namespace Ucommerce.Transactions.Payments.Netaxept
 			}
 			catch (Exception ex)
 			{
-				_loggingService.Log<NetaxeptPaymentMethodService>(ex.Message);
+				_loggingService.Error<NetaxeptPaymentMethodService>(ex, ex.Message);
 
 				string uri = new Uri(_absoluteUrlService.GetAbsoluteUrl(declineUrl))
 					.AddOrderGuidParameter(payment.PurchaseOrder)

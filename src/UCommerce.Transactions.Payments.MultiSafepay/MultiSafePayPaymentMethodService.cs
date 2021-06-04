@@ -67,7 +67,7 @@ namespace Ucommerce.Transactions.Payments.MultiSafepay
 
 			if (result.ToLower() != "ok")
 			{
-				_loggingService.Log<MultiSafepayPaymentMethodService>("Failing xml request: " + xmlRequestString);
+				_loggingService.Debug<MultiSafepayPaymentMethodService>("Failing xml request: " + xmlRequestString);
 				GuardAgainstIncorrectResponse(xmlElement);
 			}
 

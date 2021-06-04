@@ -127,7 +127,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			if (emptyPayment)
 			{
 				//General notification recieved from Adyen. 
-				LoggingService.Log<AdyenPaymentMethodService>(
+				LoggingService.Debug<AdyenPaymentMethodService>(
 					string.Format("Notification received, but no payment was found with Reference ID: " + payment["ReferenceId"]));
 			}
 			else
@@ -167,7 +167,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			}
 			catch (Exception ex)
 			{
-				LoggingService.Log<AdyenPaymentMethodService>(ex, "Caught trying to Cancel a payment.");
+				LoggingService.Error<AdyenPaymentMethodService>(ex, "Caught trying to Cancel a payment.");
 				status = PaymentMessages.AcquireFailed + ": " + ex.Message;
 				return false;
 			}
@@ -186,7 +186,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			}
 			catch (CommunicationException ex)
 			{
-				LoggingService.Log<AdyenPaymentMethodService>(ex, "Caught trying to Acquire a payment.");
+				LoggingService.Error<AdyenPaymentMethodService>(ex, "Caught trying to Acquire a payment.");
 				status = PaymentMessages.AcquireFailed + ": " + ex.Message;
 				return false;
 			}
@@ -301,7 +301,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			}
 			catch (Exception ex)
 			{
-				LoggingService.Log<AdyenPaymentMethodService>(ex, "Caught trying to Refund a payment.");
+				LoggingService.Error<AdyenPaymentMethodService>(ex, "Caught trying to Refund a payment.");
 				status = PaymentMessages.RefundFailed + ": " + ex.Message;
 				return false;
 			}
@@ -377,13 +377,13 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			foreach (var key in request.QueryString.AllKeys)
 			{
 				dict[key] = request.QueryString[key];
-				LoggingService.Log<AdyenPaymentMethodService>(string.Format("Querystring Parameter '{0}'='{1}'", key, request[key]));
+				LoggingService.Debug<AdyenPaymentMethodService>(string.Format("Querystring Parameter '{0}'='{1}'", key, request[key]));
 			}
 
 			foreach (var key in request.Form.AllKeys)
 			{
 				dict[key] = request.Form[key];
-				LoggingService.Log<AdyenPaymentMethodService>(string.Format("Form Parameter '{0}'='{1}'", key, request[key]));
+				LoggingService.Debug<AdyenPaymentMethodService>(string.Format("Form Parameter '{0}'='{1}'", key, request[key]));
 			}
 
 			return dict;
@@ -500,10 +500,9 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			}
 			catch (Exception ex)
 			{
-				LoggingService.Log<AdyenPaymentMethodService>(
-					string.Format("Saving recurring detail reference failed for payment with reference id: {0}, exception: {1}",
-					payment.ReferenceId,
-					ex.Message));
+				LoggingService.Error<AdyenPaymentMethodService>(
+					ex,
+					string.Format("Saving recurring detail reference failed for payment with reference id: {0}, exception: {1}", payment.ReferenceId, ex.Message));
 			}
 		}
 

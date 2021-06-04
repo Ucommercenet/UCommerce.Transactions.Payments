@@ -63,7 +63,7 @@ namespace Ucommerce.Transactions.Payments.Dibs
 			}
 			else
 			{
-                _loggingService.Log<DibsPaymentMethodService>("Hash was not verified");
+                _loggingService.Debug<DibsPaymentMethodService>("Hash was not verified");
                 payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
 				payment.Save(); //Save payment to ensure transactionId not lost.
 			}
@@ -94,7 +94,7 @@ namespace Ucommerce.Transactions.Payments.Dibs
 		    var verifyMd5Hash = authKeyParameter.Equals(md5ResponseKey);
 		    if (!verifyMd5Hash)
 		    {
-		        _loggingService.Log<DibsPaymentMethodService>(string.Format("Comparing response authkey: '{0}' with calculated key: '{1}' returned false. Hash cannot be verified!", authKeyParameter, md5ResponseKey));
+		        _loggingService.Debug<DibsPaymentMethodService>(string.Format("Comparing response authkey: '{0}' with calculated key: '{1}' returned false. Hash cannot be verified!", authKeyParameter, md5ResponseKey));
 		    }
 
 		    return verifyMd5Hash;
