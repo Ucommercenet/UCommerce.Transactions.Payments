@@ -33,6 +33,7 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
 			bool itemizeReceipt = paymentRequest.PaymentMethod.DynamicProperty<bool>().ItemizeReceipt;
 			string apiLogin = paymentRequest.PaymentMethod.DynamicProperty<string>().ApiLogin;
 			string transactionKey = paymentRequest.PaymentMethod.DynamicProperty<string>().TransactionKey;
+            string signatureKey = paymentRequest.PaymentMethod.DynamicProperty<string>().Md5Hash;
 			string callbackUrl = paymentRequest.PaymentMethod.DynamicProperty<string>().CallbackUrl;
 			string payType = paymentRequest.PaymentMethod.DynamicProperty<string>().PayType;
 			string logoUrl = paymentRequest.PaymentMethod.DynamicProperty<string>().LogoUrl;
@@ -93,7 +94,6 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
 			if (testMode && !sandboxMode)
 				AddHiddenField(page, "x_test_request", "TRUE");
 
-			var hashComputer = new AuthorizedotnetMd5Computer();
 			string sequence = paymentRequest.Payment.ReferenceId;
 			AddHiddenField(page, "x_fp_sequence", sequence);
 
@@ -101,7 +101,11 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
 			string timestamp = ((int)timeSinceCreate.TotalSeconds).ToString();
 
 			AddHiddenField(page, "x_fp_timestamp", timestamp);
-			AddHiddenField(page, "x_fp_hash", hashComputer.GetPreMd5Key(transactionKey, apiLogin, sequence, timestamp, amount));
+
+
+            const string format = "{0}^{1}^{2}^{3}^";
+            var textToHash = string.Format(format, apiLogin, sequence, timestamp, amount);
+			AddHiddenField(page, "x_fp_hash", AuthorizedotnetSHA512Computer.GetSHA512HashKey(signatureKey, textToHash));
 
 			if (Debug)
 				AddSubmitButton(page, "ac", "Post it");
