@@ -79,8 +79,6 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
 				}
 			}
 
-			AddHiddenField(page, "x_header_html_payment_form", "<style type='text/css'>#imgMerchantLogo{}</style>");
-			
 			if (!string.IsNullOrEmpty(logoUrl))
 				AddHiddenField(page, "x_logo_url", logoUrl);
 
