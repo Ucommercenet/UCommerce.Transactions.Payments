@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Web;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
 using Ucommerce.Web;
@@ -46,7 +47,7 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 				AddHiddenField(page, parameter.Key, parameter.Value);
 			}
 
-			if(Debug)
+			if (Debug)
 				AddSubmitButton(page, "ac", "Post it");
 
 			page.Append("</form>");
@@ -56,6 +57,7 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 		{
 			PaymentMethod paymentMethod = paymentRequest.PaymentMethod;
 			Payment payment = paymentRequest.Payment;
+			PurchaseOrder order = payment.PurchaseOrder;
 
 			var dict = new Dictionary<string, string>();
 			bool testMode = paymentMethod.DynamicProperty<bool>().TestMode;
@@ -65,6 +67,7 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			string key = paymentMethod.DynamicProperty<string>().Key;
 			string signature = paymentMethod.DynamicProperty<string>().Signature;
 
+			// https://developer.worldpay.com/docs/bg350/send-order-details
 			// All required fields
 			var amount = paymentRequest.Payment.Amount.ToString("0.00", CultureInfo.InvariantCulture);
 			var currency = paymentRequest.Amount.CurrencyIsoCode;
@@ -72,14 +75,10 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			dict.Add("testMode", (testMode ? 100 : 0).ToString());
 
 			// Specifies the authorisation mode used. The values are "A" for a full auth, or "E" for a pre-auth.
-			if (instantCapture)
-				dict.Add("authMode", "A");
-			else
-				dict.Add("authMode", "E");
+			dict.Add("authMode", instantCapture ? "A" : "E");
 
 			var hash = Md5Computer.GetHash(payment.Amount, payment.ReferenceId, payment.PurchaseOrder.BillingCurrency.ISOCode, key);
 			var cartId = paymentRequest.Payment.ReferenceId;
-			var callbackUrl = _callbackUrl.GetCallbackUrl(callback, paymentRequest.Payment);
 
 			dict.Add("MC_hash", hash);
 			dict.Add("instId", instId);
@@ -88,6 +87,90 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			dict.Add("amount", amount);
 			dict.Add("currency", currency);
 
+			// <!-- The below parameters are all optional in this submission, but some become mandatory on the payment page -->
+			var billingAddress = order.BillingAddress;
+			dict.Add("address1", billingAddress.Line1); // "1st line of address
+			dict.Add("address2", billingAddress.Line2); // "2nd line of address
+														//dict.Add("address3", billingAddress); // "3rd line of address
+			dict.Add("town", billingAddress.City); // "Town
+			dict.Add("region", billingAddress.State); // "Region/County/State
+			dict.Add("postcode", billingAddress.PostalCode); // "Post/Zip Code
+			dict.Add("country", billingAddress.Country.TwoLetterISORegionName); // "Country
+			dict.Add("desc", order.OrderNumber); // "Description of purchase
+												 //dict.Add("resultfile", order); // "Final landing Page for shopper
+												 //dict.Add("accId1", order); // "Tells us which merchant code to use (if more than one)
+												 //dict.Add("authValidFrom", order); // "Time window for purchase to complete (from)
+												 //dict.Add("authValidTo", order); // "Time window for purchase to complete (to)
+			dict.Add("name", $"{billingAddress.FirstName} {billingAddress.LastName}"); // "Shopper's full name <!-- Accepts test values to simulate transaction outcome-->
+			dict.Add("tel", billingAddress.PhoneNumber); // "Shopper's telephone number
+														 //dict.Add("fax", order); // "Shopper's fax number
+			dict.Add("email", billingAddress.EmailAddress); // "Shopper's email address
+
+
+			// <!-- The below optional parameters control the behaviour of the payment pages -->
+			dict.Add("fixContact", string.Empty); // "Prevents contact details from being edited
+			dict.Add("hideContact", string.Empty); // "Hides contact details
+			dict.Add("hideCurrency", string.Empty); // "Hides the currency drop down
+			dict.Add("lang", order.CultureCode); // "Shopper's language choice
+			dict.Add("noLanguageMenu", string.Empty); // "Hides the language menu
+													  //dict.Add("withDelivery", order); // "Displays and mandates delivery address fields
+
+
+			// <!-- This optional parameter is for testing, only relevant if you're creating your own messages files -->
+			if (Debug)
+				dict.Add("subst", "yes"); // "Lets you see the names of message properties
+
+
+			// <!-- The below optional parameters can be used in the payment pages -->
+			//dict.Add("amountString", order); // "HTML string produced from the amount and currency submitted
+			dict.Add("countryString", billingAddress.Country.Name); // "Full name of the country produced from the country code
+																	//dict.Add("compName", order); // "Name of the company
+
+
+
+			// <!-- The below optional parameters instruct us to return data in the transaction result -->
+			//dict.Add("transId", order); // "Worldpay's ID for the transaction
+			//dict.Add("futurePayId", order); // "Worldpay's ID for a FuturePay (recurring) agreement, if applicable
+			//dict.Add("transStatus", order); // "Result of this transaction
+			//dict.Add("transTime", order); // "Time of this transaction
+			//dict.Add("authAmount", order); // "Amount the transaction was authorised for
+			//dict.Add("authCurrency", order); // "The currency used for authorisation
+			//dict.Add("authAmountString", order); // "HTML string produced from auth amount and currency
+			//dict.Add("rawAuthMessage", order); // "Text received from bank
+			//dict.Add("rawAuthCode", order); // "Single character authorisation code
+			//dict.Add("callbackPW", order); // "Payment Responses password, if set
+			//dict.Add("cardType", order); // "Type of card used by the shopper
+			//dict.Add("countryMatch", order); // "Result of comparison between shopper's country and card issuer country
+			//dict.Add("AVS", order); // "Address Verification Service result
+
+
+			//// <!-- The below optional parameters are prefixes for types of custom parameter -->
+			//dict.Add("C_", order); // "Prefix for parameters only used in the result page
+			//dict.Add("M_", order); // "Prefix for parameters only used in the payment responses
+			//dict.Add("MC_", order); // "Prefix for parameters used in the both the result page and payment responses
+			//dict.Add("CM_", order); // "Prefix for parameters used in the both the result page and payment responses
+
+
+			var callbackUrl = GetLocalhostSafeCallbackUrl(paymentRequest, callback);
+
+			dict.Add("signature", CalculateSignature(instId, amount, currency, cartId, callbackUrl, signature));
+			dict.Add("MC_callback", callbackUrl);
+
+			return dict;
+		}
+
+		private string GetLocalhostSafeCallbackUrl(PaymentRequest paymentRequest, string callback)
+		{
+			var callbackUrl = _callbackUrl.GetCallbackUrl(callback, paymentRequest.Payment);
+
+			var request = HttpContext.Current.Request;
+			callbackUrl = callbackUrl.Replace("://localhost/", $"://localhost:{request.Url.Port}/");
+
+			return callbackUrl.ToLower();
+		}
+
+		private string CalculateSignature(string instId, string amount, string currency, string cartId, string callbackUrl, string signature)
+		{
 			// instId:amount:currency:cartId:MC_callback
 
 			IList<string> signatureList = new List<string>();
@@ -98,11 +181,7 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 			signatureList.Add(callbackUrl);
 
 			var signatureHash = Md5Computer.GetSignatureHash(signatureList, signature);
-
-			dict.Add("signature", signatureHash);
-			dict.Add("MC_callback", callbackUrl);
-
-			return dict;
+			return signatureHash;
 		}
 	}
 }

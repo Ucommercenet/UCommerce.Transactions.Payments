@@ -86,19 +86,22 @@ namespace Ucommerce.Transactions.Payments.WorldPay
 				ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
 
 				if (!string.IsNullOrEmpty(acceptUrl))
-					HttpContext.Current.Response.Write(
-						DownloadPageContent(
-							new Uri(_absoluteUrlService.GetAbsoluteUrl(acceptUrl)).AddOrderGuidParameter(payment.PurchaseOrder)));
+					HttpContext.Current.Response.Write(DownloadPageContent(GetLocalhostSafeCallbackUrl(_absoluteUrlService.GetAbsoluteUrl(acceptUrl)).AddOrderGuidParameter(payment.PurchaseOrder)));
 			}
 			else if (transStatus[0] == 'C') // a value of C means that the transaction was cancelled
 			{
 				if (!string.IsNullOrEmpty(declineUrl))
-					HttpContext.Current.Response.Write(DownloadPageContent(new Uri(_absoluteUrlService.GetAbsoluteUrl(declineUrl)).AddOrderGuidParameter(payment.PurchaseOrder)));
+					HttpContext.Current.Response.Write(DownloadPageContent(GetLocalhostSafeCallbackUrl(_absoluteUrlService.GetAbsoluteUrl(declineUrl)).AddOrderGuidParameter(payment.PurchaseOrder)));
 			}
 			else
 			{
 				throw new NotSupportedException("transStatus should have a status of either 'Y' or 'C'.");
 			}
+		}
+		private Uri GetLocalhostSafeCallbackUrl(string url)
+		{
+			var request = HttpContext.Current.Request;
+			return new Uri(url.Replace("://localhost/", $"://localhost:{request.Url.Port}/"));
 		}
 
 		private string DownloadPageContent(Uri uri)
