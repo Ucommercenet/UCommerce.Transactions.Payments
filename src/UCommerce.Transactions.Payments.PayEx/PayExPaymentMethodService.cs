@@ -60,7 +60,7 @@ namespace Ucommerce.Transactions.Payments.PayEx
 			};
 
 			Uri uri = paymentMethod.DynamicProperty<bool>().TestMode
-				? new Uri("https://test-external.payex.com/pxorder/pxorder.asmx", UriKind.Absolute)
+				? new Uri("https://external.externaltest.payex.com/pxorder/pxorder.asmx?WSDL", UriKind.Absolute)
 				: new Uri("https://external.payex.com/pxorder/pxorder.asmx", UriKind.Absolute);
 
 			var endpointAddress = new EndpointAddress(uri);
