@@ -92,7 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizedotnetMd5Computer.cs" />
+    <Compile Include="AuthorizedotnetSHA512Computer.cs" />
     <Compile Include="AuthorizedotnetPageBuilder.cs" />
     <Compile Include="AuthorizedotnetPaymentMethodService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
