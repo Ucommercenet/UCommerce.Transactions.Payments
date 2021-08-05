@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Web;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
+using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
 
@@ -18,7 +21,8 @@ namespace Ucommerce.Transactions.Payments.SagePay
 		private readonly INumberSeriesService _numberSeriesService;
 		private readonly IAbsoluteUrlService _absoluteUrlService;
 		private readonly ICallbackUrl _callbackUrl;
-		private SagePayMd5Computer Md5Computer { get; set; }
+        private readonly ILoggingService _loggingService;
+        private SagePayMd5Computer Md5Computer { get; set; }
 
 		/// <summary>
 		/// Protocol version used.
@@ -31,12 +35,13 @@ namespace Ucommerce.Transactions.Payments.SagePay
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PayExPaymentMethodService"/> class.
 		/// </summary>
-		public SagePayPaymentMethodService(SagePayMd5Computer md5Computer, INumberSeriesService numberSeriesService, IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl)
+		public SagePayPaymentMethodService(SagePayMd5Computer md5Computer, INumberSeriesService numberSeriesService, IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl, ILoggingService loggingService)
 		{
 			_numberSeriesService = numberSeriesService;
 			_absoluteUrlService = absoluteUrlService;
 			_callbackUrl = callbackUrl;
-			Md5Computer = md5Computer;
+            _loggingService = loggingService;
+            Md5Computer = md5Computer;
 		}
 
 		private string UrlEncodeString(string input)
@@ -252,7 +257,7 @@ namespace Ucommerce.Transactions.Payments.SagePay
 			list.Add(GetHttpRequestValueUrlDecoded(request, "CV2Result"));
 			list.Add(GetHttpRequestValueUrlDecoded(request, "GiftAid"));
 			list.Add(GetHttpRequestValueUrlDecoded(request, "3DSecureStatus"));
-			list.Add(GetHttpRequestValueUrlDecoded(request, "CAVV"));
+			list.Add(request["CAVV"]);
 			list.Add(GetHttpRequestValueUrlDecoded(request, "AddressStatus"));
 			list.Add(GetHttpRequestValueUrlDecoded(request, "PayerStatus"));
 			list.Add(GetHttpRequestValueUrlDecoded(request, "CardType"));
@@ -293,22 +298,33 @@ namespace Ucommerce.Transactions.Payments.SagePay
 
 			var orgVpsSignature = request["VPSSignature"];
 
-			if (string.IsNullOrEmpty(orgVpsSignature))
-				throw new Exception("VPSSignature is null in the HttpRequest.");
+            if (string.IsNullOrEmpty(orgVpsSignature))
+            {
+				_loggingService.Log<SagePayPaymentMethodService>($"Missing VPS Signature in callback for payment {payment.Guid}");
+				WriteResponse(new Dictionary<string, string>() {{ "Status", "INVALID" } });
+			}
 
-			if (!vpsSignature.Equals(orgVpsSignature))
-				throw new Exception(string.Format("VPS Signatures are not equal, Calculated Signature: {0}, From HttpRequest: {1}.", vpsSignature, orgVpsSignature));
+            if (!vpsSignature.Equals(orgVpsSignature))
+            {
+                _loggingService.Log<SagePayPaymentMethodService>($"Mismatch in VPS Signatures doesn't match for payment {payment.Guid}");
+				WriteResponse(new Dictionary<string, string>() { { "Status", "INVALID" } });
+			}
 
 			string vpsTxId = request["VPSTxId"];
-			string txAuthNo = request["TxAuthNo"];
 
 			if (string.IsNullOrEmpty(vpsTxId))
-				throw new ArgumentException(@"vpsTxId must be present in query string.");
+            {
+                _loggingService.Log<SagePayPaymentMethodService>($"vpsTxId must be present in query string for payment {payment.Guid}");
+                WriteResponse(new Dictionary<string, string>() { { "Status", "INVALID" } });
+            }
 
 			var statusCodeString = request["Status"];
 
 			if (string.IsNullOrEmpty(statusCodeString))
-				throw new Exception("NullOrEmptystatus response from SagePay.");
+            {
+                _loggingService.Log<SagePayPaymentMethodService>($"NullOrEmpty status response from SagePay for payment {payment.Guid}");
+                WriteResponse(new Dictionary<string, string>() { { "Status", "INVALID" } });
+            }
 
 			var status = GetStatus(statusCodeString);
 
