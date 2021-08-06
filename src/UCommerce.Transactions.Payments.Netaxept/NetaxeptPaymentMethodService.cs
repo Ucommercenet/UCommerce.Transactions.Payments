@@ -99,7 +99,7 @@ namespace Ucommerce.Transactions.Payments.Netaxept
 			string customerStreet2 = billingAddress.Line2;
 			string customerPostalCode = billingAddress.PostalCode;
 			string customerCity = billingAddress.City;
-			string customerCountry = billingAddress.Country.Name;
+			string customerCountry = billingAddress.Country.TwoLetterISORegionName;
 			string customerPhone = string.Format("{0}, {1}", billingAddress.PhoneNumber,
 												 billingAddress.MobilePhoneNumber);
 
