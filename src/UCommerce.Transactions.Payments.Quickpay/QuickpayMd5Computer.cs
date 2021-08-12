@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Ucommerce.Infrastructure.Configuration;
-using Ucommerce.Transactions.Payments.Configuration;
+﻿using System.Text;
 
 namespace Ucommerce.Transactions.Payments.Quickpay
 {

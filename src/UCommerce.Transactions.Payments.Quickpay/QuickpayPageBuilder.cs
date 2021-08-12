@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using Ucommerce.Extensions;
-using Ucommerce.Infrastructure.Configuration;
 using Ucommerce.Infrastructure.Globalization;
 using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
@@ -20,9 +19,9 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 	    private CustomGlobalization LocalizationContext { get; set; }
 		private QuickpayMd5Computer Md5Computer { get; set; }
 
-        private const string PROTOCOL = "6";
+        protected virtual string PROTOCOL => "6";
 
-		/// <summary>
+        /// <summary>
 		/// Initializes a new instance of the <see cref="QuickpayPageBuilder"/> class.
 		/// </summary>
 		public QuickpayPageBuilder(QuickpayMd5Computer md5Computer,IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl)
@@ -136,14 +135,21 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 		/// <returns></returns>
 	    protected virtual IDictionary<string,string> GetParameters(PaymentRequest paymentRequest)
 	    {
-			string md5Secret = paymentRequest.PaymentMethod.DynamicProperty<string>().Md5secret;
 			string merchant = paymentRequest.PaymentMethod.DynamicProperty<string>().Merchant;
 			string acceptUrlConfig = paymentRequest.PaymentMethod.DynamicProperty<string>().AcceptUrl;
 			string callBackUrl = paymentRequest.PaymentMethod.DynamicProperty<string>().CallbackUrl;
 			string cancelUrlConfig = paymentRequest.PaymentMethod.DynamicProperty<string>().CancelUrl;
 			bool instantAcquire = paymentRequest.PaymentMethod.DynamicProperty<bool>().InstantAcquire;
-			bool testMode = paymentRequest.PaymentMethod.DynamicProperty<bool>().TestMode;
-		    
+
+            bool testMode = false;
+			if (paymentRequest.PaymentMethod.GetProperty("TestMode") != null)
+			  testMode = paymentRequest.PaymentMethod.DynamicProperty<bool>().TestMode;
+
+            string md5Secret = "";
+            if (paymentRequest.PaymentMethod.GetProperty("Md5secret") != null)
+                md5Secret = paymentRequest.PaymentMethod.DynamicProperty<bool>().Md5secret;
+
+
 			var twoLetterLanguageCode = GetTwoLetterLanguageCode(paymentRequest);
 		    var amount = paymentRequest.Payment.Amount.ToCents().ToString();
 		    var acceptUrl = new Uri(_absoluteUrlService.GetAbsoluteUrl(acceptUrlConfig)).AddOrderGuidParameter(paymentRequest.Payment.PurchaseOrder).ToString();

@@ -21,7 +21,6 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 	    private QuickpayMd5Computer QuickpayMd5Computer { get; set; }
 		private AbstractPageBuilder PageBuilder { get; set; }
 
-        private const string PROTOCOL = "6";
 	    private const string API_ENDPOINT_URL = "https://secure.quickpay.dk/api";
 
 	    /// <summary>
@@ -33,6 +32,8 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 		    QuickpayMd5Computer = md5Computer;
 			PageBuilder = pageBuilder;
 		}
+
+        protected virtual string PROTOCOL => "6";
 
         /// <summary>
         /// Renders the forms to be submitted to the payment provider.
@@ -52,10 +53,10 @@ namespace Ucommerce.Transactions.Payments.Quickpay
         {
 	        Guard.Against.PaymentNotPendingAuthorization(payment);
 			Guard.Against.MissingHttpContext(_webRuntimeInspector);
-			Guard.Against.MissingRequestParameter("transaction");
+			Guard.Against.MissingRequestParameter("transactionId");
 
 	        bool instantAcquire = payment.PaymentMethod.DynamicProperty<bool>().InstantAcquire;
-			int transactionId = GetTransactionIdFromRequestParameters(HttpContext.Current.Request["transaction"]);
+			int transactionId = GetTransactionIdFromRequestParameters(HttpContext.Current.Request["transactionId"]);
 			
 			bool callbackValid = ValidateCallback(payment.PaymentMethod);
 
@@ -72,7 +73,7 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 			}
         }
 
-	    private int GetTransactionIdFromRequestParameters(string input)
+	    protected int GetTransactionIdFromRequestParameters(string input)
 	    {
 		    int transactionId;
 			if (!int.TryParse(input, out transactionId))
@@ -81,7 +82,7 @@ namespace Ucommerce.Transactions.Payments.Quickpay
 		    return transactionId;
 	    }
 
-	    private bool ValidateCallback(PaymentMethod paymentMethod)
+	    protected virtual bool ValidateCallback(PaymentMethod paymentMethod)
 	    {
 			string md5Secret = paymentMethod.DynamicProperty<string>().Md5secret;
 		    string[] requestFieldNames =
@@ -162,7 +163,7 @@ namespace Ucommerce.Transactions.Payments.Quickpay
         /// </summary>
         /// <param name="message">The quickpay response message.</param>
         /// <returns>Call status message string.</returns>
-        private string GetCallStatusMessage(string message)
+        protected string GetCallStatusMessage(string message)
         {
             var el = XDocument.Parse(message).Element("response");
             string qpstat = el.Element("qpstat").Value;
@@ -260,9 +261,9 @@ namespace Ucommerce.Transactions.Payments.Quickpay
         {
 			string merchant = payment.PaymentMethod.DynamicProperty<string>().Merchant.ToString();
 			string apiKey = payment.PaymentMethod.DynamicProperty<string>().ApiKey.ToString();
-			string md5Secret = payment.PaymentMethod.DynamicProperty<string>().Md5secret.ToString();
-            
-			var postValues = GetDefaultPostValues(payment.PaymentMethod);
+            string md5Secret = payment.PaymentMethod.DynamicProperty<string>().Md5secret.ToString();
+
+            var postValues = GetDefaultPostValues(payment.PaymentMethod);
             postValues.Add("msgtype", "capture");
             postValues.Add("amount", payment.Amount.ToCents().ToString());
             postValues.Add("transaction", payment.TransactionId);
