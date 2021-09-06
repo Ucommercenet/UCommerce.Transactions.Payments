@@ -87,7 +87,7 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
                 var sha2KeyParameter = GetParameter("x_SHA2_Hash", format);
                 
                 // Configuration values
-                string signatureKey = payment.PaymentMethod.DynamicProperty<string>().Md5Hash;
+                string signatureKey = payment.PaymentMethod.DynamicProperty<string>().SignatureKey;
                 bool instantAcquire = payment.PaymentMethod.DynamicProperty<bool>().InstantAcquire;
 
                 var paymentKey1 = AuthorizedotnetSHA512Computer.GetSHA512HashKey(signatureKey, GetParamList());
@@ -155,10 +155,10 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
         {
             // Configuration values
             string apiLogin = payment.PaymentMethod.DynamicProperty<string>().ApiLogin;
-            string transactionKey = payment.PaymentMethod.DynamicProperty<string>().TransactionKey;
+            string signatureKey = payment.PaymentMethod.DynamicProperty<string>().SignatureKey;
             bool testMode = payment.PaymentMethod.DynamicProperty<bool>().TestMode;
 
-            var gateway = new Gateway(apiLogin, transactionKey, testMode);
+            var gateway = new Gateway(apiLogin, signatureKey, testMode);
             IGatewayResponse gatewayResponse = gateway.Send(new VoidRequest(payment.TransactionId));
             status = gatewayResponse.Message;
             return gatewayResponse.Approved;
@@ -175,10 +175,10 @@ namespace Ucommerce.Transactions.Payments.Authorizedotnet
         {
             // Configuration values
             string apiLogin = payment.PaymentMethod.DynamicProperty<string>().ApiLogin;
-            string transactionKey = payment.PaymentMethod.DynamicProperty<string>().TransactionKey;
+            string signatureKey = payment.PaymentMethod.DynamicProperty<string>().SignatureKey;
             bool testMode = payment.PaymentMethod.DynamicProperty<bool>().TestMode;
 
-            var gateway = new Gateway(apiLogin, transactionKey, testMode);
+            var gateway = new Gateway(apiLogin, signatureKey, testMode);
             IGatewayResponse gatewayResponse = gateway.Send(new PriorAuthCaptureRequest(payment.Amount, payment.TransactionId));
             status = gatewayResponse.Message;
             return gatewayResponse.Approved;
