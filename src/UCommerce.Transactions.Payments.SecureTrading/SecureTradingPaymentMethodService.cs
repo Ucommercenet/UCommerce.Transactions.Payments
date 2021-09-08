@@ -77,7 +77,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 
 			if (!RequestMatchesAuthRequest(queryString, instantCapture))
 			{
-				_loggingService.Log<SecureTradingPaymentMethodService>(
+				_loggingService.Debug<SecureTradingPaymentMethodService>(
 					string.Format("Request captured that didn't match auth request. Request contained following parameters:\r\n {0}", ReadQueryString(queryString)));
 				return;
 			}
@@ -126,7 +126,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 		{
 			payment.PaymentStatus = _paymentStatusRepository.Get((int) PaymentStatusCode.Declined);
 			_orderService.ChangeOrderStatus(payment.PurchaseOrder,_orderStatusRepository.Get((int)OrderStatusCode.RequiresAttention));
-			_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("Auth request for payment: {0} failed. Response was: {1}", payment.TransactionId, ReadQueryString(queryString)));
+			_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("Auth request for payment: {0} failed. Response was: {1}", payment.TransactionId, ReadQueryString(queryString)));
 		}
 
 		private void HandleDeclinedAuthRequest(Payment payment, NameValueCollection queryString)
@@ -138,7 +138,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 			payment.PaymentStatus = paymentStatus;
 
 			_orderService.ChangeOrderStatus(payment.PurchaseOrder, OrderStatus.Get((int)OrderStatusCode.RequiresAttention));
-			_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("Auth request for payment: {0} failed. Response was: {1}", payment.TransactionId, ReadQueryString(queryString)));
+			_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("Auth request for payment: {0} failed. Response was: {1}", payment.TransactionId, ReadQueryString(queryString)));
 		}
 
 		private bool HandleAuthRequest(Payment payment, NameValueCollection queryString)
@@ -213,7 +213,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 			bool transactionFound = secureTradingTransactionQueryXmlResponse.TransactionFound;
 			if (transactionFound) return secureTradingTransactionQueryXmlResponse;
 
-			_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("Transaction with id: {0} not found. \r\n. Waiting {1} seconds for retry.",transactionId,_secondsToWaitOnRetryForQuery));
+			_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("Transaction with id: {0} not found. \r\n. Waiting {1} seconds for retry.",transactionId,_secondsToWaitOnRetryForQuery));
 			int retries = 0;
 			while (!transactionFound && retries < _numberOfRetriesForTransactionQuery)
 			{
@@ -222,15 +222,15 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 				transactionFound = secureTradingTransactionQueryXmlResponse.TransactionFound;
 				retries++;
 				if (!transactionFound)
-					_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("Failed to find Transaction with id: {0}. Number of tries: {1} ",retries,transactionId));
+					_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("Failed to find Transaction with id: {0}. Number of tries: {1} ",retries,transactionId));
 			}
 
 			if (transactionFound)
-				_loggingService.Log<SecureTradingPaymentMethodService>(
+				_loggingService.Debug<SecureTradingPaymentMethodService>(
 					string.Format("Transaction was found after {0} number of tries.", retries));
 			else
 			{
-				_loggingService.Log<SecureTradingPaymentMethodService>(
+				_loggingService.Debug<SecureTradingPaymentMethodService>(
 					string.Format("Failed to find transaction after {0} attempts with timeout period: {1}",_numberOfRetriesForTransactionQuery,_numberOfRetriesForTransactionQuery*_secondsToWaitOnRetryForQuery));
 			}
 
@@ -253,7 +253,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 				return true;
 			}
 
-			_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("failed to cancel payment. Message: {0} Response was:\r\n {1}",cancelRequestResponse.ErrorMessage, cancelRequestResponse.XmlResponse ));
+			_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("failed to cancel payment. Message: {0} Response was:\r\n {1}",cancelRequestResponse.ErrorMessage, cancelRequestResponse.XmlResponse ));
 			
 			status = string.Format("{0} - {1}", PaymentMessages.CancelFailed, cancelRequestResponse.ErrorMessage);
 			return false;
@@ -284,7 +284,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 				return true;
 			}
 
-			_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("failed to acquire payment. Message: {0} Response was:\r\n {1}", updateSettleMentStatusResponse.ErrorMessage, updateSettleMentStatusResponse.XmlResponse));
+			_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("failed to acquire payment. Message: {0} Response was:\r\n {1}", updateSettleMentStatusResponse.ErrorMessage, updateSettleMentStatusResponse.XmlResponse));
 			payment.PaymentStatus = _paymentStatusRepository.Get((int) PaymentStatusCode.AcquireFailed);
 			status = string.Format("{0} - {1}",PaymentMessages.AcquireFailed,updateSettleMentStatusResponse.ErrorMessage);
 			return false;
@@ -309,7 +309,7 @@ namespace Ucommerce.Transactions.Payments.SecureTrading
 				return true;
 			}
 
-			_loggingService.Log<SecureTradingPaymentMethodService>(string.Format("failed to refund payment. Message: {0} Response was:\r\n {1}", refundXmlResponse.ErrorMessage, refundXmlResponse.XmlResponse));
+			_loggingService.Debug<SecureTradingPaymentMethodService>(string.Format("failed to refund payment. Message: {0} Response was:\r\n {1}", refundXmlResponse.ErrorMessage, refundXmlResponse.XmlResponse));
 			status = string.Format("{0} - {1}", PaymentMessages.RefundFailed, refundXmlResponse.ErrorMessage);
 			payment.PaymentStatus = _paymentStatusRepository.Get((int) PaymentStatusCode.Declined); //TODO: should payment status be changed in case request was declined / failed?
 			return false;

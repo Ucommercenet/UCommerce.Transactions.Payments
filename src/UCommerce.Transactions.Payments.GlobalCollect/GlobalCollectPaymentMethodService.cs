@@ -359,7 +359,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 			var error = gce.Errors[0];
 			var message = string.Format("Error from Global Collect: Code '{0}'. Message '{1}'", error.Code, error.Message);
 			var logPrefix = string.Format("Payment merchant id: {0} ", GetMerchantReference(payment));
-			_loggingService.Log<GlobalCollectPaymentMethodService>(logPrefix + message);
+			_loggingService.Debug<GlobalCollectPaymentMethodService>(logPrefix + message);
 			status = message;
 		}
 
@@ -564,7 +564,7 @@ namespace Ucommerce.Transactions.Payments.GlobalCollect
 					paymentData.FormMethod,
 					paymentData.FormAction);
 
-			_loggingService.Log<GlobalCollectPaymentMethodService>(message);
+			_loggingService.Debug<GlobalCollectPaymentMethodService>(message);
 		}
 
 		private string TryGetCountryFromCustomerOrPayment(PaymentRequest paymentRequest)
