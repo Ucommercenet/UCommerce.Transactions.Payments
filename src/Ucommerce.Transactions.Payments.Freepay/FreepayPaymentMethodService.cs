@@ -126,7 +126,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
             }
             catch (Exception ex)
             {
-                _loggingService.Log<FreepayPaymentMethodService>(ex, "Error validating callback!");
+                _loggingService.Error<FreepayPaymentMethodService>(ex, "Error validating callback!");
             }
 
             return false;
