@@ -22,6 +22,57 @@ using Ucommerce.Infrastructure.Logging;
 
 namespace Ucommerce.Transactions.Payments.Freepay
 {
+    public class RefundResultModel
+    {
+        public bool IsSuccess { get; set; }
+        public int AcquirerStatusCode { get; set; }
+        public Guid Identifier { get; set; }
+        public string ErrorMessage { get; set; }
+    }
+
+    public class CaptureResultModel
+    {
+        public bool IsSuccess { get; set; }
+        public int AcquirerStatusCode { get; set; }
+        public Guid Identifier { get; set; }
+    }
+
+    public class TransactionModel
+    {
+        public int AuthorizationID { get; set; }
+        public int MerchantNumber { get; set; }
+        public Guid AuthorizationIdentifier { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateAuthorized { get; set; }
+        public DateTime? DateCaptured { get; set; }
+        public string Currency { get; set; }
+        public string OrderID { get; set; }
+        public int CardType { get; set; }
+        public int AuthorizationAmount { get; set; }
+        public bool IsCaptured { get; set; }
+        public int CaptureAmount { get; set; }
+        public int CaptureErrorCode { get; set; }
+        public bool IsSubscription { get; set; }
+        public DateTime DateSubscriptionExpires { get; set; }
+        public DateTime? DateCredited { get; set; }
+        public string MaskedPan { get; set; }
+        public bool Used3dSecure { get; set; }
+        public int? Acquirer { get; set; }
+        public int Status { get; set; }
+        public Guid? PaymentIdentifier { get; set; }
+        public string Wallet { get; set; }
+        public int WalletProvider { get; set; }
+        public string CardExpiryDate { get; set; }
+
+        public decimal GetFormattedAmount
+        {
+            get
+            {
+                return Decimal.Divide(CaptureAmount, 100);
+            }
+        }
+    }
+
     /// <summary>
     /// Freepay integration via hosted payment form.
     /// </summary>
@@ -117,8 +168,8 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
                 if (!string.IsNullOrEmpty(result))
                 {
-                    dynamic transaction = JsonConvert.DeserializeObject(result);
-                    if (transaction.AuthorizationAmount == payment.Amount.ToCents() && transaction.Currency == payment.PurchaseOrder.BillingCurrency.ISOCode && transaction.OrderID == payment.PurchaseOrder.Id.ToString() && !((JToken)transaction.IsCaptured).Value<bool>())
+                    TransactionModel transaction = JsonConvert.DeserializeObject<TransactionModel>(result);
+                    if (transaction.AuthorizationAmount == payment.Amount.ToCents() && transaction.Currency == payment.PurchaseOrder.BillingCurrency.ISOCode && transaction.OrderID == payment.PurchaseOrder.Id.ToString() && !transaction.IsCaptured)
                     {
                         return true;
                     }
@@ -179,9 +230,9 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
                 if (responseCode == HttpStatusCode.OK || responseCode == HttpStatusCode.NoContent)
                 {
-                    dynamic resultData = JsonConvert.DeserializeObject(result);
+                    CaptureResultModel resultData = JsonConvert.DeserializeObject<CaptureResultModel>(result);
 
-                    if (((JToken)resultData.IsSuccess).Value<bool>())
+                    if (resultData.IsSuccess)
                     {
                         status = PaymentMessages.AcquireSuccess;
                     }
@@ -219,9 +270,9 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
                 if (responseCode == HttpStatusCode.OK || responseCode == HttpStatusCode.NoContent)
                 {
-                    dynamic resultData = JsonConvert.DeserializeObject(result);
+                    RefundResultModel resultData = JsonConvert.DeserializeObject<RefundResultModel>(result);
                     
-                    if (((JToken)resultData.IsSuccessful).Value<bool>())
+                    if (resultData.IsSuccess)
                     {
                         status = PaymentMessages.RefundSuccess;
                     }
