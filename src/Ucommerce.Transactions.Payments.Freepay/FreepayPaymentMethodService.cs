@@ -63,14 +63,6 @@ namespace Ucommerce.Transactions.Payments.Freepay
         public string Wallet { get; set; }
         public int WalletProvider { get; set; }
         public string CardExpiryDate { get; set; }
-
-        public decimal GetFormattedAmount
-        {
-            get
-            {
-                return Decimal.Divide(CaptureAmount, 100);
-            }
-        }
     }
 
     /// <summary>
@@ -109,13 +101,13 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
         public override Payment RequestPayment(PaymentRequest paymentRequest)
         {
-            if (paymentRequest.Payment == null)
+            if (paymentRequest?.Payment == null)
             {
                 paymentRequest.Payment = CreatePayment(paymentRequest);
             }
 
             string url = GeneratePaymentLink(paymentRequest);
-            if (string.IsNullOrEmpty(url))
+            if (string.IsNullOrWhiteSpace(url))
             {
                 throw new InvalidOperationException("Could not redirect to Freepay payment page.");
             }
@@ -358,8 +350,8 @@ namespace Ucommerce.Transactions.Payments.Freepay
                 values.Add("Options", new Dictionary<string, object> { { "TestMode", true } });
             }
 
-            var response = client.PostAsync("https://gw.freepay.dk/api/payment", new StringContent(JsonConvert.SerializeObject(values), Encoding.UTF8, "application/json")).Result;
-            string responseString = response.Content.ReadAsStringAsync().Result;
+            var response = client.PostAsync("https://gw.freepay.dk/api/payment", new StringContent(JsonConvert.SerializeObject(values), Encoding.UTF8, "application/json")).GetAwaiter().GetResult();
+            string responseString = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             responseString = JObject.Parse(responseString).SelectToken("paymentWindowLink").Value<string>();
 
             return responseString;
