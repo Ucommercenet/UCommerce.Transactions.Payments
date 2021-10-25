@@ -3,6 +3,7 @@ using NHibernate.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NHibernate.Impl;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Infrastructure;
 using Ucommerce.Pipelines;
@@ -28,7 +29,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
         public PipelineExecutionResult Execute(InitializeArgs subject)
         {
             var sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
-            var session = sessionProvider.GetSession() as NHibernate.Impl.SessionImpl;
+            var session = sessionProvider.GetSession() as SessionImpl;
             IPreInsertEventListener[] oldListeners = session.Listeners.PreInsertEventListeners;
             session.Listeners.PreInsertEventListeners = new List<IPreInsertEventListener> { }.ToArray();
 
