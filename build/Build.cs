@@ -65,7 +65,7 @@ partial class Build : NukeBuild
         .Before(Compile)
         .Executes(() =>
         {
-            NuGetTasks.NuGet($"update {Solution.Path} -Id Ucommerce.Core -source {UcommerceNugetSource}");
+            NuGetTasks.NuGet($"update {Solution.Path} -Id Ucommerce.Core -source {UcommerceNugetSource} -Prerelease");
         });
     
     Target Compile => _ => _
