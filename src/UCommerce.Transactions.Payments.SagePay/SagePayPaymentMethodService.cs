@@ -300,13 +300,13 @@ namespace Ucommerce.Transactions.Payments.SagePay
 
             if (string.IsNullOrEmpty(orgVpsSignature))
             {
-				_loggingService.Log<SagePayPaymentMethodService>($"Missing VPS Signature in callback for payment {payment.Guid}");
+				_loggingService.Information<SagePayPaymentMethodService>($"Missing VPS Signature in callback for payment {payment.Guid}");
 				WriteResponse(new Dictionary<string, string>() {{ "Status", "INVALID" } });
 			}
 
             if (!vpsSignature.Equals(orgVpsSignature))
             {
-                _loggingService.Log<SagePayPaymentMethodService>($"Mismatch in VPS Signatures doesn't match for payment {payment.Guid}");
+                _loggingService.Information<SagePayPaymentMethodService>($"Mismatch in VPS Signatures doesn't match for payment {payment.Guid}");
 				WriteResponse(new Dictionary<string, string>() { { "Status", "INVALID" } });
 			}
 
@@ -314,7 +314,7 @@ namespace Ucommerce.Transactions.Payments.SagePay
 
 			if (string.IsNullOrEmpty(vpsTxId))
             {
-                _loggingService.Log<SagePayPaymentMethodService>($"vpsTxId must be present in query string for payment {payment.Guid}");
+                _loggingService.Information<SagePayPaymentMethodService>($"vpsTxId must be present in query string for payment {payment.Guid}");
                 WriteResponse(new Dictionary<string, string>() { { "Status", "INVALID" } });
             }
 
@@ -322,7 +322,7 @@ namespace Ucommerce.Transactions.Payments.SagePay
 
 			if (string.IsNullOrEmpty(statusCodeString))
             {
-                _loggingService.Log<SagePayPaymentMethodService>($"NullOrEmpty status response from SagePay for payment {payment.Guid}");
+                _loggingService.Information<SagePayPaymentMethodService>($"NullOrEmpty status response from SagePay for payment {payment.Guid}");
                 WriteResponse(new Dictionary<string, string>() { { "Status", "INVALID" } });
             }
 
