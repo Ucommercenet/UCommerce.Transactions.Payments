@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Stripe.net" Version="39.4.0" />
-    <PackageReference Include="UCommerce.Core" Version="9.3.1.20275" />
+    <PackageReference Include="UCommerce.Core" Version="9.5.1.21265" />
   </ItemGroup>
 
   <ItemGroup>
