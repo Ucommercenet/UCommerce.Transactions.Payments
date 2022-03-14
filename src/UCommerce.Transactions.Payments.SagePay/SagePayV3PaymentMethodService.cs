@@ -23,7 +23,7 @@ namespace Ucommerce.Transactions.Payments.SagePay
 
 		protected override string PROTOCOL_VERSION
 		{
-			get { return "3.00"; }
+			get { return "4.00"; }
 		}
 
 		/// <summary>
