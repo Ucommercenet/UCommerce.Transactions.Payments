@@ -96,7 +96,6 @@ namespace Ucommerce.Transactions.Payments.SagePay
 			dictionary.Add("FailureURL", new Uri(_absoluteUrlService.GetAbsoluteUrl(failureUrl)).AddOrderGuidParameter(payment.PurchaseOrder).ToString());
 			dictionary.Add("NotificationURL", _callbackUrl.GetCallbackUrl(notificationUrl, payment));
 			dictionary.Add("SendEMail", "0");
-			dictionary.Add("Apply3DSecure", "2");
 
 			dictionary.Add("BillingFirstnames", firstnames);
 			dictionary.Add("BillingSurname", surname);
