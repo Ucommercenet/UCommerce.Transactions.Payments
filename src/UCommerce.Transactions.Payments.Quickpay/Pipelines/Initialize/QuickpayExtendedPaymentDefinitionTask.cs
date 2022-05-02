@@ -43,7 +43,7 @@ namespace Ucommerce.Transactions.Payments.Quickpay.Pipelines.Initialize
                     Description = "Configuration for Quickpay",
                     DefinitionType = _definitionTypeRepository.Get(_definitionTypeId)
                 };
-                this._logger.Log<QuickpayExtendedPaymentDefinitionTask>("Quickpay payment definition created.");
+                this._logger.Information<QuickpayExtendedPaymentDefinitionTask>("Quickpay payment definition created.");
             }
 
             var shortTextDataType = _dataTypeRepository.Get(_shortTextDataType);

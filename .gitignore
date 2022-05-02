@@ -31,3 +31,6 @@ _ReSharper*
 src/packages/*
 src/.idea/*
 src/.vs/*
+
+.nuke/temp/
+artifacts/
