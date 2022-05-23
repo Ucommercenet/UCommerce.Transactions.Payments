@@ -138,19 +138,24 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			dict.Add("skinCode", paymentRequest.PaymentMethod.DynamicProperty<string>().SkinCode);
 			dict.Add("merchantAccount", paymentRequest.PaymentMethod.DynamicProperty<string>().MerchantAccount);
 			dict.Add("shopperLocale", LocalizationContext.CurrentCultureCode.Replace('-', '_'));
+
 			// orderData (optional)
 			dict.Add("sessionValidity", BuildFutureTimestamp(0, 0, paymentRequest.PaymentMethod.DynamicProperty<int>().SessionValidityPlusMinutes));
 			dict.Add("merchantReturnData", paymentRequest.Payment.ReferenceId);
+
 			if (!string.IsNullOrEmpty(paymentRequest.PurchaseOrder.BillingAddress.Country.TwoLetterISORegionName))
 				dict.Add("countryCode", paymentRequest.PurchaseOrder.BillingAddress.Country.TwoLetterISORegionName);
+
 			if (!string.IsNullOrEmpty(paymentRequest.PurchaseOrder.BillingAddress.EmailAddress))
 			{
 				dict.Add("shopperEmail", paymentRequest.PurchaseOrder.BillingAddress.EmailAddress);
 				dict.Add("shopperReference", paymentRequest.Payment.ReferenceId);
 			}
+
 			dict.Add("allowedMethods", paymentRequest.PaymentMethod.DynamicProperty<string>().AllowedMethods);
 			dict.Add("blockedMethods", paymentRequest.PaymentMethod.DynamicProperty<string>().BlockedMethods);
 			dict.Add("offset", paymentRequest.PaymentMethod.DynamicProperty<string>().Offset.ToString(CultureInfo.InvariantCulture)); // Per user value?
+
 			// shopperStatement (optional) // Per user value?
 			if (paymentRequest.PaymentMethod.DynamicProperty<bool>().OfferEmail)
 				dict.Add("offerEmail", "prompt");
@@ -181,7 +186,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
 				var calculator = new HmacCalculator(HttpUtility.UrlDecode(paymentMethod.DynamicProperty<string>().HmacSharedSecret));
 				signature = calculator.Execute(signingString);
 			}
-
 
 			return signature;
 		}
@@ -217,7 +221,8 @@ namespace Ucommerce.Transactions.Payments.Adyen
 				.AddDays(daysIntoTheFuture)
 				.AddHours(hoursIntoTheFuture)
 				.AddMinutes(minutesIntoTheFuture)
-				.ToUniversalTime().ToString("s", DateTimeFormatInfo.InvariantInfo) + "Z";
+				.ToUniversalTime()
+				.ToString("s", DateTimeFormatInfo.InvariantInfo) + "Z";
 		}
 	}
 }
