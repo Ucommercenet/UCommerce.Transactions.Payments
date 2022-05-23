@@ -509,6 +509,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 		protected void ProcessPaymentNotificationMessage(Payment payment, Dictionary<string, string> dict)
 		{
 			var data = RetrieveNotificationMessageData(dict);
+			payment.TransactionId = data.PspReference;
 			payment[LatestPspReference] = data.PspReference;
 
             Guard.Against.MessageNotAuthenticated(ResultValidator.NotificationMessageIsAuthenticated(payment.PaymentMethod));
