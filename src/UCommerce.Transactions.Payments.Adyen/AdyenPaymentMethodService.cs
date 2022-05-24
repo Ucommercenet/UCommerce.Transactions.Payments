@@ -204,6 +204,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
 			SetupWebServiceClients(payment.PaymentMethod);
 			SetupWebServiceCredentials(payment.PaymentMethod);
+
 			var result = PaymentClient.authorise(
 				new Adyen.Test.ModificationSoapService.PaymentRequest
 				{
@@ -399,6 +400,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			var data = RetrieveAuthenticationResultMessageData(dict);
 			payment.TransactionId = data.PspReference;
 			payment[LatestPspReference] = data.PspReference;
+			payment.Save();
 
 			var authenticatedOrPending = false;
 			switch (data.AuthorizationResult)
@@ -509,7 +511,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
 		protected void ProcessPaymentNotificationMessage(Payment payment, Dictionary<string, string> dict)
 		{
 			var data = RetrieveNotificationMessageData(dict);
-			payment.TransactionId = data.PspReference;
 			payment[LatestPspReference] = data.PspReference;
 
             Guard.Against.MessageNotAuthenticated(ResultValidator.NotificationMessageIsAuthenticated(payment.PaymentMethod));
