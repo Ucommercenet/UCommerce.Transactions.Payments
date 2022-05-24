@@ -128,7 +128,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			{
 				//General notification recieved from Adyen. 
 				LoggingService.Debug<AdyenPaymentMethodService>(
-					string.Format("Notification received, but no payment was found with Reference ID: " + payment["ReferenceId"]));
+					string.Format("Notification received, but no payment was found with Reference ID: " + payment.ReferenceId));
 			}
 			else
 			{
