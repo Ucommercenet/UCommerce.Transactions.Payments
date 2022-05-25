@@ -400,6 +400,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			var data = RetrieveAuthenticationResultMessageData(dict);
 			payment.TransactionId = data.PspReference;
 			payment[LatestPspReference] = data.PspReference;
+			payment.Save();
 
 			var authenticatedOrPending = false;
 			switch (data.AuthorizationResult)
@@ -412,7 +413,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 						if (!CheckoutPipelineHasAlreadyBeenExecutedForPayment(payment)) //The checkout pipeline may already have been run at this point.
 						{
 							payment.PurchaseOrder.OrderStatus = OrderStatus.Get((int)OrderStatusCode.Processing); //to remove the link from the basket.
-							payment.PurchaseOrder.Save();	
+							payment.PurchaseOrder.Save();
 						}
 					}
 
