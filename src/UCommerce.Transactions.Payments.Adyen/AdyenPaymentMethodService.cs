@@ -400,7 +400,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			var data = RetrieveAuthenticationResultMessageData(dict);
 			payment.TransactionId = data.PspReference;
 			payment[LatestPspReference] = data.PspReference;
-			payment.Save();
 
 			var authenticatedOrPending = false;
 			switch (data.AuthorizationResult)
