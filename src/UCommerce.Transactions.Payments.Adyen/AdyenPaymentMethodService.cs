@@ -128,7 +128,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			{
 				//General notification recieved from Adyen. 
 				LoggingService.Debug<AdyenPaymentMethodService>(
-					string.Format("Notification received, but no payment was found with Reference ID: " + payment["ReferenceId"]));
+					string.Format("Notification received, but no payment was found with Reference ID: " + payment.ReferenceId));
 			}
 			else
 			{
@@ -204,6 +204,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
 			SetupWebServiceClients(payment.PaymentMethod);
 			SetupWebServiceCredentials(payment.PaymentMethod);
+
 			var result = PaymentClient.authorise(
 				new Adyen.Test.ModificationSoapService.PaymentRequest
 				{
@@ -399,6 +400,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 			var data = RetrieveAuthenticationResultMessageData(dict);
 			payment.TransactionId = data.PspReference;
 			payment[LatestPspReference] = data.PspReference;
+			payment.Save();
 
 			var authenticatedOrPending = false;
 			switch (data.AuthorizationResult)
@@ -411,7 +413,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 						if (!CheckoutPipelineHasAlreadyBeenExecutedForPayment(payment)) //The checkout pipeline may already have been run at this point.
 						{
 							payment.PurchaseOrder.OrderStatus = OrderStatus.Get((int)OrderStatusCode.Processing); //to remove the link from the basket.
-							payment.PurchaseOrder.Save();	
+							payment.PurchaseOrder.Save();
 						}
 					}
 
