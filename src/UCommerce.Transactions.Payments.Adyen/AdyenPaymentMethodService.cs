@@ -22,7 +22,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 	{
 		private readonly IAbsoluteUrlService _absoluteUrlService;
 		protected ILoggingService LoggingService { get; set; }
-		protected AdyenPageBuilder PageBuilder { get; set; }
+		protected AdyenDropInPageBuilder PageBuilder { get; set; }
 		protected IHttpPaymentExtractor HttpPaymentExtractor { get; set; }
 		protected PaymentPortTypeClient PaymentClient { get; set; }
 		protected RecurringPortTypeClient RecurringClient { get; set; }
@@ -50,7 +50,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
 		private const string LatestPspReference = "LatestPspReference";
 
 		public AdyenPaymentMethodService(ILoggingService loggingService,
-			AdyenPageBuilder pageBuilder,
+			AdyenDropInPageBuilder pageBuilder,
 			IHttpPaymentExtractor httpExtractor,
 			IAbsoluteUrlService absoluteUrlService)
 		{
