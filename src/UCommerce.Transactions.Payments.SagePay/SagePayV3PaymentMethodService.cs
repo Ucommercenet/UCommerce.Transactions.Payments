@@ -9,6 +9,7 @@ using System.Web;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
 using Ucommerce.Infrastructure;
+using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
 
@@ -16,13 +17,13 @@ namespace Ucommerce.Transactions.Payments.SagePay
 {
 	public class SagePayV3PaymentMethodService : SagePayPaymentMethodService
 	{
-		public SagePayV3PaymentMethodService(SagePayMd5Computer md5Computer, INumberSeriesService numberSeriesService, IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl) : base(md5Computer, numberSeriesService, absoluteUrlService, callbackUrl)
+		public SagePayV3PaymentMethodService(SagePayMd5Computer md5Computer, INumberSeriesService numberSeriesService, IAbsoluteUrlService absoluteUrlService, ICallbackUrl callbackUrl, ILoggingService loggingService) : base(md5Computer, numberSeriesService, absoluteUrlService, callbackUrl, loggingService)
 		{
 		}
 
 		protected override string PROTOCOL_VERSION
 		{
-			get { return "3.00"; }
+			get { return "4.00"; }
 		}
 
 		/// <summary>
