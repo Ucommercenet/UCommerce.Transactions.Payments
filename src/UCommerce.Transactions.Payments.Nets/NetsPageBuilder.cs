@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using Ucommerce.Content;
 using Ucommerce.Extensions;
@@ -94,12 +95,22 @@ namespace Ucommerce.Transactions.Payments.Nets
 
         protected override void BuildBody(StringBuilder page, PaymentRequest paymentRequest)
         {
-            page.Append(@"<form method=""post"" action=""https://payment.architrade.com/paymentweb/start.action"">");
+			string paymentId = string.Empty;
+			string paymentFormLink = string.Empty;
 
-	        var parameters = GetParameters(paymentRequest);
-			AddParameters(page,parameters);
+			var webhookAuthKey = Guid.NewGuid().ToString();
 
-            page.Append("</form>");
-        }
-    }
+			try
+			{
+				// Create payment
+				string payment = null; // CreatePayment();
+
+
+			}
+			catch
+			{
+
+			}
+		}
+	}
 }
