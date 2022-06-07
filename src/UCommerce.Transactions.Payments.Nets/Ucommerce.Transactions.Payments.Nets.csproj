@@ -77,7 +77,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Api\NetsPaymentResult.cs" />
+    <Compile Include="NetsEasyClient.cs" />
+    <Compile Include="NetsEasyClientConfig.cs" />
+    <Compile Include="NetsEasyPaymentMethodService.cs" />
     <Compile Include="NetsPageBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

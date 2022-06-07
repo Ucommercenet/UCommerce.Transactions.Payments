@@ -102,6 +102,8 @@ namespace Ucommerce.Transactions.Payments.Nets
 
 			try
 			{
+				var client = new NetsEasyClient(clientConfig);
+
 				// Create payment
 				string payment = null; // CreatePayment();
 
@@ -111,6 +113,19 @@ namespace Ucommerce.Transactions.Payments.Nets
 			{
 
 			}
+		}
+
+		protected NetsEasyClientConfig GetNetsEasyClientConfig(bool testMode)
+		{
+			var prefix = settings.TestMode ? "test-secret-key-" : "live-secret-key-";
+			var secretKey = settings.TestMode ? settings.TestSecretKey : settings.LiveSecretKey;
+			var auth = secretKey?.Trim().TrimStart(prefix.ToCharArray());
+
+			return new NetsEasyClientConfig
+			{
+				BaseUrl = $"https://{(settings.TestMode ? "test." : "")}api.dibspayment.eu",
+				Authorization = auth
+			};
 		}
 	}
 }

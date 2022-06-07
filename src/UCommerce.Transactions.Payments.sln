@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30503.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.Test", "Ucommerce.Transactions.Payments.Test\Ucommerce.Transactions.Payments.Test.csproj", "{33E2A3F7-D5F2-4F87-BE95-13BB3941FBBF}"
 EndProject
@@ -55,6 +55,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.csproj", "{B21207DA-C18C-4182-8EB4-4A2699A4A657}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.Freepay", "Ucommerce.Transactions.Payments.Freepay\Ucommerce.Transactions.Payments.Freepay.csproj", "{A9D1FC0A-0CD8-4664-9080-E59FB1420B28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.Nets", "UCommerce.Transactions.Payments.Nets\Ucommerce.Transactions.Payments.Nets.csproj", "{BE04AC92-C2EC-4FFE-870D-34BEBE9C991E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +154,10 @@ Global
 		{A9D1FC0A-0CD8-4664-9080-E59FB1420B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9D1FC0A-0CD8-4664-9080-E59FB1420B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9D1FC0A-0CD8-4664-9080-E59FB1420B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE04AC92-C2EC-4FFE-870D-34BEBE9C991E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE04AC92-C2EC-4FFE-870D-34BEBE9C991E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE04AC92-C2EC-4FFE-870D-34BEBE9C991E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE04AC92-C2EC-4FFE-870D-34BEBE9C991E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
