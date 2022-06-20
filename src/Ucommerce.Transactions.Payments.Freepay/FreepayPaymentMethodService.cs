@@ -22,19 +22,11 @@ using Ucommerce.Infrastructure.Logging;
 
 namespace Ucommerce.Transactions.Payments.Freepay
 {
-    public class RefundResultModel
+    public class OperationResultModel
     {
         public bool IsSuccess { get; set; }
-        public int AcquirerStatusCode { get; set; }
-        public Guid Identifier { get; set; }
-        public string ErrorMessage { get; set; }
-    }
-
-    public class CaptureResultModel
-    {
-        public bool IsSuccess { get; set; }
-        public int AcquirerStatusCode { get; set; }
-        public Guid Identifier { get; set; }
+        public int GatewayStatusCode { get; set; }
+        public string GatewayStatusMessage { get; set; }
     }
 
     public class TransactionModel
@@ -76,7 +68,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
         private readonly ILoggingService _loggingService;
         private AbstractPageBuilder PageBuilder { get; set; }
 
-	    private const string API_ENDPOINT_URL = "https://mw.freepay.dk";
+	    private const string API_ENDPOINT_URL = "https://mw.freepay.dk/api/v2";
 
 	    /// <summary>
         /// Initializes a new instance of the <see cref="FreepayPaymentMethodService"/> class.
@@ -156,7 +148,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
 	    {
             try
             {
-                var result = MakeRequest(null, HttpMethod.Get, API_ENDPOINT_URL + $"/api/authorization/{authorizationIdentifier}", payment.PaymentMethod.DynamicProperty<Guid>().ApiKey.ToString(), out HttpStatusCode responseCode);
+                var result = MakeRequest(null, HttpMethod.Get, API_ENDPOINT_URL + $"/authorization/{authorizationIdentifier}", payment.PaymentMethod.DynamicProperty<Guid>().ApiKey.ToString(), out HttpStatusCode responseCode);
 
                 if (!string.IsNullOrEmpty(result))
                 {
@@ -187,7 +179,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
             try
             {
-                var result = MakeRequest(null, HttpMethod.Delete, API_ENDPOINT_URL + $"/api/authorization/{payment.TransactionId}", apiKey, out HttpStatusCode responseCode);
+                var result = MakeRequest(null, HttpMethod.Delete, API_ENDPOINT_URL + $"/authorization/{payment.TransactionId}", apiKey, out HttpStatusCode responseCode);
 
                 if (responseCode == HttpStatusCode.OK || responseCode == HttpStatusCode.NoContent)
                 {
@@ -218,11 +210,11 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
             try
             {
-                var result = MakeRequest(JsonConvert.SerializeObject(new { Amount = payment.Amount.ToCents() }), HttpMethod.Post, API_ENDPOINT_URL + $"/api/authorization/{payment.TransactionId}/capture", apiKey, out HttpStatusCode responseCode);
+                var result = MakeRequest(JsonConvert.SerializeObject(new { Amount = payment.Amount.ToCents() }), HttpMethod.Post, API_ENDPOINT_URL + $"/authorization/{payment.TransactionId}/capture", apiKey, out HttpStatusCode responseCode);
 
                 if (responseCode == HttpStatusCode.OK || responseCode == HttpStatusCode.NoContent)
                 {
-                    CaptureResultModel resultData = JsonConvert.DeserializeObject<CaptureResultModel>(result);
+                    OperationResultModel resultData = JsonConvert.DeserializeObject<OperationResultModel>(result);
 
                     if (resultData.IsSuccess)
                     {
@@ -230,7 +222,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
                     }
                     else
                     {
-                        status = string.Format("{0} >> {1}", PaymentMessages.AcquireFailed, "Capture error code: " + resultData.AcquirerStatusCode);
+                        status = string.Format("{0} >> {1}", PaymentMessages.AcquireFailed, "Capture error code: " + resultData.GatewayStatusCode);
                     }
                 }
                 else
@@ -258,11 +250,11 @@ namespace Ucommerce.Transactions.Payments.Freepay
 
             try
             {
-                var result = MakeRequest(JsonConvert.SerializeObject(new { Amount = payment.Amount.ToCents() }), HttpMethod.Post, API_ENDPOINT_URL + $"/api/authorization/{payment.TransactionId}/credit", apiKey, out HttpStatusCode responseCode);
+                var result = MakeRequest(JsonConvert.SerializeObject(new { Amount = payment.Amount.ToCents() }), HttpMethod.Post, API_ENDPOINT_URL + $"/authorization/{payment.TransactionId}/credit", apiKey, out HttpStatusCode responseCode);
 
                 if (responseCode == HttpStatusCode.OK || responseCode == HttpStatusCode.NoContent)
                 {
-                    RefundResultModel resultData = JsonConvert.DeserializeObject<RefundResultModel>(result);
+                    OperationResultModel resultData = JsonConvert.DeserializeObject<OperationResultModel>(result);
                     
                     if (resultData.IsSuccess)
                     {
@@ -270,7 +262,7 @@ namespace Ucommerce.Transactions.Payments.Freepay
                     }
                     else
                     {
-                        status = string.Format("{0} >> {1}", PaymentMessages.AcquireFailed, resultData.ErrorMessage);
+                        status = string.Format("{0} >> {1}", PaymentMessages.AcquireFailed, resultData.GatewayStatusMessage);
                     }
                 }
                 else
@@ -340,8 +332,8 @@ namespace Ucommerce.Transactions.Payments.Freepay
                 { "Client", new Dictionary<string, object> {
                     { "CMS", new Dictionary<string, object> { { "Name", "Umraco" }, { "Version", "8" } } },
                     { "Shop", new Dictionary<string, object> { { "Name", "uCommerce" }, { "Version", "9.4.2" } } },
-                    { "Plugin", new Dictionary<string, object> { { "Name", "Freepay" }, { "Version", "1.0" } } },
-                    { "API", new Dictionary<string, object> { { "Name", "Freepay" }, { "Version", "1.0" } } },
+                    { "Plugin", new Dictionary<string, object> { { "Name", "Freepay" }, { "Version", "1.1" } } },
+                    { "API", new Dictionary<string, object> { { "Name", "Freepay" }, { "Version", "2.0" } } },
                 } },
             };
 
