@@ -138,10 +138,10 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
         /// <summary>
         /// 
         /// </summary>
-        protected virtual IReadOnlyDictionary<string, DataType> GetMissingFields()
+        protected virtual IReadOnlyDictionary<string, DataType> GetMissingFields(Definition definition)
         {
             var ids = _keys.Keys;
-            var existing = _definitionFieldRepository.Select(field => ids.Contains(field.Name))
+            var existing = _definitionFieldRepository.Select(field => ids.Contains(field.Name) && field.Definition.Id == definition.Id)
                                                      .Select(field => field.Name)
                                                      .ToList();
 
@@ -202,7 +202,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
 
         private void CreateNewFields(Definition definition)
         {
-            var dataTypes = GetMissingFields();
+            var dataTypes = GetMissingFields(definition);
             var fields = dataTypes.Select(field => new DefinitionField
                                   {
                                       BuiltIn = true,
