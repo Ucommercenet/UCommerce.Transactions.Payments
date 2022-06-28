@@ -5,8 +5,8 @@ using System.ServiceModel;
 using System.Web;
 using Adyen.Model.Checkout;
 using Ucommerce.EntitiesV2;
-using Ucommerce.Extensions;
 using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Adyen.Extensions;
 using Ucommerce.Transactions.Payments.Adyen.Factories;
 using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
@@ -24,10 +24,12 @@ namespace Ucommerce.Transactions.Payments.Adyen
         private readonly ILoggingService _loggingService;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
-                                         IAbsoluteUrlService absoluteUrlService)
+                                         IAbsoluteUrlService absoluteUrlService,
+                                         IAdyenClientFactory clientFactory)
         {
             _loggingService = loggingService;
             _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
+            _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
         }
 
         public override Payment CreatePayment(PaymentRequest request)
@@ -103,17 +105,14 @@ namespace Ucommerce.Transactions.Payments.Adyen
             // Create a payment request
             var amount = new Amount(paymentRequest.PurchaseOrder.BillingCurrency.ISOCode,
                                     Convert.ToInt64(paymentRequest.Amount.Value * 100));
-            var adyenPaymentRequest = new CreatePaymentLinkRequest
+            var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount:merchantAccount, reference:GetReferenceId(paymentRequest))
             {
-                Amount = amount,
-                MerchantAccount = merchantAccount,
-                Reference = GetReferenceId(paymentRequest),
                 ReturnUrl = callBackUrl,
                 ShopperEmail = paymentRequest.PurchaseOrder.Customer?.EmailAddress,
                 ShopperReference = paymentRequest.PurchaseOrder.Customer?.Guid.ToString(),
-                ShopperName = new Name(paymentRequest.PurchaseOrder.Customer?.FirstName,
-                                       paymentRequest.PurchaseOrder.Customer?.LastName),
-                CountryCode = paymentRequest.PurchaseOrder.BillingAddress.Country.Culture.Split('-')
+                ShopperName = new Name(paymentRequest.PurchaseOrder.BillingAddress?.FirstName,
+                                       paymentRequest.PurchaseOrder.BillingAddress?.LastName),
+                CountryCode = paymentRequest.PurchaseOrder.BillingAddress?.Country.Culture.Split('-')
                                             .Last(),
                 Metadata = metadata
             };

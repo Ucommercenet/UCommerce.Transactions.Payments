@@ -23,7 +23,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Factories
                                         ?.Live ?? false;
 
 
-            return  new Client(HttpUtility.UrlDecode(apiKey), liveMode ? Environment.Live : Environment.Test);
+            return  new Client(apiKey, liveMode ? Environment.Live : Environment.Test);
         }
     }
 }

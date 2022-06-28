@@ -141,7 +141,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
         protected virtual IReadOnlyDictionary<string, DataType> GetMissingFields(Definition definition)
         {
             var ids = _keys.Keys;
-            var existing = _definitionFieldRepository.Select(field => ids.Contains(field.Name) && field.Definition.Id == definition.Id)
+            var existing = _definitionFieldRepository.Select(field => ids.Contains(field.Name) && field.Definition.DefinitionId == definition.Id)
                                                      .Select(field => field.Name)
                                                      .ToList();
 
@@ -164,7 +164,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
             }
 
             return missing.ToDictionary(field => field.Key,
-                                        field => field.Key == "ShortText" ? stringDataType : boolDataType)!;
+                                        field => field.Value == "ShortText" ? stringDataType : boolDataType)!;
         }
 
         /// <summary>

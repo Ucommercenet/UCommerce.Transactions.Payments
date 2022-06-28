@@ -17,7 +17,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Extensions
         {
             try
             {
-                return entity.DynamicProperty<T>();
+                return Ucommerce.Extensions.DynamicEntityExtensions.DynamicProperty<T>(entity);
             }
             catch (Exception)
             {
