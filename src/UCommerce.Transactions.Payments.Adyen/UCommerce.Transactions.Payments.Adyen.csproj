@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <langversion>latest</langversion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Adyen, Version=9.0.0.0, Culture=neutral, PublicKeyToken=29f3a18e619fdea1, processorArchitecture=MSIL">
@@ -131,6 +136,8 @@
   <ItemGroup>
     <Compile Include="AdyenDropInPageBuilder.cs" />
     <Compile Include="AdyenPaymentMethodService.cs" />
+    <Compile Include="Extensions\DynamicEntityExtensions.cs" />
+    <Compile Include="Factories\AdyenClientFactory.cs" />
     <Compile Include="Factories\IAdyenClientFactory.cs" />
     <Compile Include="Pipelines\Initialize\SetupAdyenPaymentMethodDefinitionTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,7 +160,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdyenDropInPaymentForm.htm" />
+    <Content Include="AdyenDropInPaymentForm.html" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,12 @@
-﻿using Adyen.HttpClient.Interfaces;
+﻿using Adyen;
+using Adyen.Service;
+using Ucommerce.EntitiesV2;
 
 namespace Ucommerce.Transactions.Payments.Adyen.Factories
 {
     public interface IAdyenClientFactory
     {
-        IClient GetClient();
+        Checkout GetCheckout(PaymentMethod paymentMethod);
+        Client GetClient(PaymentMethod paymentMethod);
     }
 }

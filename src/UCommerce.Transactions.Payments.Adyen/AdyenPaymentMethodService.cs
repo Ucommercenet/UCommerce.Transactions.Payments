@@ -15,12 +15,12 @@ namespace Ucommerce.Transactions.Payments.Adyen
     {
         private const string LatestPspReference = "LatestPspReference";
         private const string RecurringDetailReference = "RecurringDetailReference";
+        private readonly IAbsoluteUrlService _absoluteUrlService;
+        private readonly IAdyenClientFactory _clientFactory;
 
         private readonly ILoggingService _loggingService;
         private readonly AdyenDropInPageBuilder _pageBuilder;
-        private readonly IAbsoluteUrlService _absoluteUrlService;
-        private readonly IAdyenClientFactory _clientFactory;
-        
+
         public AdyenPaymentMethodService(ILoggingService loggingService,
                                          AdyenDropInPageBuilder pageBuilder,
                                          IAbsoluteUrlService absoluteUrlService,
@@ -422,16 +422,16 @@ namespace Ucommerce.Transactions.Payments.Adyen
             {
                 dict[key] = request.QueryString[key];
                 _loggingService.Debug<AdyenPaymentMethodService>(string.Format("Querystring Parameter '{0}'='{1}'",
-                                                                              key,
-                                                                              request[key]));
+                                                                               key,
+                                                                               request[key]));
             }
 
             foreach (var key in request.Form.AllKeys)
             {
                 dict[key] = request.Form[key];
                 _loggingService.Debug<AdyenPaymentMethodService>(string.Format("Form Parameter '{0}'='{1}'",
-                                                                              key,
-                                                                              request[key]));
+                                                                               key,
+                                                                               request[key]));
             }
 
             return dict;
@@ -573,9 +573,9 @@ namespace Ucommerce.Transactions.Payments.Adyen
             {
                 //General notification recieved from Adyen. 
                 _loggingService.Debug<AdyenPaymentMethodService>(
-                                                                string
-                                                                    .Format("Notification received, but no payment was found with Reference ID: "
-                                                                            + payment["ReferenceId"]));
+                                                                 string
+                                                                     .Format("Notification received, but no payment was found with Reference ID: "
+                                                                             + payment["ReferenceId"]));
             }
             else
             {
