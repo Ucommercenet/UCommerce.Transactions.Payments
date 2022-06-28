@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Adyen, Version=8.2.0.0, Culture=neutral, PublicKeyToken=29f3a18e619fdea1, processorArchitecture=MSIL">
-      <HintPath>..\packages\Adyen.8.2.0\lib\netstandard2.0\Adyen.dll</HintPath>
+    <Reference Include="Adyen, Version=9.0.0.0, Culture=neutral, PublicKeyToken=29f3a18e619fdea1, processorArchitecture=MSIL">
+      <HintPath>..\packages\Adyen.9.0.0\lib\netstandard2.0\Adyen.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
@@ -130,33 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdyenDropInPageBuilder.cs" />
-    <Compile Include="AdyenFields.cs" />
-    <Compile Include="AdyenGuardExtensions.cs" />
-    <Compile Include="AdyenHttpPaymentExtractor.cs" />
-    <Compile Include="AdyenPageBuilder.cs" />
-    <Compile Include="AdyenPaymentFlowSelection.cs" />
     <Compile Include="AdyenPaymentMethodService.cs" />
-    <Compile Include="AuthorizationResultMessageData.cs" />
-    <Compile Include="Connected Services\Adyen.Test.ModificationSoapService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\Adyen.Test.NotificationSoapService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\Adyen.Test.RecurringSoapService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="EnumExtensions.cs" />
-    <Compile Include="HmacCalculator.cs" />
-    <Compile Include="HmacCalculatorSHA256.cs" />
-    <Compile Include="NotificationMessageData.cs" />
-    <Compile Include="PaymentResultValidator.cs" />
+    <Compile Include="Factories\IAdyenClientFactory.cs" />
     <Compile Include="Pipelines\Initialize\SetupAdyenPaymentMethodDefinitionTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -168,36 +143,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Configuration\Adyen.config" />
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Payment.wsdl" />
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.BalanceCheckResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.DirectDebitResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.FundTransferResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.ModificationResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.ModificationSoapService.PaymentResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.NotificationSoapService\Notification.wsdl" />
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\Recurring.wsdl" />
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.DisableResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringDetailsResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.RecurringResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\Ucommerce.Transactions.Payments.Adyen.Adyen.Test.RecurringSoapService.StoreTokenResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -206,47 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\Adyen.Test.ModificationSoapService\" />
-    <WCFMetadataStorage Include="Connected Services\Adyen.Test.NotificationSoapService\" />
-    <WCFMetadataStorage Include="Connected Services\Adyen.Test.RecurringSoapService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.ModificationSoapService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.NotificationSoapService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.NotificationSoapService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.NotificationSoapService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Adyen.Test.RecurringSoapService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdyenDropInPaymentForm.htm" />
