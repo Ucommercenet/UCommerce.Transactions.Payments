@@ -15,7 +15,7 @@ using Ucommerce.Search.Extensions;
 
 namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
 {
-    internal class SetupAdyenPaymentMethodDefinitionTask : IPipelineTask<InitializeArgs>
+    public class SetupAdyenPaymentMethodDefinitionTask : IPipelineTask<InitializeArgs>
     {
         private static readonly IReadOnlyDictionary<string, string> _keys = new List<KeyValuePair<string, string>>
         {
@@ -128,7 +128,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
         /// <summary>
         /// 
         /// </summary>
-        protected virtual Definition GetAdyenDefinition()
+        protected virtual Definition? GetAdyenDefinition()
         {
             var definitions = _definitionRepository.Select(def => def.Name == "Adyen")
                                                    .FetchMany(def => def.DefinitionFields)
@@ -170,7 +170,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
         /// <summary>
         /// 
         /// </summary>
-        protected virtual DefinitionType GetPaymentDefinitionType()
+        protected virtual DefinitionType? GetPaymentDefinitionType()
         {
             return _definitionTypeRepository.Select(def => def.Name == "PaymentMethod Definitions")
                                             .FirstOrDefault();

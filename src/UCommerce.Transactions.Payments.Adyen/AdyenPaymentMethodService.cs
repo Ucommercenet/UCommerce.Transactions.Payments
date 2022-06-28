@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.ServiceModel;
 using System.Web;
+using Adyen.Model.Checkout;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Extensions;
 using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Adyen.Factories;
 using Ucommerce.Transactions.Payments.Common;
 using Ucommerce.Web;
+using PaymentMethod = Ucommerce.EntitiesV2.PaymentMethod;
 
 namespace Ucommerce.Transactions.Payments.Adyen
 {
@@ -15,18 +18,15 @@ namespace Ucommerce.Transactions.Payments.Adyen
     {
         private const string LatestPspReference = "LatestPspReference";
         private const string RecurringDetailReference = "RecurringDetailReference";
-        
+
         private readonly IAbsoluteUrlService _absoluteUrlService;
         private readonly IAdyenClientFactory _clientFactory;
         private readonly ILoggingService _loggingService;
-        private readonly AdyenDropInPageBuilder _pageBuilder;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
-                                         AdyenDropInPageBuilder pageBuilder,
                                          IAbsoluteUrlService absoluteUrlService)
         {
             _loggingService = loggingService;
-            _pageBuilder = pageBuilder;
             _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
         }
 
@@ -74,7 +74,72 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         public override string RenderPage(PaymentRequest paymentRequest)
         {
-            return _pageBuilder.Build(paymentRequest);
+            throw new NotSupportedException("Adyen does not need a local form. Use RequestPayment instead.");
+        }
+
+
+        public override Payment RequestPayment(PaymentRequest paymentRequest)
+        {
+            if (paymentRequest.Payment == null)
+            {
+                paymentRequest.Payment = CreatePayment(paymentRequest);
+            }
+
+            var metadata = new Dictionary<string, string>
+            {
+                { "orderReference", GetReferenceId(paymentRequest) },
+                { "orderId", paymentRequest.PurchaseOrder.Guid.ToString("D") },
+                { "orderNumber", paymentRequest.PurchaseOrder.OrderNumber }
+            };
+
+
+            string merchantAccount = paymentRequest.PaymentMethod.DynamicProperty<string>()
+                                                   ?
+                                                   .MerchantAccount ?? string.Empty;
+            string callBackUrl = paymentRequest.PaymentMethod.DynamicProperty<string>()
+                                               ?
+                                               .CallbackUrl ?? string.Empty;
+
+            // Create a payment request
+            var amount = new Amount(paymentRequest.PurchaseOrder.BillingCurrency.ISOCode,
+                                    Convert.ToInt64(paymentRequest.Amount.Value * 100));
+            var adyenPaymentRequest = new CreatePaymentLinkRequest
+            {
+                Amount = amount,
+                MerchantAccount = merchantAccount,
+                Reference = GetReferenceId(paymentRequest),
+                ReturnUrl = callBackUrl,
+                ShopperEmail = paymentRequest.PurchaseOrder.Customer?.EmailAddress,
+                ShopperReference = paymentRequest.PurchaseOrder.Customer?.Guid.ToString(),
+                ShopperName = new Name(paymentRequest.PurchaseOrder.Customer?.FirstName,
+                                       paymentRequest.PurchaseOrder.Customer?.LastName),
+                CountryCode = paymentRequest.PurchaseOrder.BillingAddress.Country.Culture.Split('-')
+                                            .Last(),
+                Metadata = metadata
+            };
+
+            //if (allowedPaymentMethods?.Count > 0)
+            //{
+            //    adyenPaymentRequest.AllowedPaymentMethods = allowedPaymentMethods;
+            //}
+
+            //if (blockedPaymentMethods?.Count > 0)
+            //{
+            //    paymentRequest.BlockedPaymentMethods = blockedPaymentMethods;
+            //}
+
+            var checkout = _clientFactory.GetCheckout(paymentRequest.PaymentMethod);
+
+            var result = checkout.PaymentLinks(adyenPaymentRequest);
+
+            if (string.IsNullOrWhiteSpace(result.Url))
+            {
+                throw new InvalidOperationException("Could not redirect to Adyen payment page.");
+            }
+
+            HttpContext.Current.Response.Redirect(result.Url);
+
+            return paymentRequest.Payment;
         }
 
         protected override bool AcquirePaymentInternal(Payment payment, out string status)

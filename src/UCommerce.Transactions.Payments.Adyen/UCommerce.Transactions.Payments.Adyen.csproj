@@ -134,7 +134,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdyenDropInPageBuilder.cs" />
     <Compile Include="AdyenPaymentMethodService.cs" />
     <Compile Include="Extensions\DynamicEntityExtensions.cs" />
     <Compile Include="Factories\AdyenClientFactory.cs" />
@@ -158,9 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AdyenDropInPaymentForm.html" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
