@@ -63,8 +63,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
 
         public PipelineExecutionResult Execute(InitializeArgs subject)
         {
-            new RetryableTask(CreateAdyenDefinitions, MaxNumberOfTries, GracePeriodBetweenTriesInMilliseconds)
-                .Start();
+            CreateAdyenDefinitions();
             return PipelineExecutionResult.Success;
         }
 
@@ -141,7 +140,8 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
         /// </summary>
         protected virtual IReadOnlyDictionary<string, DataType> GetMissingFields()
         {
-            var existing = _definitionFieldRepository.Select(field => _keys.ContainsKey(field.Name))
+            var ids = _keys.Keys;
+            var existing = _definitionFieldRepository.Select(field => ids.Contains(field.Name))
                                                      .Select(field => field.Name)
                                                      .ToList();
 
