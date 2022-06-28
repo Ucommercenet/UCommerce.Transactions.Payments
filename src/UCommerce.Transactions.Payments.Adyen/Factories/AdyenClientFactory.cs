@@ -17,15 +17,13 @@ namespace Ucommerce.Transactions.Payments.Adyen.Factories
 
         public Client GetClient(PaymentMethod paymentMethod)
         {
-            var apiKey = paymentMethod.DynamicProperty<string>()
+            string apiKey = paymentMethod.DynamicProperty<string>()
                                       ?.ApiKey ?? string.Empty;
-            var liveMode = paymentMethod.DynamicProperty<bool>()
+            bool liveMode = paymentMethod.DynamicProperty<bool>()
                                         ?.Live ?? false;
 
 
-            return liveMode
-                       ? new Client(HttpUtility.UrlDecode(apiKey), Environment.Live)
-                       : new Client(HttpUtility.UrlDecode(apiKey), Environment.Test);
+            return  new Client(HttpUtility.UrlDecode(apiKey), liveMode ? Environment.Live : Environment.Test);
         }
     }
 }
