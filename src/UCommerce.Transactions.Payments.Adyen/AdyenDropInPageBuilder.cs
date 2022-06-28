@@ -60,6 +60,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
                                     Convert.ToInt64(paymentRequest.Amount.Value * 100)),
                 CountryCode = paymentRequest.PurchaseOrder.BillingAddress.Country.Culture.Split('-')
                                             .Last(),
+                Channel = CreateCheckoutSessionRequest.ChannelEnum.Web
             };
 
             var checkout = _adyenClientFactory.GetCheckout(paymentRequest.PaymentMethod);
