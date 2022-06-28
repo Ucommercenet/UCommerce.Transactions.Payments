@@ -19,17 +19,14 @@ namespace Ucommerce.Transactions.Payments.Adyen
         private readonly ILoggingService _loggingService;
         private readonly AdyenDropInPageBuilder _pageBuilder;
         private readonly IAbsoluteUrlService _absoluteUrlService;
-        private readonly IAdyenClientFactory _clientFactory;
         
         public AdyenPaymentMethodService(ILoggingService loggingService,
                                          AdyenDropInPageBuilder pageBuilder,
-                                         IAbsoluteUrlService absoluteUrlService,
-                                         IAdyenClientFactory clientFactory)
+                                         IAbsoluteUrlService absoluteUrlService)
         {
             _loggingService = loggingService;
             _pageBuilder = pageBuilder;
             _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
-            _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
         }
 
         public override Payment CreatePayment(PaymentRequest request)
