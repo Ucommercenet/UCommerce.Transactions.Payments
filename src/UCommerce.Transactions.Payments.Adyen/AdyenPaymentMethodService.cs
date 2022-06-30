@@ -4,6 +4,9 @@ using System.Linq;
 using System.ServiceModel;
 using System.Web;
 using Adyen.Model.Checkout;
+using Adyen.Model.Notification;
+using Adyen.Notification;
+using Adyen.Util;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
@@ -17,19 +20,23 @@ namespace Ucommerce.Transactions.Payments.Adyen
     public class AdyenPaymentMethodService : ExternalPaymentMethodService
     {
         private const string LatestPspReference = "LatestPspReference";
+        private const string PaymentReferenceKey = "merchantReference";
         private const string RecurringDetailReference = "RecurringDetailReference";
 
         private readonly IAbsoluteUrlService _absoluteUrlService;
         private readonly IAdyenClientFactory _clientFactory;
+        private readonly IRepository<Payment> _paymentRepository;
         private readonly ILoggingService _loggingService;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
                                          IAbsoluteUrlService absoluteUrlService,
-                                         IAdyenClientFactory clientFactory)
+                                         IAdyenClientFactory clientFactory, 
+                                         IRepository<Payment> paymentRepository)
         {
             _loggingService = loggingService;
             _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
+            _paymentRepository = paymentRepository;
         }
 
         public override Payment CreatePayment(PaymentRequest request)
@@ -55,23 +62,59 @@ namespace Ucommerce.Transactions.Payments.Adyen
         /// <returns></returns>
         public override Payment Extract(HttpRequest httpRequest)
         {
-            throw new NotImplementedException();
+            var reference = httpRequest[PaymentReferenceKey];
+
+            if (string.IsNullOrEmpty(reference))
+                return null;
+
+            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault();
         }
 
         public override void ProcessCallback(Payment payment)
         {
-            var request = HttpContext.Current.Request;
+            string hmacKey = payment.PaymentMethod.DynamicProperty<string>()
+                ?
+                .HmacKey ?? string.Empty;
 
-            var dict = BuildDictionaryOfParameters(request);
+            var hmacValidator = new HmacValidator();
+            var notificationHandler = new NotificationHandler();
 
-            if (RequestIsAuthorizationReponse(dict))
+            var handleNotificationRequest = notificationHandler.HandleNotificationRequest(HttpContext.Current.Request["additionalData"]);
+
+            IList<NotificationRequestItemContainer> notificationRequestItemContainers = handleNotificationRequest.NotificationItemContainers;
+            foreach (var notificationRequestItemContainer in notificationRequestItemContainers)
             {
-                ProcessAuthorizarionResponse(payment, dict);
+                var notificationItem = notificationRequestItemContainer.NotificationItem;
+                // Handle the notification
+                if (hmacValidator.IsValidHmac(notificationItem, hmacKey))
+                {
+                    // Process the notification based on the eventCode
+                    string eventCode = notificationItem.EventCode;
+
+                    // This notification is for a payment.
+                    if (notificationItem.Success)
+                    {
+                        var newPaymentStatus = eventCode == "AUTHORISATION"
+                            ? PaymentStatus.Get((int)PaymentStatusCode.Authorized)
+                            : eventCode == "CAPTURE"
+                                ? PaymentStatus.Get((int)PaymentStatusCode.Acquired)
+                                : null;
+
+                        if(newPaymentStatus!= null)
+                        {
+                            payment.PaymentStatus = newPaymentStatus;
+
+                            ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
+                        }
+                    }
+                    payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
+                    payment.Save();
+                    return;
+                }
+
+                _loggingService.Information<AdyenPaymentMethodService>($"Failed verifying HMAC key for {notificationItem.PspReference}.");
             }
-            else
-            {
-                ProcessNotificationMessage(payment, dict);
-            }
+
         }
 
         public override string RenderPage(PaymentRequest paymentRequest)
@@ -135,6 +178,9 @@ namespace Ucommerce.Transactions.Payments.Adyen
             {
                 throw new InvalidOperationException("Could not redirect to Adyen payment page.");
             }
+
+            paymentRequest.Payment.ReferenceId = result.Reference;
+            paymentRequest.Payment.Save();
 
             HttpContext.Current.Response.Redirect(result.Url);
 

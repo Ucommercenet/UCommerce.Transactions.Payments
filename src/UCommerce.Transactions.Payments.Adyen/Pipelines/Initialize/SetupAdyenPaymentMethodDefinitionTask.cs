@@ -21,7 +21,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
         {
             new("ClientKey", "ShortText"),
             new("Live", "Boolean"),
-            new("PaymentFormTemplate", "ShortText"),
+            new("HmacKey", "ShortText"),
             new("ApiKey", "ShortText"),
             new("MerchantAccount", "ShortText"),
             new("CallbackUrl", "ShortText"),
