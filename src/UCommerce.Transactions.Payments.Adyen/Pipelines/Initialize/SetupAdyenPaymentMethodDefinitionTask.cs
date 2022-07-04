@@ -24,9 +24,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
             new("HmacKey", "ShortText"),
             new("ApiKey", "ShortText"),
             new("MerchantAccount", "ShortText"),
-            new("CallbackUrl", "ShortText"),
-            new("AcceptUrl", "ShortText"),
-            new("DeclineUrl", "ShortText")
+            new("ReturnUrl", "ShortText"),
         }.ToDictionary();
 
         private readonly IRepository<DataType> _dataTypeRepository;
@@ -189,7 +187,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
                 "SessionValidityPlusMinutes", "Offset", "OfferEmail",
                 "BrandCode", "WebServiceUsername",
                 "WebServicePassword", "UseRecurringContract", "SigningAlgorithm",
-                "ResultUrl"
+                "ResultUrl", "AcceptUrl", "DeclineUrl"
             };
 
             var setToDeleted = fields

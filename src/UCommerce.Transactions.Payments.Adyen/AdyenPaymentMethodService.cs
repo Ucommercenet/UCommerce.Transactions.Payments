@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
+using System.Text;
 using System.Web;
 using Adyen.Model.Checkout;
 using Adyen.Model.Notification;
 using Adyen.Notification;
 using Adyen.Util;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
@@ -27,6 +31,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
         private readonly IAdyenClientFactory _clientFactory;
         private readonly IRepository<Payment> _paymentRepository;
         private readonly ILoggingService _loggingService;
+        private string webHookContent;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
                                          IAbsoluteUrlService absoluteUrlService,
@@ -62,12 +67,29 @@ namespace Ucommerce.Transactions.Payments.Adyen
         /// <returns></returns>
         public override Payment Extract(HttpRequest httpRequest)
         {
-            var reference = httpRequest[PaymentReferenceKey];
+            var contentJson = ReadWebHookContent(httpRequest);
+            var jsonObj = (JObject?)JsonConvert.DeserializeObject(contentJson);
+            var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]?.Value<string>();
+          
+            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault() ?? throw new NullReferenceException(
+                $"Could not find a payment with ReferenceId: '{reference}'.");
+        }
 
-            if (string.IsNullOrEmpty(reference))
-                return null;
+        private string ReadWebHookContent(HttpRequest httpRequest)
+        {
+            if (!string.IsNullOrWhiteSpace(webHookContent)) return webHookContent;
+            Stream inputStream = httpRequest.InputStream;
+            int length = Convert.ToInt32(inputStream.Length);
 
-            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault();
+            byte[] byteArr = new byte[length];
+            inputStream.Read(byteArr, 0, length);
+
+            var stringBuilder = new StringBuilder();
+            foreach (var b in byteArr)
+                stringBuilder.Append(char.ConvertFromUtf32(b));
+
+            webHookContent = stringBuilder.ToString();
+            return webHookContent;
         }
 
         public override void ProcessCallback(Payment payment)
@@ -78,8 +100,8 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
             var hmacValidator = new HmacValidator();
             var notificationHandler = new NotificationHandler();
-
-            var handleNotificationRequest = notificationHandler.HandleNotificationRequest(HttpContext.Current.Request["additionalData"]);
+            var contentJson = ReadWebHookContent(HttpContext.Current.Request);
+            var handleNotificationRequest = notificationHandler.HandleNotificationRequest(contentJson);
 
             IList<NotificationRequestItemContainer> notificationRequestItemContainers = handleNotificationRequest.NotificationItemContainers;
             foreach (var notificationRequestItemContainer in notificationRequestItemContainers)
@@ -141,16 +163,17 @@ namespace Ucommerce.Transactions.Payments.Adyen
             string merchantAccount = paymentRequest.PaymentMethod.DynamicProperty<string>()
                                                    ?
                                                    .MerchantAccount ?? string.Empty;
-            string callBackUrl = paymentRequest.PaymentMethod.DynamicProperty<string>()
+            string returnUrl = paymentRequest.PaymentMethod.DynamicProperty<string>()
                                                ?
-                                               .CallbackUrl ?? string.Empty;
+                                               .ReturnUrl ?? string.Empty;
 
             // Create a payment request
             var amount = new Amount(paymentRequest.PurchaseOrder.BillingCurrency.ISOCode,
                                     Convert.ToInt64(paymentRequest.Amount.Value * 100));
+
             var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount:merchantAccount, reference:GetReferenceId(paymentRequest))
             {
-                ReturnUrl = callBackUrl,
+                ReturnUrl = returnUrl,
                 ShopperEmail = paymentRequest.PurchaseOrder.Customer?.EmailAddress,
                 ShopperReference = paymentRequest.PurchaseOrder.Customer?.Guid.ToString(),
                 ShopperName = new Name(paymentRequest.PurchaseOrder.BillingAddress?.FirstName,
@@ -159,16 +182,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
                                             .Last(),
                 Metadata = metadata
             };
-
-            //if (allowedPaymentMethods?.Count > 0)
-            //{
-            //    adyenPaymentRequest.AllowedPaymentMethods = allowedPaymentMethods;
-            //}
-
-            //if (blockedPaymentMethods?.Count > 0)
-            //{
-            //    paymentRequest.BlockedPaymentMethods = blockedPaymentMethods;
-            //}
 
             var checkout = _clientFactory.GetCheckout(paymentRequest.PaymentMethod);
 
