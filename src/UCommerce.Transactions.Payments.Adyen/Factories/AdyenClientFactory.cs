@@ -1,5 +1,4 @@
-﻿using System.Web;
-using Adyen;
+﻿using Adyen;
 using Adyen.Model.Enum;
 using Adyen.Service;
 using Ucommerce.EntitiesV2;
@@ -9,13 +8,19 @@ namespace Ucommerce.Transactions.Payments.Adyen.Factories
 {
     public class AdyenClientFactory : IAdyenClientFactory
     {
-        public Checkout GetCheckout(PaymentMethod paymentMethod)
+        public virtual Checkout GetCheckout(PaymentMethod paymentMethod)
         {
             var client = GetClient(paymentMethod);
             return new Checkout(client);
         }
 
-        public Client GetClient(PaymentMethod paymentMethod)
+        public virtual Modification GetModification(PaymentMethod paymentMethod)
+        {
+            var client = GetClient(paymentMethod);
+            return new Modification(client);
+        }
+
+        private Client GetClient(PaymentMethod paymentMethod)
         {
             string apiKey = paymentMethod.DynamicProperty<string>()
                                       ?.ApiKey ?? string.Empty;
