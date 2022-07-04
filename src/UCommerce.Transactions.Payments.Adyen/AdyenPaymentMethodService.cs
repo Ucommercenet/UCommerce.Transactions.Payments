@@ -28,7 +28,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
         private string webHookContent;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
-                                         IAdyenClientFactory clientFactory, 
+                                         IAdyenClientFactory clientFactory,
                                          IRepository<Payment> paymentRepository)
         {
             _loggingService = loggingService;
@@ -46,7 +46,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
             var contentJson = ReadWebHookContent(httpRequest);
             var jsonObj = (JObject?)JsonConvert.DeserializeObject(contentJson);
             var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]?.Value<string>();
-          
+
             return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault() ?? throw new NullReferenceException(
                 $"Could not find a payment with ReferenceId: '{reference}'.");
         }
@@ -80,7 +80,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
                                 ? PaymentStatus.Get((int)PaymentStatusCode.Acquired)
                                 : null;
 
-                        if(newPaymentStatus != null)
+                        if (newPaymentStatus != null)
                         {
                             payment.PaymentStatus = newPaymentStatus;
                             payment.TransactionId = notificationItem.PspReference;
@@ -128,7 +128,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
             var amount = new Amount(paymentRequest.PurchaseOrder.BillingCurrency.ISOCode,
                                     Convert.ToInt64(paymentRequest.Amount.Value * 100));
 
-            var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount:merchantAccount, reference:paymentRequest.Payment.ReferenceId)
+            var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount: merchantAccount, reference: paymentRequest.Payment.ReferenceId)
             {
                 ReturnUrl = returnUrl,
                 ShopperEmail = paymentRequest.PurchaseOrder.Customer?.EmailAddress,
@@ -195,13 +195,13 @@ namespace Ucommerce.Transactions.Payments.Adyen
                 ModificationAmount = amount,
                 OriginalReference = payment.TransactionId
             });
-            
+
             status = result.Status;
 
             if (result.Response == global::Adyen.Model.Enum.ResponseEnum.RefundReceived ||
                 result.Response == global::Adyen.Model.Enum.ResponseEnum.CancelOrRefundReceived)
             {
-                
+
                 return true;
             }
 
@@ -236,7 +236,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
         private string ReadWebHookContent(HttpRequest httpRequest)
         {
             if (!string.IsNullOrWhiteSpace(webHookContent)) return webHookContent;
-          
+
             Stream inputStream = httpRequest.InputStream;
             int length = Convert.ToInt32(inputStream.Length);
 
