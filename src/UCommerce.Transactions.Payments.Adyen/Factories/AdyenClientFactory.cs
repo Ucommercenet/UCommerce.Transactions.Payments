@@ -26,9 +26,11 @@ namespace Ucommerce.Transactions.Payments.Adyen.Factories
                                       ?.ApiKey ?? string.Empty;
             bool liveMode = paymentMethod.DynamicProperty<bool>()
                                         ?.Live ?? false;
+            string? liveEndpointUrlPrefix = paymentMethod.DynamicProperty<string?>()
+                ?.LiveEndpointUrlPrefix ?? null;
 
 
-            return  new Client(apiKey, liveMode ? Environment.Live : Environment.Test);
+            return  new Client(apiKey, liveMode ? Environment.Live : Environment.Test, liveEndpointUrlPrefix);
         }
     }
 }

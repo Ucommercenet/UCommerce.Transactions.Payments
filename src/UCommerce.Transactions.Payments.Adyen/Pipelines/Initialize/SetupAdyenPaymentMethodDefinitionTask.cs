@@ -25,6 +25,7 @@ namespace Ucommerce.Transactions.Payments.Adyen.Pipelines.Initialize
             new("ApiKey", "ShortText"),
             new("MerchantAccount", "ShortText"),
             new("ReturnUrl", "ShortText"),
+            new("LiveEndpointUrlPrefix", "ShortText")
         }.ToDictionary();
 
         private readonly IRepository<DataType> _dataTypeRepository;

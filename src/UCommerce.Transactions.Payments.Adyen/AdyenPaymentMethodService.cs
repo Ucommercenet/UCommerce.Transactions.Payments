@@ -15,6 +15,7 @@ using Ucommerce.EntitiesV2;
 using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
 using Ucommerce.Transactions.Payments.Adyen.Factories;
+using Ucommerce.Web;
 
 namespace Ucommerce.Transactions.Payments.Adyen
 {
@@ -24,16 +25,18 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         private readonly IAdyenClientFactory _clientFactory;
         private readonly IRepository<Payment> _paymentRepository;
+        private readonly IAbsoluteUrlService _absoluteUrlService;
         private readonly ILoggingService _loggingService;
         private string webHookContent;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
-                                         IAdyenClientFactory clientFactory,
-                                         IRepository<Payment> paymentRepository)
+            IAdyenClientFactory clientFactory,
+            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService)
         {
             _loggingService = loggingService;
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
             _paymentRepository = paymentRepository;
+            _absoluteUrlService = absoluteUrlService;
         }
 
         /// <summary>
@@ -45,10 +48,12 @@ namespace Ucommerce.Transactions.Payments.Adyen
         {
             var contentJson = ReadWebHookContent(httpRequest);
             var jsonObj = (JObject?)JsonConvert.DeserializeObject(contentJson);
-            var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]?.Value<string>();
+            var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]
+                ?.Value<string>();
 
-            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault() ?? throw new NullReferenceException(
-                $"Could not find a payment with ReferenceId: '{reference}'.");
+            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault() ??
+                   throw new NullReferenceException(
+                       $"Could not find a payment with ReferenceId: '{reference}'.");
         }
 
         public override void ProcessCallback(Payment payment)
@@ -61,7 +66,8 @@ namespace Ucommerce.Transactions.Payments.Adyen
             var contentJson = ReadWebHookContent(HttpContext.Current.Request);
             var handleNotificationRequest = notificationHandler.HandleNotificationRequest(contentJson);
 
-            IList<NotificationRequestItemContainer> notificationRequestItemContainers = handleNotificationRequest.NotificationItemContainers;
+            IList<NotificationRequestItemContainer> notificationRequestItemContainers =
+                handleNotificationRequest.NotificationItemContainers;
             foreach (var notificationRequestItemContainer in notificationRequestItemContainers)
             {
                 var notificationItem = notificationRequestItemContainer.NotificationItem;
@@ -87,14 +93,15 @@ namespace Ucommerce.Transactions.Payments.Adyen
                             ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
                         }
                     }
+
                     payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
                     payment.Save();
                     return;
                 }
 
-                _loggingService.Information<AdyenPaymentMethodService>($"Failed verifying HMAC key for {notificationItem.PspReference}.");
+                _loggingService.Information<AdyenPaymentMethodService>(
+                    $"Failed verifying HMAC key for {notificationItem.PspReference}.");
             }
-
         }
 
         public override string RenderPage(PaymentRequest paymentRequest)
@@ -118,25 +125,26 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
 
             string merchantAccount = paymentRequest.PaymentMethod.DynamicProperty<string>()
-                                                   ?
-                                                   .MerchantAccount ?? string.Empty;
-            string returnUrl = paymentRequest.PaymentMethod.DynamicProperty<string>()
-                                               ?
-                                               .ReturnUrl ?? string.Empty;
+                ?
+                .MerchantAccount ?? string.Empty;
+            string returnUrl = _absoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()
+                ?
+                .ReturnUrl) ?? string.Empty;
 
             // Create a payment request
             var amount = new Amount(paymentRequest.PurchaseOrder.BillingCurrency.ISOCode,
-                                    Convert.ToInt64(paymentRequest.Amount.Value * 100));
+                Convert.ToInt64(paymentRequest.Amount.Value * 100));
 
-            var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount: merchantAccount, reference: paymentRequest.Payment.ReferenceId)
+            var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount: merchantAccount,
+                reference: paymentRequest.Payment.ReferenceId)
             {
                 ReturnUrl = returnUrl,
                 ShopperEmail = paymentRequest.PurchaseOrder.Customer?.EmailAddress,
                 ShopperReference = paymentRequest.PurchaseOrder.Customer?.Guid.ToString(),
                 ShopperName = new Name(paymentRequest.PurchaseOrder.BillingAddress?.FirstName,
-                                       paymentRequest.PurchaseOrder.BillingAddress?.LastName),
+                    paymentRequest.PurchaseOrder.BillingAddress?.LastName),
                 CountryCode = paymentRequest.PurchaseOrder.BillingAddress?.Country.Culture.Split('-')
-                                            .Last(),
+                    .Last(),
                 Metadata = metadata
             };
 
@@ -201,7 +209,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
             if (result.Response == global::Adyen.Model.Enum.ResponseEnum.RefundReceived ||
                 result.Response == global::Adyen.Model.Enum.ResponseEnum.CancelOrRefundReceived)
             {
-
                 return true;
             }
 
