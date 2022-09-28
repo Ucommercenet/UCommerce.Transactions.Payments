@@ -5,7 +5,7 @@ NEW: Stripe payment provider integration. Courtesy of [@jamiehowarth0](https://g
 - Adding the definition fields used by the service (PublicKey, SecretKey, AcceptUrl, PaymentFormTemplate)
 
 ### What is this repository for? ###
-
+DISCLAIMER: These implementations are made to serve as inpiration, or bases, and are not meant to be used in Production OOTB.
 This project contains all payment provider integrations shipped with Ucommerce out of the box. It is often easier to use a payment provider if the integration code is openly available. The code for the existing integrations is also great inspiration for those looking to create custom integrations with other payment providers not supported by Ucommerce out of the box.
 Furthermore, the integrations being open-source allows for community pull-requests and the possibility to make custom fixes to them when necessary, to be used for a project.
 
