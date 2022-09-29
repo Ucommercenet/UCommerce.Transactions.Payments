@@ -93,8 +93,11 @@ namespace Ucommerce.Transactions.Payments.Adyen
                             ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
                         }
                     }
+                    else
+                    {
+                        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
+                    }
 
-                    payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
                     payment.Save();
                     return;
                 }
@@ -244,7 +247,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
         {
             if (!string.IsNullOrWhiteSpace(webHookContent)) return webHookContent;
 
-            Stream inputStream = httpRequest.InputStream;
+            Stream inputStream = httpRequest.GetBufferedInputStream();
             int length = Convert.ToInt32(inputStream.Length);
 
             byte[] byteArr = new byte[length];
