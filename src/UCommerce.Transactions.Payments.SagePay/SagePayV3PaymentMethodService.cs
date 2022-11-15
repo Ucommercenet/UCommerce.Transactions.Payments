@@ -43,6 +43,11 @@ namespace Ucommerce.Transactions.Payments.SagePay
 			signatureParameterList.Add(GetHttpRequestValueUrlDecoded(request, "FraudResponse"));
 			signatureParameterList.Add(GetHttpRequestValueUrlDecoded(request, "BankAuthCode"));
 
+			//v4 fields described here: https://developer-eu.elavon.com/docs/opayo-server/protocol-300-400-migration-guide
+			signatureParameterList.Add(GetHttpRequestValueUrlDecoded(request, "ACSTransID"));
+			signatureParameterList.Add(GetHttpRequestValueUrlDecoded(request, "DSTransID"));
+			signatureParameterList.Add(GetHttpRequestValueUrlDecoded(request, "SchemeTraceID"));
+
 			return signatureParameterList;
 		}
 
