@@ -56,7 +56,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.Freepay", "Ucommerce.Transactions.Payments.Freepay\Ucommerce.Transactions.Payments.Freepay.csproj", "{A9D1FC0A-0CD8-4664-9080-E59FB1420B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.QuickpayLink", "..\..\..\UCommerce.Transactions.Payments\src\Ucommerce.Transactions.Payments.QuickpayLink\Ucommerce.Transactions.Payments.QuickpayLink.csproj", "{EA65CF60-B2E7-476E-BB77-19CD3E45176B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ucommerce.Transactions.Payments.QuickpayLink", "Ucommerce.Transactions.Payments.QuickpayLink\Ucommerce.Transactions.Payments.QuickpayLink.csproj", "{EA65CF60-B2E7-476E-BB77-19CD3E45176B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

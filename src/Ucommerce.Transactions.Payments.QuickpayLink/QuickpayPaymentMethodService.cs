@@ -11,7 +11,6 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
     {
         private string ApiKey(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().ApiKey;
         private string CallbackUrl(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().CallbackUrl;
-        private string AcceptUrl(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().AcceptUrl;
         private string CancelUrl(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().CancelUrl;
         private string PaymentMethods(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().PaymentMethods;
 

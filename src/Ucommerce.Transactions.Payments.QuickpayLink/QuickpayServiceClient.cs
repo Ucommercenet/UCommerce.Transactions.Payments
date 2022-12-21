@@ -255,7 +255,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
     }
 
     /// <summary>
-    /// Represents the set of http methodss the client supports.
+    /// Represents the set of http methods the client supports.
     /// </summary>
     internal enum Method
     {

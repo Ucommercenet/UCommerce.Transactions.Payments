@@ -67,7 +67,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink.Pipelines.Initialize
 
             try
             {
-                var definition = GetAdyenDefinition();
+                var definition = GetQuickpayLinkDefinition();
                 var definitionType = GetPaymentDefinitionType();
                 if (definitionType is null)
                 {
@@ -90,7 +90,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink.Pipelines.Initialize
                     };
 
                     _definitionRepository.Save(definition);
-                    definition = GetAdyenDefinition();
+                    definition = GetQuickpayLinkDefinition();
                     if (definition is null)
                     {
                         throw new Exception("Unable to create new definition for QuickpayLink");
@@ -107,7 +107,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink.Pipelines.Initialize
             }
         }
 
-        protected virtual Definition? GetAdyenDefinition()
+        protected virtual Definition? GetQuickpayLinkDefinition()
         {
             var definitions = _definitionRepository.Select(def => def.Name == "QuickpayLink")
                                                    .FetchMany(def => def.DefinitionFields)
