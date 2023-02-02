@@ -21,13 +21,14 @@ namespace Ucommerce.Transactions.Payments.Adyen
 {
     public class AdyenPaymentMethodService : ExternalPaymentMethodService
     {
+        private const string WebHookContentKey = nameof(WebHookContentKey);
         private const string PaymentReferenceKey = "merchantReference";
+        private const string EventCodeKey = "eventCode";
 
         private readonly IAdyenClientFactory _clientFactory;
         private readonly IRepository<Payment> _paymentRepository;
         private readonly IAbsoluteUrlService _absoluteUrlService;
         private readonly ILoggingService _loggingService;
-        private string webHookContent;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
             IAdyenClientFactory clientFactory,
@@ -50,17 +51,23 @@ namespace Ucommerce.Transactions.Payments.Adyen
             var jsonObj = (JObject?)JsonConvert.DeserializeObject(contentJson);
             var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]
                 ?.Value<string>();
+            var eventCode = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[EventCodeKey]
+    ?.Value<string>();
 
-            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault() ??
-                   throw new NullReferenceException(
-                       $"Could not find a payment with ReferenceId: '{reference}'.");
+            if(string.IsNullOrWhiteSpace(reference) && eventCode == "REPORT_AVAILABLE")
+            {
+                _loggingService.Information<AdyenPaymentMethodService>("We received a report webhook");
+                HttpContext.Current.Response.Write("[accepted]");
+                HttpContext.Current.Response.End();
+            }
+            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault();
         }
 
         public override void ProcessCallback(Payment payment)
         {
+
             string hmacKey = payment.PaymentMethod.DynamicProperty<string>()?
                 .HmacKey ?? string.Empty;
-
             var hmacValidator = new HmacValidator();
             var notificationHandler = new NotificationHandler();
             var contentJson = ReadWebHookContent(HttpContext.Current.Request);
@@ -99,6 +106,8 @@ namespace Ucommerce.Transactions.Payments.Adyen
                     }
 
                     payment.Save();
+                    HttpContext.Current.Response.Write("[accepted]");
+                    HttpContext.Current.Response.End();
                     return;
                 }
 
@@ -152,7 +161,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
             };
 
             var checkout = _clientFactory.GetCheckout(paymentRequest.PaymentMethod);
-
             var result = checkout.PaymentLinks(adyenPaymentRequest);
 
             if (string.IsNullOrWhiteSpace(result.Url))
@@ -245,19 +253,13 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         private string ReadWebHookContent(HttpRequest httpRequest)
         {
-            if (!string.IsNullOrWhiteSpace(webHookContent)) return webHookContent;
+            if (HttpContext.Current.Items.Contains(WebHookContentKey)) return HttpContext.Current.Items[WebHookContentKey] as string;
 
             Stream inputStream = httpRequest.GetBufferedInputStream();
-            int length = Convert.ToInt32(inputStream.Length);
+            using var reader = new StreamReader(inputStream, Encoding.UTF8);
 
-            byte[] byteArr = new byte[length];
-            inputStream.Read(byteArr, 0, length);
-
-            var stringBuilder = new StringBuilder();
-            foreach (var b in byteArr)
-                stringBuilder.Append(char.ConvertFromUtf32(b));
-
-            webHookContent = stringBuilder.ToString();
+            var webHookContent = reader.ReadToEnd();
+            HttpContext.Current.Items.Add(WebHookContentKey, webHookContent);
             return webHookContent;
         }
     }
