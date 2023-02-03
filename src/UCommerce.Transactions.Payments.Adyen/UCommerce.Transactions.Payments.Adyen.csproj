@@ -135,9 +135,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdyenPaymentMethodService.cs" />
+    <Compile Include="EventHandlers\AuthorisationEventHandler.cs" />
+    <Compile Include="EventHandlers\CancellationEventHandler.cs" />
+    <Compile Include="EventHandlers\CancelOrRefundEventHandler.cs" />
+    <Compile Include="EventHandlers\CaptureEventHandler.cs" />
+    <Compile Include="EventHandlers\CaptureFailedEventHandler.cs" />
     <Compile Include="Extensions\DynamicEntityExtensions.cs" />
     <Compile Include="Factories\AdyenClientFactory.cs" />
     <Compile Include="Factories\IAdyenClientFactory.cs" />
+    <Compile Include="EventHandlers\IEventHandler.cs" />
     <Compile Include="Pipelines\Initialize\SetupAdyenPaymentMethodDefinitionTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -158,6 +164,5 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
 using Ucommerce.Transactions.Payments.Adyen.Factories;
 using Ucommerce.Web;
@@ -28,16 +29,18 @@ namespace Ucommerce.Transactions.Payments.Adyen
         private readonly IAdyenClientFactory _clientFactory;
         private readonly IRepository<Payment> _paymentRepository;
         private readonly IAbsoluteUrlService _absoluteUrlService;
+        private readonly IList<IEventHandler> _eventHandlers;
         private readonly ILoggingService _loggingService;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
             IAdyenClientFactory clientFactory,
-            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService)
+            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService, IList<IEventHandler> eventHandlers)
         {
-            _loggingService = loggingService;
+            _loggingService = loggingService ?? throw new ArgumentNullException(nameof(loggingService));
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
-            _paymentRepository = paymentRepository;
-            _absoluteUrlService = absoluteUrlService;
+            _paymentRepository = paymentRepository ?? throw new ArgumentNullException(nameof(paymentRepository));
+            _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
+            _eventHandlers = eventHandlers ?? throw new ArgumentNullException(nameof(eventHandlers));
         }
 
         /// <summary>
@@ -67,53 +70,35 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         public override void ProcessCallback(Payment payment)
         {
-
             string hmacKey = payment.PaymentMethod.DynamicProperty<string>()?
                 .HmacKey ?? string.Empty;
             var hmacValidator = new HmacValidator();
             var notificationHandler = new NotificationHandler();
             var contentJson = ReadWebHookContent(HttpContext.Current.Request);
-            var handleNotificationRequest = notificationHandler.HandleNotificationRequest(contentJson);
+            var notificationRequest = notificationHandler.HandleNotificationRequest(contentJson);
 
-            IList<NotificationRequestItemContainer> notificationRequestItemContainers =
-                handleNotificationRequest.NotificationItemContainers;
-            foreach (var notificationRequestItemContainer in notificationRequestItemContainers)
+            foreach (var notificationRequestItemContainer in notificationRequest.NotificationItemContainers)
             {
                 var notificationItem = notificationRequestItemContainer.NotificationItem;
-                // Handle the notification
-                if (hmacValidator.IsValidHmac(notificationItem, hmacKey))
+                if (!hmacValidator.IsValidHmac(notificationItem, hmacKey))
                 {
-                    // Process the notification based on the eventCode
-                    string eventCode = notificationItem.EventCode;
-
-                    // This notification is for a payment.
-                    if (notificationItem.Success)
-                    {
-                        var newPaymentStatus = eventCode == "AUTHORISATION"
-                            ? PaymentStatus.Get((int)PaymentStatusCode.Authorized)
-                            : eventCode == "CAPTURE"
-                                ? PaymentStatus.Get((int)PaymentStatusCode.Acquired)
-                                : null;
-
-                        if (newPaymentStatus != null)
-                        {
-                            payment.PaymentStatus = newPaymentStatus;
-                            payment.TransactionId = notificationItem.PspReference;
-                            ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
-                        }
-                    }
-                    else
-                    {
-                        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
-                    }
-
-                    payment.Save();
-                    SendAcceptHttpResponse();
-                    return;
+                    continue;
                 }
 
-                _loggingService.Information<AdyenPaymentMethodService>(
-                    $"Failed verifying HMAC key for {notificationItem.PspReference}.");
+                var handler = _eventHandlers.LastOrDefault(eh => eh.CanHandle(notificationItem.EventCode));
+                if (handler is null)
+                {
+                    _loggingService.Information<AdyenPaymentMethodService>(
+                        "An appropriate handler was not found."); //TODO);
+                    continue;
+                }
+
+                if (!notificationItem.Success)
+                {
+                    _loggingService.Information<AdyenPaymentMethodService>("besked"); //TODO
+                    continue;
+                }
+                handler.Handle(notificationItem, payment);
             }
         }
 
