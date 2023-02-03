@@ -266,8 +266,9 @@ namespace Ucommerce.Transactions.Payments.Adyen
         
         protected virtual void SendAcceptHttpResponse()
         {
-            HttpContext.Current.Response.Write("[accepted]");
-            HttpContext.Current.Response.End();
+            HttpContext.Current?.Response.Write("[accepted]");
+            HttpContext.Current?.Response.End();
         }
+
     }
 }
