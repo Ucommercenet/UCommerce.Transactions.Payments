@@ -1,0 +1,29 @@
+name: Compile
+
+on: [push]
+
+jobs:
+  Build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            7.x
+        
+      - name: Support longpaths
+        run: git config --system core.longpaths true
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Cache ~/.nuget/packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+
+      - name: Build Solution
+        run: ./build.ps1 compile --Configuration Release
