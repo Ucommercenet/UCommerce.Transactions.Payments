@@ -11,6 +11,7 @@ using Adyen.Notification;
 using Adyen.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NHibernate.Linq;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
@@ -32,12 +33,13 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
             IAdyenClientFactory clientFactory,
-            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService)
+            IRepository<Payment> paymentRepository,
+            IAbsoluteUrlService absoluteUrlService)
         {
-            _loggingService = loggingService;
+            _loggingService = loggingService ?? throw new ArgumentNullException(nameof(loggingService));
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
-            _paymentRepository = paymentRepository;
-            _absoluteUrlService = absoluteUrlService;
+            _paymentRepository = paymentRepository ?? throw new ArgumentNullException(nameof(paymentRepository));
+            _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
         }
 
         /// <summary>
@@ -48,28 +50,38 @@ namespace Ucommerce.Transactions.Payments.Adyen
         /// </summary>
         /// <param name="httpRequest"></param>
         /// <returns></returns>
-        public override Payment Extract(HttpRequest httpRequest)
+        public override Payment? Extract(HttpRequest httpRequest)
         {
             var contentJson = ReadWebHookContent(httpRequest);
+            if (contentJson == null || string.IsNullOrWhiteSpace(contentJson))
+            {
+                _loggingService.Information<AdyenPaymentMethodService>("We received a webhook without any content");
+                return null;
+            }
+            
             var jsonObj = (JObject?)JsonConvert.DeserializeObject(contentJson);
             var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]
                 ?.Value<string>();
             var eventCode = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[EventCodeKey]
     ?.Value<string>();
 
-            if(string.IsNullOrWhiteSpace(reference) && eventCode == "REPORT_AVAILABLE")
-            {
-                _loggingService.Information<AdyenPaymentMethodService>("We received a report webhook");
-                SendAcceptHttpResponse();
-            }
-            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault();
+            if (!string.IsNullOrWhiteSpace(reference) || eventCode != "REPORT_AVAILABLE")
+                return _paymentRepository.Select(x => x.ReferenceId == reference)
+                                         .Fetch(pa => pa.PurchaseOrder)
+                                         .FirstOrDefault();
+            
+            _loggingService.Information<AdyenPaymentMethodService>("We received a report webhook");
+            SendAcceptHttpResponse();
+            return null;
         }
 
         public override void ProcessCallback(Payment payment)
         {
-
             string hmacKey = payment.PaymentMethod.DynamicProperty<string>()?
-                .HmacKey ?? string.Empty;
+                                 .HmacKey ??
+                             payment.PaymentMethod.DynamicProperty<string>()?
+                                 .hmacKey ?? string.Empty;
+            
             var hmacValidator = new HmacValidator();
             var notificationHandler = new NotificationHandler();
             var contentJson = ReadWebHookContent(HttpContext.Current.Request);
@@ -137,12 +149,16 @@ namespace Ucommerce.Transactions.Payments.Adyen
             };
 
 
-            string merchantAccount = paymentRequest.PaymentMethod.DynamicProperty<string>()
-                ?
-                .MerchantAccount ?? string.Empty;
-            string returnUrl = _absoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()
-                ?
-                .ReturnUrl) ?? string.Empty;
+            string merchantAccount = paymentRequest.PaymentMethod.DynamicProperty<string>()?.MerchantAccount ?? string.Empty;
+            string returnUrl = _absoluteUrlService.GetAbsoluteUrl(paymentRequest.PaymentMethod.DynamicProperty<string>()?.ReturnUrl) ?? string.Empty;
+
+            var queryParams = GetReturnUrlQueryParams(paymentRequest.Payment);
+            var query = string.Join("&", queryParams.Select(param => $"{param.Key}={param.Value}")); 
+            var builder = new UriBuilder(returnUrl);
+            if (builder.Query.Length > 1)
+                builder.Query = builder.Query.Substring(1) + "&" + query; 
+            else
+                builder.Query = query;
 
             // Create a payment request
             var amount = new Amount(paymentRequest.PurchaseOrder.BillingCurrency.ISOCode,
@@ -151,7 +167,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
             var adyenPaymentRequest = new CreatePaymentLinkRequest(amount: amount, merchantAccount: merchantAccount,
                 reference: paymentRequest.Payment.ReferenceId)
             {
-                ReturnUrl = returnUrl,
+                ReturnUrl = builder.ToString(),
                 ShopperEmail = paymentRequest.PurchaseOrder.Customer?.EmailAddress,
                 ShopperReference = paymentRequest.PurchaseOrder.Customer?.Guid.ToString(),
                 ShopperName = new Name(paymentRequest.PurchaseOrder.BillingAddress?.FirstName,
@@ -198,6 +214,13 @@ namespace Ucommerce.Transactions.Payments.Adyen
             }
 
             return false;
+        }
+
+        protected virtual IDictionary<string, string> GetReturnUrlQueryParams(Payment payment)
+        {
+            var collection = new Dictionary<string, string>();
+            collection.Add("orderId", payment.PurchaseOrder.OrderGuid.ToString());
+            return collection;
         }
 
         protected override bool RefundPaymentInternal(Payment payment, out string status)
@@ -252,9 +275,12 @@ namespace Ucommerce.Transactions.Payments.Adyen
             return false;
         }
 
-        private string ReadWebHookContent(HttpRequest httpRequest)
+        protected virtual string? ReadWebHookContent(HttpRequest httpRequest)
         {
-            if (HttpContext.Current.Items.Contains(WebHookContentKey)) return HttpContext.Current.Items[WebHookContentKey] as string;
+            if (HttpContext.Current.Items.Contains(WebHookContentKey))
+            {
+                return HttpContext.Current.Items[WebHookContentKey] as string;
+            }
 
             Stream inputStream = httpRequest.GetBufferedInputStream();
             using var reader = new StreamReader(inputStream, Encoding.UTF8);
