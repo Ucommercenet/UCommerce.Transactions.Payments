@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NHibernate.Linq;
 using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
 using Ucommerce.Infrastructure.Logging;
 using Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
@@ -35,14 +36,13 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
             IAdyenClientFactory clientFactory,
-            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService,
-            IList<IEventHandler> eventHandlers)
+            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService)
         {
             _loggingService = loggingService ?? throw new ArgumentNullException(nameof(loggingService));
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
             _paymentRepository = paymentRepository ?? throw new ArgumentNullException(nameof(paymentRepository));
             _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
-            _eventHandlers = eventHandlers ?? throw new ArgumentNullException(nameof(eventHandlers));
+            _eventHandlers = ObjectFactory.Instance.ResolveAll<IEventHandler>();
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
                     _loggingService.Information<AdyenPaymentMethodService>("Request unsuccessful");
                     continue;
                 }
-
+                
                 handler.Handle(notificationItem, payment);
             }
         }
