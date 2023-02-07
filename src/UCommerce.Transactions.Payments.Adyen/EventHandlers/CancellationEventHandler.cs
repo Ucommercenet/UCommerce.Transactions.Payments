@@ -7,11 +7,18 @@ public class CancellationEventHandler: IEventHandler
 {
     public bool CanHandle(string eventCode)
     {
-        throw new System.NotImplementedException();
+        if (eventCode == "CANCELLATION")
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        throw new System.NotImplementedException();
+        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Cancelled);
+        payment.TransactionId = notification.PspReference;
+        payment.Save();
     }
 }

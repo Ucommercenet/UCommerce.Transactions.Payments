@@ -3,11 +3,11 @@ using Ucommerce.EntitiesV2;
 
 namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 
-public class CaptureEventHandler: IEventHandler
+public class RefundEventHandler: IEventHandler
 {
     public bool CanHandle(string eventCode)
     {
-        if (eventCode == "CAPTURE")
+        if (eventCode == "REFUND")
         {
             return true;
         }
@@ -17,7 +17,7 @@ public class CaptureEventHandler: IEventHandler
 
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Acquired);
+        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Refunded);
         payment.TransactionId = notification.PspReference;
         payment.Save();
     }

@@ -140,6 +140,7 @@
     <Compile Include="EventHandlers\CancelOrRefundEventHandler.cs" />
     <Compile Include="EventHandlers\CaptureEventHandler.cs" />
     <Compile Include="EventHandlers\CaptureFailedEventHandler.cs" />
+    <Compile Include="EventHandlers\RefundEventHandler.cs" />
     <Compile Include="Extensions\DynamicEntityExtensions.cs" />
     <Compile Include="Factories\AdyenClientFactory.cs" />
     <Compile Include="Factories\IAdyenClientFactory.cs" />
