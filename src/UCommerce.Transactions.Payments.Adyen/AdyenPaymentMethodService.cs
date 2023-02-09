@@ -36,13 +36,15 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
             IAdyenClientFactory clientFactory,
-            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService)
+            IRepository<Payment> paymentRepository,
+            IAbsoluteUrlService absoluteUrlService,
+            IEventHandler[] eventHandlers)
         {
             _loggingService = loggingService ?? throw new ArgumentNullException(nameof(loggingService));
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
             _paymentRepository = paymentRepository ?? throw new ArgumentNullException(nameof(paymentRepository));
             _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
-            _eventHandlers = ObjectFactory.Instance.ResolveAll<IEventHandler>();
+            _eventHandlers = eventHandlers ?? throw new ArgumentNullException(nameof(eventHandlers));
         }
 
         /// <summary>
@@ -89,6 +91,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
                 var notificationItem = notificationRequestItemContainer.NotificationItem;
                 if (!hmacValidator.IsValidHmac(notificationItem, hmacKey))
                 {
+                    _loggingService.Information<AdyenPaymentMethodService>("The provided HMAC key is not valid.");
                     continue;
                 }
 
@@ -106,9 +109,11 @@ namespace Ucommerce.Transactions.Payments.Adyen
                     _loggingService.Information<AdyenPaymentMethodService>("Request unsuccessful");
                     continue;
                 }
-                
+
                 handler.Handle(notificationItem, payment);
             }
+
+            SendAcceptHttpResponse();
         }
 
         public override string RenderPage(PaymentRequest paymentRequest)

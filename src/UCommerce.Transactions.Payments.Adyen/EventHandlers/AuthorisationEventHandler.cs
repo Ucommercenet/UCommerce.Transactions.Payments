@@ -23,7 +23,7 @@ public class AuthorisationEventHandler : IEventHandler
         payment.TransactionId = notification.PspReference;
         payment.Save();
 
-        if (string.IsNullOrWhiteSpace(payment.PaymentMethod.Pipeline))
+        if (!string.IsNullOrWhiteSpace(payment.PaymentMethod.Pipeline))
         {
             var factory = PipelineFactory.Create<PurchaseOrder>(payment.PaymentMethod.Pipeline)
                 .Execute(payment.PurchaseOrder);
