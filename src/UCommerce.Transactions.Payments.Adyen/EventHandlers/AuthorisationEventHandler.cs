@@ -1,3 +1,4 @@
+using System;
 using Adyen.Model.Notification;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Pipelines;
@@ -5,11 +6,22 @@ using Ucommerce.Transactions.Payments;
 
 namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 
+/// <summary>
+/// EventHandler for Authorisation events.
+/// </summary>
 public class AuthorisationEventHandler : IEventHandler
 {
+    private readonly IRepository<PaymentStatus> _paymentStatusRepository;
+
+    public AuthorisationEventHandler(IRepository<PaymentStatus> paymentStatusRepository)
+    {
+        _paymentStatusRepository = paymentStatusRepository;
+    }
+
+    /// <inheritdoc />
     public bool CanHandle(string eventCode)
     {
-        if (eventCode == "AUTHORISATION")
+        if (eventCode == EventCodes.Authorisation)
         {
             return true;
         }
@@ -17,9 +29,10 @@ public class AuthorisationEventHandler : IEventHandler
         return false;
     }
 
+    /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Authorized);
+        payment.PaymentStatus = _paymentStatusRepository.SingleOrDefault(status => status.Name == "Authorized");
         payment.TransactionId = notification.PspReference;
         payment.Save();
 

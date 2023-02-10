@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdyenPaymentMethodService.cs" />
+    <Compile Include="EventCodes.cs" />
     <Compile Include="EventHandlers\AuthorisationEventHandler.cs" />
     <Compile Include="EventHandlers\CancellationEventHandler.cs" />
     <Compile Include="EventHandlers\CancelOrRefundEventHandler.cs" />

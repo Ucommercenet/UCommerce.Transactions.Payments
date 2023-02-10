@@ -3,11 +3,15 @@ using Ucommerce.EntitiesV2;
 
 namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 
+/// <summary>
+/// EventHandler for Refund events.
+/// </summary>
 public class RefundEventHandler: IEventHandler
 {
+    /// <inheritdoc />
     public bool CanHandle(string eventCode)
     {
-        if (eventCode == "REFUND")
+        if (eventCode == EventCodes.Refund)
         {
             return true;
         }
@@ -15,6 +19,7 @@ public class RefundEventHandler: IEventHandler
         return false;
     }
 
+    /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
         payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Refunded);

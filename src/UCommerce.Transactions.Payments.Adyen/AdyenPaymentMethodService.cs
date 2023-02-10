@@ -64,7 +64,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
             var eventCode = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[EventCodeKey]
                 ?.Value<string>();
 
-            if (string.IsNullOrWhiteSpace(reference) && eventCode == "REPORT_AVAILABLE")
+            if (string.IsNullOrWhiteSpace(reference) && eventCode == EventCodes.ReportAvailable)
             {
                 _loggingService.Information<AdyenPaymentMethodService>("We received a report webhook");
                 SendAcceptHttpResponse();
@@ -77,6 +77,10 @@ namespace Ucommerce.Transactions.Payments.Adyen
                 .FirstOrDefault();
         }
 
+        /// <summary>
+        /// Performs data validation on a Payment received from the <see cref="Extract"/> method. Assigns the webhook event to one of the <see cref="IEventHandler"/> handlers.
+        /// Sends a response to the PSP containing an accept message.
+        /// </summary>
         public override void ProcessCallback(Payment payment)
         {
             string hmacKey = payment.PaymentMethod.DynamicProperty<string>()?
@@ -100,7 +104,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
                 {
                     _loggingService.Information<AdyenPaymentMethodService>(
                         $"An appropriate handler for ${notificationItem.EventCode}] was not found.");
-                    ;
                     continue;
                 }
 

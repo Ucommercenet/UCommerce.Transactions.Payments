@@ -4,11 +4,15 @@ using Ucommerce.EntitiesV2;
 
 namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 
-public class CancelOrRefundEventHandler: IEventHandler
+/// <summary>
+/// EventHandler for CancelOrRefund events.
+/// </summary>
+public class CancelOrRefundEventHandler : IEventHandler
 {
+    /// <inheritdoc />
     public bool CanHandle(string eventCode)
     {
-        if (eventCode == "CANCEL_OR_REFUND")
+        if (eventCode == EventCodes.CancelOrRefund)
         {
             return true;
         }
@@ -16,15 +20,16 @@ public class CancelOrRefundEventHandler: IEventHandler
         return false;
     }
 
-    
+
+    /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
         payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Cancelled);
-        var notificationType = "refund";
-        if(notification.AdditionalData.TryGetValue("modification.action",out notificationType))
+        if (notification.AdditionalData.TryGetValue("modification.action", out var notificationType))
         {
             payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Refunded);
         }
+
         payment.TransactionId = notification.PspReference;
         payment.Save();
     }
