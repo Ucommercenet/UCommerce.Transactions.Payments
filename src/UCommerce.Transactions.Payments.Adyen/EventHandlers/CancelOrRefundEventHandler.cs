@@ -1,6 +1,7 @@
 using System;
 using Adyen.Model.Notification;
 using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure.Logging;
 
 namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 
@@ -9,6 +10,16 @@ namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 /// </summary>
 public class CancelOrRefundEventHandler : IEventHandler
 {
+    private readonly IRepository<PaymentStatus> _paymentStatusRepository;
+    private readonly ILoggingService _loggingService;
+
+    public CancelOrRefundEventHandler(IRepository<PaymentStatus> paymentStatusRepository,
+        ILoggingService loggingService)
+    {
+        _paymentStatusRepository = paymentStatusRepository;
+        _loggingService = loggingService;
+    }
+
     /// <inheritdoc />
     public bool CanHandle(string eventCode)
     {
@@ -24,13 +35,22 @@ public class CancelOrRefundEventHandler : IEventHandler
     /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Cancelled);
         if (notification.AdditionalData.TryGetValue("modification.action", out var notificationType))
         {
-            payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Refunded);
+            payment.PaymentStatus =
+                _paymentStatusRepository.SingleOrDefault(status => status.PaymentStatusId == (int)PaymentStatusCode.Cancelled);
+            if (notificationType == "refund")
+            {
+                payment.PaymentStatus =
+                    _paymentStatusRepository.SingleOrDefault(status => status.PaymentStatusId == (int)PaymentStatusCode.Refunded);
+            }
+
+            payment.TransactionId = notification.PspReference;
+            payment.Save();
+            return;
         }
 
-        payment.TransactionId = notification.PspReference;
-        payment.Save();
+        _loggingService.Information<AdyenPaymentMethodService>(
+            "Ucommerce could not determine whether the request was a cancellation or a refund. Payment has not been updated.");
     }
 }

@@ -12,7 +12,9 @@ namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 public class AuthorisationEventHandler : IEventHandler
 {
     private readonly IRepository<PaymentStatus> _paymentStatusRepository;
-
+    /// <summary>
+    /// CTOR for AuthorisationEventHandler
+    /// </summary>
     public AuthorisationEventHandler(IRepository<PaymentStatus> paymentStatusRepository)
     {
         _paymentStatusRepository = paymentStatusRepository;
@@ -32,7 +34,7 @@ public class AuthorisationEventHandler : IEventHandler
     /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        payment.PaymentStatus = _paymentStatusRepository.SingleOrDefault(status => status.Name == "Authorized");
+        payment.PaymentStatus = _paymentStatusRepository.SingleOrDefault(status => status.PaymentStatusId == (int)PaymentStatusCode.Authorized);
         payment.TransactionId = notification.PspReference;
         payment.Save();
 
@@ -42,7 +44,7 @@ public class AuthorisationEventHandler : IEventHandler
                 .Execute(payment.PurchaseOrder);
             if (factory != PipelineExecutionResult.Success)
             {
-                throw new PipelineException("Ucommerce was not able to succesfully run the checkout pipeline.");
+                throw new PipelineException("Ucommerce was not able to successfully run the checkout pipeline.");
             }
         }
     }

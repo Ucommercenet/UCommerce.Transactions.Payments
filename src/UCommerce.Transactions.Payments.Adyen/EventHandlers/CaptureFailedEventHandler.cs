@@ -8,6 +8,17 @@ namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 /// </summary>
 public class CaptureFailedEventHandler: IEventHandler
 {
+    
+    private readonly IRepository<PaymentStatus> _paymentStatusRepository;
+
+    /// <summary>
+    /// CTOR for CaptureFailedEventHandler
+    /// </summary>
+    public CaptureFailedEventHandler(IRepository<PaymentStatus> paymentStatusRepository)
+    {
+        _paymentStatusRepository = paymentStatusRepository;
+    }
+
     /// <inheritdoc />
     public bool CanHandle(string eventCode)
     {
@@ -22,7 +33,7 @@ public class CaptureFailedEventHandler: IEventHandler
     /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.AcquireFailed);
+        payment.PaymentStatus = _paymentStatusRepository.SingleOrDefault(status => status.PaymentStatusId == (int)PaymentStatusCode.AcquireFailed);
         payment.TransactionId = notification.PspReference;
         payment.Save();
     }

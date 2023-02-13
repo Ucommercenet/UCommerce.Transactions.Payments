@@ -6,8 +6,18 @@ namespace Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 /// <summary>
 /// EventHandler for Refund events.
 /// </summary>
-public class RefundEventHandler: IEventHandler
+public class RefundEventHandler : IEventHandler
+
 {
+    private readonly IRepository<PaymentStatus> _paymentStatusRepository;
+    /// <summary>
+    /// CTOR for RefundEventHandler
+    /// </summary>
+    public RefundEventHandler(IRepository<PaymentStatus> paymentStatusRepository)
+    {
+        _paymentStatusRepository = paymentStatusRepository;
+    }
+
     /// <inheritdoc />
     public bool CanHandle(string eventCode)
     {
@@ -22,7 +32,7 @@ public class RefundEventHandler: IEventHandler
     /// <inheritdoc />
     public void Handle(NotificationRequestItem notification, Payment payment)
     {
-        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Refunded);
+        payment.PaymentStatus = _paymentStatusRepository.SingleOrDefault(status => status.PaymentStatusId == (int)PaymentStatusCode.Refunded);
         payment.TransactionId = notification.PspReference;
         payment.Save();
     }
