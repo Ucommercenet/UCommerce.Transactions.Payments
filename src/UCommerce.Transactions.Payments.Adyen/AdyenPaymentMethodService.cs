@@ -95,7 +95,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
                 var notificationItem = notificationRequestItemContainer.NotificationItem;
                 if (!hmacValidator.IsValidHmac(notificationItem, hmacKey))
                 {
-                    _loggingService.Information<AdyenPaymentMethodService>("The provided HMAC key is not valid.");
+                    _loggingService.Information<AdyenPaymentMethodService>("The provided HMAC key for {notificationItem} is not valid.", notificationItem);
                     continue;
                 }
 
@@ -103,7 +103,7 @@ namespace Ucommerce.Transactions.Payments.Adyen
                 if (handler is null)
                 {
                     _loggingService.Information<AdyenPaymentMethodService>(
-                        $"An appropriate handler for ${notificationItem.EventCode}] was not found.");
+                        "An appropriate handler for {EVENT_CODE} was not found.", notificationItem.EventCode);
                     continue;
                 }
 

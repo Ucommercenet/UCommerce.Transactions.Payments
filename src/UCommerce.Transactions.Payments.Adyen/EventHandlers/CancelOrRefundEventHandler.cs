@@ -51,6 +51,6 @@ public class CancelOrRefundEventHandler : IEventHandler
         }
 
         _loggingService.Information<AdyenPaymentMethodService>(
-            "Ucommerce could not determine whether the request was a cancellation or a refund. Payment has not been updated.");
+            "Ucommerce could not determine whether the {Notification_Request} was a cancellation or a refund. Payment has not been updated.", notification);
     }
 }
