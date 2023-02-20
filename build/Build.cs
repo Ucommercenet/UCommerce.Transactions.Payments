@@ -99,6 +99,12 @@ partial class Build : NukeBuild
                     CopyFileToDirectory(
                         project.GetOutputDir(configuration) / "paypal_base.dll", outputDirectory / "bin");
                 }},
+                {"Adyen", (outputDirectory, configuration) =>
+                {
+                    var project = Solution.GetProject("Ucommerce.Transactions.Payments.Adyen");
+                    CopyFileToDirectory(
+                        project.GetOutputDir(configuration) / "Adyen.dll", outputDirectory / "bin");
+                }},
                 {"Braintree", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Braintree");
