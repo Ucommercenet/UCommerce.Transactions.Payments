@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Ucommerce.EntitiesV2;
 using Ucommerce.Transactions.Payments.Common;
@@ -99,7 +99,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
                        .GetAwaiter()
                        .GetResult();
 
-            return JsonSerializer.Deserialize<CreatePaymentLinkResponse>(url).Url;
+            return JsonConvert.DeserializeObject<CreatePaymentLinkResponse>(url).Url;
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
                                .GetAwaiter()
                                .GetResult();
 
-            return JsonSerializer.Deserialize<T>(contentStr);
+            return JsonConvert.DeserializeObject<T>(contentStr);
         }
         #endregion
     }

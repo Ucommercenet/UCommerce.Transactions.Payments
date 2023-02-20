@@ -1,25 +1,25 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Ucommerce.Transactions.Payments.QuickpayLink.Models
 {
     internal class PaymentModel
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonPropertyName("accepted")]
+        [JsonProperty("accepted")]
         public bool Accepted { get; set; }
 
-        [JsonPropertyName("state")]
+        [JsonProperty("state")]
         public string State { get; set; }
 
-        [JsonPropertyName("operations")]
+        [JsonProperty("operations")]
         public Operation[] Operations { get; set; }
     }
 
     internal class Operation
     {
-        [JsonPropertyName("type")]
+        [JsonProperty("type")]
         public string Type { get; set; }
     }
 }

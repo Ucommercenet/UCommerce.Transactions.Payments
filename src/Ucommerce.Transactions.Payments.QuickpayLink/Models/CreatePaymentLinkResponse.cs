@@ -1,10 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Ucommerce.Transactions.Payments.QuickpayLink.Models
 {
     internal class CreatePaymentLinkResponse
     {
-        [JsonPropertyName("url")]
+        [JsonProperty("url")]
         public string Url { get; set; }
     }
 }
