@@ -10,6 +10,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
     public class QuickpayPaymentMethodService : ExternalPaymentMethodService
     {
         private string ApiKey(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().ApiKey;
+        private string AcceptUrl(PaymentMethod paymentMethod) => paymentMethod?.DynamicProperty<string>().AcceptUrl;
         private string CallbackUrl(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().CallbackUrl;
         private string CancelUrl(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().CancelUrl;
         private string PaymentMethods(PaymentMethod paymentMethod) => paymentMethod.DynamicProperty<string>().PaymentMethods;
@@ -26,7 +27,6 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
         public override Payment RequestPayment(PaymentRequest paymentRequest)
         {
             var orderPayment = paymentRequest.Payment;
-            var callbackUrl = _callback.GetCallbackUrl(CallbackUrl(paymentRequest.PaymentMethod), orderPayment);
             var quickpayClient = new QuickpayServiceClient(ApiKey(paymentRequest.PaymentMethod));
 
             // Create payment
@@ -36,7 +36,8 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
             var paymentLink = quickpayClient.CreatePaymentLink(new Models.CreatePaymentLinkParams()
             {
                 Id = paymentDto.Id,
-                AcceptUrl = callbackUrl,
+                AcceptUrl = AcceptUrl(paymentRequest.PaymentMethod),
+                CallBackUrl = _callback.GetCallbackUrl(CallbackUrl(paymentRequest.PaymentMethod), orderPayment),
                 CancelUrl = CancelUrl(paymentRequest.PaymentMethod),
                 Amount = Convert.ToInt32(paymentRequest.Amount.Value.ToCents()),
                 PaymentMethods = PaymentMethods(paymentRequest.PaymentMethod)

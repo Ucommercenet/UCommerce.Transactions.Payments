@@ -79,6 +79,7 @@ namespace Ucommerce.Transactions.Payments.QuickpayLink
             {
                 new KeyValuePair<string, string>("amount", requestParams.Amount.ToString()),
                 new KeyValuePair<string, string>("continue_url", requestParams.AcceptUrl),
+                new KeyValuePair<string, string>("callback_url", requestParams.CallBackUrl),
                 new KeyValuePair<string, string>("cancel_url", requestParams.CancelUrl),
                 new KeyValuePair<string, string>("payment_methods", requestParams.PaymentMethods)
             });

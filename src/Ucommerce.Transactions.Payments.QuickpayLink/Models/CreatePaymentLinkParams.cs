@@ -23,6 +23,11 @@
         public string CancelUrl { get; set; }
 
         /// <summary>
+        /// Endpoint url for async callback.
+        /// </summary>
+        public string CallBackUrl { get; set; }
+
+        /// <summary>
         /// Allowed payment methods.
         /// </summary>
         public string PaymentMethods { get; set; }
