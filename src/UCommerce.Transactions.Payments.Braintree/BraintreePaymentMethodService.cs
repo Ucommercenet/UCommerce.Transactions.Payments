@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Threading;
@@ -43,7 +44,7 @@ namespace Ucommerce.Transactions.Payments.Braintree
 		    BraintreePageBuilder = braintreePageBuilder;
 	    }
 
-	    /// <summary>
+        /// <summary>
         /// Renders the page with the information needed by the payment provider.
         /// </summary>
         /// <remarks>

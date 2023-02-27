@@ -11,8 +11,11 @@ using Adyen.Notification;
 using Adyen.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NHibernate.Linq;
 using Ucommerce.EntitiesV2;
+using Ucommerce.Infrastructure;
 using Ucommerce.Infrastructure.Logging;
+using Ucommerce.Transactions.Payments.Adyen.EventHandlers;
 using Ucommerce.Transactions.Payments.Adyen.Extensions;
 using Ucommerce.Transactions.Payments.Adyen.Factories;
 using Ucommerce.Web;
@@ -21,90 +24,99 @@ namespace Ucommerce.Transactions.Payments.Adyen
 {
     public class AdyenPaymentMethodService : ExternalPaymentMethodService
     {
+        private const string WebHookContentKey = nameof(WebHookContentKey);
         private const string PaymentReferenceKey = "merchantReference";
+        private const string EventCodeKey = "eventCode";
 
         private readonly IAdyenClientFactory _clientFactory;
         private readonly IRepository<Payment> _paymentRepository;
         private readonly IAbsoluteUrlService _absoluteUrlService;
+        private readonly IList<IEventHandler> _eventHandlers;
         private readonly ILoggingService _loggingService;
-        private string webHookContent;
 
         public AdyenPaymentMethodService(ILoggingService loggingService,
             IAdyenClientFactory clientFactory,
-            IRepository<Payment> paymentRepository, IAbsoluteUrlService absoluteUrlService)
+            IRepository<Payment> paymentRepository,
+            IAbsoluteUrlService absoluteUrlService,
+            IEventHandler[] eventHandlers)
         {
-            _loggingService = loggingService;
+            _loggingService = loggingService ?? throw new ArgumentNullException(nameof(loggingService));
             _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
-            _paymentRepository = paymentRepository;
-            _absoluteUrlService = absoluteUrlService;
+            _paymentRepository = paymentRepository ?? throw new ArgumentNullException(nameof(paymentRepository));
+            _absoluteUrlService = absoluteUrlService ?? throw new ArgumentNullException(nameof(absoluteUrlService));
+            _eventHandlers = eventHandlers ?? throw new ArgumentNullException(nameof(eventHandlers));
         }
 
         /// <summary>
         /// Extracts payment from request using the default payment gateway callback extractor.
+        /// Adyen expects a response acknowledging that we have received and accepted the request. Uses HttpContext to provide that response for Adyen.
+        /// In special cases a request from Adyen will not contain a reference Id, and will therefore not be a valid <see cref="Payment"/> object.
+        /// We need to send the accepted response before the special request reaches our ProcessCallback and returns a http 500 response to Adyen.
         /// </summary>
         /// <param name="httpRequest"></param>
         /// <returns></returns>
-        public override Payment Extract(HttpRequest httpRequest)
+        public override Payment? Extract(HttpRequest httpRequest)
         {
             var contentJson = ReadWebHookContent(httpRequest);
             var jsonObj = (JObject?)JsonConvert.DeserializeObject(contentJson);
             var reference = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[PaymentReferenceKey]
                 ?.Value<string>();
+            var eventCode = jsonObj?["notificationItems"]?[0]?["NotificationRequestItem"]?[EventCodeKey]
+                ?.Value<string>();
 
-            return _paymentRepository.Select(x => x.ReferenceId == reference).FirstOrDefault() ??
-                   throw new NullReferenceException(
-                       $"Could not find a payment with ReferenceId: '{reference}'.");
+            if (string.IsNullOrWhiteSpace(reference) && eventCode == EventCodes.ReportAvailable)
+            {
+                _loggingService.Information<AdyenPaymentMethodService>("We received a report webhook");
+                SendAcceptHttpResponse();
+            }
+
+            return _paymentRepository.Select(x => x.ReferenceId == reference)
+                .Fetch(x => x.PurchaseOrder)
+                .Fetch(x => x.PaymentMethod)
+                .Fetch(x => x.PaymentStatus)
+                .FirstOrDefault();
         }
 
+        /// <summary>
+        /// Performs data validation on a Payment received from the <see cref="Extract"/> method. Assigns the webhook event to one of the <see cref="IEventHandler"/> handlers.
+        /// Sends a response to the PSP containing an accept message.
+        /// </summary>
         public override void ProcessCallback(Payment payment)
         {
             string hmacKey = payment.PaymentMethod.DynamicProperty<string>()?
-                .HmacKey ?? string.Empty;
-
+                .HmacKey ?? payment.PaymentMethod.DynamicProperty<string>()?.hmacKey ?? string.Empty;
             var hmacValidator = new HmacValidator();
             var notificationHandler = new NotificationHandler();
             var contentJson = ReadWebHookContent(HttpContext.Current.Request);
-            var handleNotificationRequest = notificationHandler.HandleNotificationRequest(contentJson);
+            var notificationRequest = notificationHandler.HandleNotificationRequest(contentJson);
 
-            IList<NotificationRequestItemContainer> notificationRequestItemContainers =
-                handleNotificationRequest.NotificationItemContainers;
-            foreach (var notificationRequestItemContainer in notificationRequestItemContainers)
+            foreach (var notificationRequestItemContainer in notificationRequest.NotificationItemContainers)
             {
                 var notificationItem = notificationRequestItemContainer.NotificationItem;
-                // Handle the notification
-                if (hmacValidator.IsValidHmac(notificationItem, hmacKey))
+                if (!hmacValidator.IsValidHmac(notificationItem, hmacKey))
                 {
-                    // Process the notification based on the eventCode
-                    string eventCode = notificationItem.EventCode;
-
-                    // This notification is for a payment.
-                    if (notificationItem.Success)
-                    {
-                        var newPaymentStatus = eventCode == "AUTHORISATION"
-                            ? PaymentStatus.Get((int)PaymentStatusCode.Authorized)
-                            : eventCode == "CAPTURE"
-                                ? PaymentStatus.Get((int)PaymentStatusCode.Acquired)
-                                : null;
-
-                        if (newPaymentStatus != null)
-                        {
-                            payment.PaymentStatus = newPaymentStatus;
-                            payment.TransactionId = notificationItem.PspReference;
-                            ProcessPaymentRequest(new PaymentRequest(payment.PurchaseOrder, payment));
-                        }
-                    }
-                    else
-                    {
-                        payment.PaymentStatus = PaymentStatus.Get((int)PaymentStatusCode.Declined);
-                    }
-
-                    payment.Save();
-                    return;
+                    _loggingService.Information<AdyenPaymentMethodService>("The provided HMAC key for {notificationItem} is not valid.", notificationItem);
+                    continue;
                 }
 
-                _loggingService.Information<AdyenPaymentMethodService>(
-                    $"Failed verifying HMAC key for {notificationItem.PspReference}.");
+                var handler = _eventHandlers.LastOrDefault(eh => eh.CanHandle(notificationItem.EventCode));
+                if (handler is null)
+                {
+                    _loggingService.Information<AdyenPaymentMethodService>(
+                        "An appropriate handler for {EVENT_CODE} was not found.", notificationItem.EventCode);
+                    continue;
+                }
+
+                if (!notificationItem.Success)
+                {
+                    _loggingService.Information<AdyenPaymentMethodService>("Request unsuccessful");
+                    continue;
+                }
+
+                handler.Handle(notificationItem, payment);
             }
+
+            SendAcceptHttpResponse();
         }
 
         public override string RenderPage(PaymentRequest paymentRequest)
@@ -152,7 +164,6 @@ namespace Ucommerce.Transactions.Payments.Adyen
             };
 
             var checkout = _clientFactory.GetCheckout(paymentRequest.PaymentMethod);
-
             var result = checkout.PaymentLinks(adyenPaymentRequest);
 
             if (string.IsNullOrWhiteSpace(result.Url))
@@ -245,20 +256,21 @@ namespace Ucommerce.Transactions.Payments.Adyen
 
         private string ReadWebHookContent(HttpRequest httpRequest)
         {
-            if (!string.IsNullOrWhiteSpace(webHookContent)) return webHookContent;
+            if (HttpContext.Current.Items.Contains(WebHookContentKey))
+                return HttpContext.Current.Items[WebHookContentKey] as string;
 
             Stream inputStream = httpRequest.GetBufferedInputStream();
-            int length = Convert.ToInt32(inputStream.Length);
+            using var reader = new StreamReader(inputStream, Encoding.UTF8);
 
-            byte[] byteArr = new byte[length];
-            inputStream.Read(byteArr, 0, length);
-
-            var stringBuilder = new StringBuilder();
-            foreach (var b in byteArr)
-                stringBuilder.Append(char.ConvertFromUtf32(b));
-
-            webHookContent = stringBuilder.ToString();
+            var webHookContent = reader.ReadToEnd();
+            HttpContext.Current.Items.Add(WebHookContentKey, webHookContent);
             return webHookContent;
+        }
+
+        protected virtual void SendAcceptHttpResponse()
+        {
+            HttpContext.Current?.Response.Write("[accepted]");
+            HttpContext.Current?.Response.End();
         }
     }
 }
