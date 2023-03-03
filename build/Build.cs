@@ -20,8 +20,7 @@ partial class Build : NukeBuild
     ///   - JetBrains Rider            https://nuke.build/rider
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
-
-    public static int Main () => Execute<Build>(x => x.Compile);
+    public static int Main() => Execute<Build>(x => x.Compile);
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
@@ -37,6 +36,7 @@ partial class Build : NukeBuild
         get => UcommerceNugetSourceField ?? ArtifactsDirectory;
         set => UcommerceNugetSourceField = value;
     }
+
     AbsolutePath UcommerceNugetSourceField;
 
     // ReSharper disable once UnusedMember.Local
@@ -67,7 +67,7 @@ partial class Build : NukeBuild
         {
             NuGetTasks.NuGet($"update {Solution.Path} -Id Ucommerce.Core -source {UcommerceNugetSource} -Prerelease");
         });
-    
+
     Target Compile => _ => _
         .Description("Compiles the solution")
         .DependsOn(Restore)
@@ -82,6 +82,7 @@ partial class Build : NukeBuild
         });
 
     AbsolutePath TempWorkDir => TemporaryDirectory / "dist";
+
     Target GatherFiles => _ => _
         .Description("Gathers payment providers to a local folder for use by package and deploy targets")
         .DependsOn(Compile)
@@ -89,38 +90,61 @@ partial class Build : NukeBuild
         .Executes(() =>
         {
             EnsureCleanDirectory(TempWorkDir);
-            
+
             // Some projects have extra files that need to be copied to output apart from the project dll and the configs. 
             var projectExtraFilesHook = new Dictionary<string, Action<AbsolutePath, Configuration>>()
             {
-                {"PayPal", (outputDirectory, configuration) =>
                 {
-                    var project = Solution.GetProject("Ucommerce.Transactions.Payments.PayPal");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "paypal_base.dll", outputDirectory / "bin");
-                }},
-                {"Braintree", (outputDirectory, configuration) =>
+                    "PayPal", (outputDirectory, configuration) =>
+                    {
+                        var project = Solution.GetProject("Ucommerce.Transactions.Payments.PayPal");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "paypal_base.dll", outputDirectory / "bin");
+                    }
+                },
                 {
-                    var project = Solution.GetProject("Ucommerce.Transactions.Payments.Braintree");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Braintree.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Newtonsoft.Json.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.Directory / "BraintreePaymentForm.htm", outputDirectory);
-                }},
-                {"Stripe", (outputDirectory, configuration) =>
+                    "Adyen", (outputDirectory, configuration) =>
+                    {
+                        var project = Solution.GetProject("Ucommerce.Transactions.Payments.Adyen");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "Adyen.dll", outputDirectory / "bin");
+                    }
+                },
                 {
-                    var project = Solution.GetProject("Ucommerce.Transactions.Payments.Stripe");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Stripe.net.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Microsoft.Bcl.AsyncInterfaces.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.Directory / "StripePaymentForm.htm", outputDirectory);
-                }}
+                    "QuickpayLink", (outputDirectory, configuration) =>
+                    {
+                        var project = Solution.GetProject("Ucommerce.Transactions.Payments.QuickpayLink");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "Newtonsoft.Json.dll", outputDirectory / "bin");
+                    }
+                },
+                {
+                    "Braintree", (outputDirectory, configuration) =>
+                    {
+                        var project = Solution.GetProject("Ucommerce.Transactions.Payments.Braintree");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "Braintree.dll", outputDirectory / "bin");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "Newtonsoft.Json.dll", outputDirectory / "bin");
+                        CopyFileToDirectory(
+                            project.Directory / "BraintreePaymentForm.htm", outputDirectory);
+                    }
+                },
+                {
+                    "Stripe", (outputDirectory, configuration) =>
+                    {
+                        var project = Solution.GetProject("Ucommerce.Transactions.Payments.Stripe");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "Stripe.net.dll", outputDirectory / "bin");
+                        CopyFileToDirectory(
+                            project.GetOutputDir(configuration) / "Microsoft.Bcl.AsyncInterfaces.dll",
+                            outputDirectory / "bin");
+                        CopyFileToDirectory(
+                            project.Directory / "StripePaymentForm.htm", outputDirectory);
+                    }
+                }
             };
-            
+
             Solution
                 .GetProjects("Ucommerce.Transactions.Payments.*")
                 .Where(project => project.Name != "Ucommerce.Transactions.Payments.Test")
@@ -129,7 +153,8 @@ partial class Build : NukeBuild
                     var outputDir = project.GetOutputDir(Configuration);
                     var providerName = project.Name.Split(".").Last();
                     CopyFileToDirectory(outputDir / $"{project.Name}.dll", TempWorkDir / providerName / "bin");
-                    CopyDirectoryRecursively(project.Directory / "Configuration", TempWorkDir / providerName / "Configuration");
+                    CopyDirectoryRecursively(project.Directory / "Configuration",
+                        TempWorkDir / providerName / "Configuration");
                     if (projectExtraFilesHook.ContainsKey(providerName))
                     {
                         projectExtraFilesHook[providerName].Invoke(TempWorkDir / providerName, Configuration);
@@ -148,7 +173,7 @@ partial class Build : NukeBuild
         });
 
     [Parameter] AbsolutePath DeployDirectory;
-    
+
     // ReSharper disable once UnusedMember.Local
     Target DeployToLocal => _ => _
         .Description("Deploys to a local folder like a website")

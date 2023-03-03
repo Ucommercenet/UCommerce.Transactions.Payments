@@ -76,6 +76,13 @@ function Run-It () {
 			Copy-Item "$projectPath\StripePaymentForm.htm" -Destination "$TargetPath\$element" -Force
 		}
 
+		# DLL Dependency necessary for Adyen
+		if($element -eq "Adyen"){
+			Copy-Item "$projectPath\bin\$Configuration\Adyen.dll" -Destination "$TargetPath\$element\bin" -Force
+			Copy-Item "$projectPath\bin\$Configuration\Newtonsoft.Json.dll" -Destination "$TargetPath\$element\bin" -Force
+			Copy-Item "$projectPath\bin\$Configuration\System.ComponentModel.Annotations.dll" -Destination "$TargetPath\$element\bin" -Force
+		}
+
 		Write-Host "Deployed > $element"
 		Write-Host "---------------------------------------------------------------------------------"
 	}
