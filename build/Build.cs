@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Helpers;
 using Nuke.Common;
-using Nuke.Common.Execution;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tools.MSBuild;
 using Nuke.Common.Tools.NuGet;
 using Nuke.Common.Utilities.Collections;
-using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
 
-[CheckBuildProjectConfigurations]
 partial class Build : NukeBuild
 {
     /// Support plugins are available for:
@@ -45,8 +42,8 @@ partial class Build : NukeBuild
         .Before(Restore)
         .Executes(() =>
         {
-            SourceDirectory.GlobDirectories("**/bin", "**/obj").ForEach(DeleteDirectory);
-            EnsureCleanDirectory(ArtifactsDirectory);
+            SourceDirectory.GlobDirectories("**/bin", "**/obj").ForEach(dir => dir.DeleteDirectory());
+            ArtifactsDirectory.CreateOrCleanDirectory();
         });
 
     Target Restore => _ => _
@@ -88,7 +85,7 @@ partial class Build : NukeBuild
         .Unlisted()
         .Executes(() =>
         {
-            EnsureCleanDirectory(TempWorkDir);
+            TempWorkDir.CreateOrCleanDirectory();
             
             // Some projects have extra files that need to be copied to output apart from the project dll and the configs. 
             var projectExtraFilesHook = new Dictionary<string, Action<AbsolutePath, Configuration>>()
@@ -96,46 +93,40 @@ partial class Build : NukeBuild
                 {"PayPal", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.PayPal");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "paypal_base.dll", outputDirectory / "bin");
+                    (project.GetOutputDir(configuration) / "paypal_base.dll").CopyToDirectory(outputDirectory / "bin");
                 }},
                 {"Adyen", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Adyen");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Adyen.dll", outputDirectory / "bin");
+                    (project.GetOutputDir(configuration) / "Adyen.dll").CopyToDirectory(outputDirectory / "bin");
                 }},
                 {"Braintree", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Braintree");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Braintree.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Newtonsoft.Json.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.Directory / "BraintreePaymentForm.htm", outputDirectory);
+                    
+                    (project.GetOutputDir(configuration) / "Braintree.dll").CopyToDirectory(outputDirectory / "bin");
+                    (project.GetOutputDir(configuration) / "Newtonsoft.Json.dll").CopyToDirectory(outputDirectory / "bin");
+                    (project.Directory / "BraintreePaymentForm.htm").CopyToDirectory(outputDirectory);
                 }},
                 {"Stripe", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Stripe");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Stripe.net.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.GetOutputDir(configuration) / "Microsoft.Bcl.AsyncInterfaces.dll", outputDirectory / "bin");
-                    CopyFileToDirectory(
-                        project.Directory / "StripePaymentForm.htm", outputDirectory);
+
+                    (project.GetOutputDir(configuration) / "Stripe.net.dll").CopyToDirectory(outputDirectory / "bin");
+                    (project.GetOutputDir(configuration) / "Microsoft.Bcl.AsyncInterfaces.dll").CopyToDirectory(outputDirectory / "bin");
+                    (project.Directory / "StripePaymentForm.htm").CopyToDirectory(outputDirectory);
                 }}
             };
             
             Solution
-                .GetProjects("Ucommerce.Transactions.Payments.*")
+                .GetAllProjects("Ucommerce.Transactions.Payments.*")
                 .Where(project => project.Name != "Ucommerce.Transactions.Payments.Test")
                 .ForEach(project =>
                 {
                     var outputDir = project.GetOutputDir(Configuration);
                     var providerName = project.Name.Split(".").Last();
-                    CopyFileToDirectory(outputDir / $"{project.Name}.dll", TempWorkDir / providerName / "bin");
-                    CopyDirectoryRecursively(project.Directory / "Configuration", TempWorkDir / providerName / "Configuration");
+                    (outputDir / $"{project.Name}.dll").CopyToDirectory(TempWorkDir / providerName / "bin");
+                    (project.Directory / "Configuration").Copy(TempWorkDir / providerName / "Configuration");
                     if (projectExtraFilesHook.ContainsKey(providerName))
                     {
                         projectExtraFilesHook[providerName].Invoke(TempWorkDir / providerName, Configuration);
@@ -149,8 +140,8 @@ partial class Build : NukeBuild
         .DependsOn(GatherFiles)
         .Executes(() =>
         {
-            DeleteFile(ArtifactsDirectory / "paymentProviders.zip");
-            CompressionTasks.CompressZip(TempWorkDir, ArtifactsDirectory / "paymentProviders.zip");
+            (ArtifactsDirectory / "paymentProviders.zip").DeleteFile();
+            TempWorkDir.CompressTo(ArtifactsDirectory / "paymentProviders.zip");
         });
 
     [Parameter] AbsolutePath DeployDirectory;
@@ -165,8 +156,8 @@ partial class Build : NukeBuild
             TempWorkDir.GlobDirectories("*").ForEach(path =>
             {
                 var relativePath = TempWorkDir.GetRelativePathTo(path);
-                EnsureCleanDirectory(DeployDirectory / relativePath);
-                CopyDirectoryRecursively(path, DeployDirectory / relativePath, DirectoryExistsPolicy.Merge);
+                (DeployDirectory / relativePath).CreateOrCleanDirectory();
+                path.Copy(DeployDirectory / relativePath, ExistsPolicy.MergeAndOverwrite);
             });
         });
 }

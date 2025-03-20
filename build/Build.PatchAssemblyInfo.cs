@@ -27,13 +27,13 @@ partial class Build
              var assemblyInfoFiles = SourceDirectory.GlobFiles("**/AssemblyInfo.cs");
              foreach (var assemblyInfoFile in assemblyInfoFiles)
              {
-                 var contents = TextTasks.ReadAllText(assemblyInfoFile);
+                 var contents = assemblyInfoFile.ReadAllText();
 
                  var newContents = contents
                      .ReplaceRegex("AssemblyVersion\\(.*\\)", _ => $"AssemblyVersion(\"{FullVersion}\")")
                      .ReplaceRegex("AssemblyFileVersion\\(.*\\)", _ => $"AssemblyFileVersion(\"{FullVersion}\")")
                      .ReplaceRegex("AssemblyInformationalVersion\\(.*\\)", _ => $"AssemblyInformationalVersion(\"{FullVersion} {commitSha}\")");
-                TextTasks.WriteAllText(assemblyInfoFile, newContents);                 
+                assemblyInfoFile.WriteAllText(newContents);                 
              }
          });
 
