@@ -18,7 +18,7 @@ partial class Build : NukeBuild
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
 
-    public static int Main () => Execute<Build>(x => x.Compile);
+    public static int Main() => Execute<Build>(x => x.Compile);
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
@@ -64,7 +64,7 @@ partial class Build : NukeBuild
         {
             NuGetTasks.NuGet($"update {Solution.Path} -Id Ucommerce.Core -source {UcommerceNugetSource} -Prerelease");
         });
-    
+
     Target Compile => _ => _
         .Description("Compiles the solution")
         .DependsOn(Restore)
@@ -86,7 +86,7 @@ partial class Build : NukeBuild
         .Executes(() =>
         {
             TempWorkDir.CreateOrCleanDirectory();
-            
+
             // Some projects have extra files that need to be copied to output apart from the project dll and the configs. 
             var projectExtraFilesHook = new Dictionary<string, Action<AbsolutePath, Configuration>>()
             {
@@ -103,19 +103,19 @@ partial class Build : NukeBuild
                 {"Braintree", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Braintree");
-                    
+
                     (project.GetOutputDir(configuration) / "Braintree.dll").CopyToDirectory(outputDirectory / "bin");
                     (project.GetOutputDir(configuration) / "Newtonsoft.Json.dll").CopyToDirectory(outputDirectory / "bin");
                     (project.Directory / "BraintreePaymentForm.htm").CopyToDirectory(outputDirectory);
                 }},
-				{
-					"QuickpayLink", (outputDirectory, configuration) =>
-					{
-						var project = Solution.GetProject("Ucommerce.Transactions.Payments.QuickpayLink");
-						(project.GetOutputDir(configuration) / "Newtonsoft.Json.dll").CopyToDirectory(outputDirectory / "bin");
-					}
-				},
-				{"Stripe", (outputDirectory, configuration) =>
+                {
+                    "QuickpayLink", (outputDirectory, configuration) =>
+                    {
+                        var project = Solution.GetProject("Ucommerce.Transactions.Payments.QuickpayLink");
+                        (project.GetOutputDir(configuration) / "Newtonsoft.Json.dll").CopyToDirectory(outputDirectory / "bin");
+                    }
+                },
+                {"Stripe", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Stripe");
 
@@ -124,7 +124,7 @@ partial class Build : NukeBuild
                     (project.Directory / "StripePaymentForm.htm").CopyToDirectory(outputDirectory);
                 }}
             };
-            
+
             Solution
                 .GetAllProjects("Ucommerce.Transactions.Payments.*")
                 .Where(project => project.Name != "Ucommerce.Transactions.Payments.Test")
@@ -152,7 +152,7 @@ partial class Build : NukeBuild
         });
 
     [Parameter] AbsolutePath DeployDirectory;
-    
+
     // ReSharper disable once UnusedMember.Local
     Target DeployToLocal => _ => _
         .Description("Deploys to a local folder like a website")
