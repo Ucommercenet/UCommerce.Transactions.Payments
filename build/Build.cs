@@ -108,7 +108,14 @@ partial class Build : NukeBuild
                     (project.GetOutputDir(configuration) / "Newtonsoft.Json.dll").CopyToDirectory(outputDirectory / "bin");
                     (project.Directory / "BraintreePaymentForm.htm").CopyToDirectory(outputDirectory);
                 }},
-                {"Stripe", (outputDirectory, configuration) =>
+				{
+					"QuickpayLink", (outputDirectory, configuration) =>
+					{
+						var project = Solution.GetProject("Ucommerce.Transactions.Payments.QuickpayLink");
+						(project.GetOutputDir(configuration) / "Newtonsoft.Json.dll").CopyToDirectory(outputDirectory / "bin");
+					}
+				},
+				{"Stripe", (outputDirectory, configuration) =>
                 {
                     var project = Solution.GetProject("Ucommerce.Transactions.Payments.Stripe");
 
