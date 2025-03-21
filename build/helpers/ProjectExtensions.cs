@@ -12,7 +12,7 @@ namespace Helpers
         
         public static void CopyProjectBinDir(this Project project, AbsolutePath targetDir, Configuration configuration)
         {
-            FileSystemTasks.CopyDirectoryRecursively(project.GetOutputDir(configuration), targetDir);
+            project.GetOutputDir(configuration).Copy(targetDir);
         }
     }
 }
