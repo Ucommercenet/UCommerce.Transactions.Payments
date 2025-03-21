@@ -45,6 +45,6 @@ partial class Build
         .Unlisted()
         .Executes(() =>
         {
-            GitTasks.Git("checkout -- \"**\\AssemblyInfo.cs\"", SourceDirectory);
+            GitTasks.Git("checkout -- **\\AssemblyInfo.cs", SourceDirectory);
         });
 }
