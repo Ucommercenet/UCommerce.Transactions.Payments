@@ -154,42 +154,52 @@ namespace Ucommerce.Transactions.Payments.SagePay
 		protected override string GetSystemURL(string strType, PaymentMethod paymentMethod)
 		{
 			bool testMode = paymentMethod.DynamicProperty<bool>().TestMode;
-
-			var requestType = strType.ToLower();
-			if (testMode)
-			{
-				switch (requestType)
-				{
-					case "abort"		:	return "https://test.sagepay.com/gateway/service/abort.vsp";
-					case "authorise"	:	return "https://test.sagepay.com/gateway/service/authorise.vsp";
-					case "cancel"		:	return "https://test.sagepay.com/gateway/service/cancel.vsp";
-					case "purchase"		:	return "https://test.sagepay.com/gateway/service/vspserver-register.vsp";
-					case "refund"		:	return "https://test.sagepay.com/gateway/service/refund.vsp";
-					case "release"		:	return "https://test.sagepay.com/gateway/service/release.vsp";
-					case "repeat"		:	return "https://test.sagepay.com/gateway/service/repeat.vsp";
-					case "void"			:	return "https://test.sagepay.com/gateway/service/void.vsp";
-					case "3dcallback"	:	return "https://test.sagepay.com/gateway/service/direct3dcallback.vsp";
-					case "showpost"		:	return "https://test.sagepay.com/showpost/showpost.asp";
-				}
-			}			
-			else
-			{
-				switch (requestType)
-				{
-					case "abort"		: return "https://live.sagepay.com/gateway/service/abort.vsp";
-					case "authorise"	: return "https://live.sagepay.com/gateway/service/authorise.vsp";
-					case "cancel"		: return "https://live.sagepay.com/gateway/service/cancel.vsp";
-					case "purchase"		: return "https://live.sagepay.com/gateway/service/vspserver-register.vsp";
-					case "refund"		: return "https://live.sagepay.com/gateway/service/refund.vsp";
-					case "release"		: return "https://live.sagepay.com/gateway/service/release.vsp";
-					case "repeat"		: return "https://live.sagepay.com/gateway/service/repeat.vsp";
-					case "void"			: return "https://live.sagepay.com/gateway/service/void.vsp";
-					case "3dcallback"	: return "https://live.sagepay.com/gateway/service/direct3dcallback.vsp";
-					case "showpost"		: return "https://test.sagepay.com/showpost/showpost.asp";
-				}
-			}
+			var destinationDomain = GetDestinationDomain(testMode);
 			
-			throw new InvalidOperationException(string.Format("Could not figure out request: {0}. Testmode: {1}", strType,testMode));
-		}
-	}
+			var requestType = strType.ToLower();
+			var destinationPath = GetDestinationPath(requestType);
+
+			if(string.IsNullOrEmpty(destinationDomain) || string.IsNullOrEmpty(destinationPath))
+			{
+                throw new InvalidOperationException(string.Format("Could not figure out request: {0}. Testmode: {1}", strType, testMode));
+            }
+			return destinationDomain + destinationPath;
+        }
+
+		/// <summary>
+		/// Get the domain for the chosen environment.
+		/// </summary>
+		/// <param name="testMode"></param>
+		/// <returns></returns>
+        private string GetDestinationDomain(bool testMode)
+        {
+			var testDomain = "https://sandbox.opayo.eu.elavon.com";
+			var liveDomain = "https://live.opayo.eu.elavon.com";
+            if (testMode) return testDomain;
+            return liveDomain;
+        }
+
+		/// <summary>
+		/// Get the path appropriate to the request being made.
+		/// </summary>
+		/// <param name="requestType"></param>
+		/// <returns></returns>
+        private string GetDestinationPath(string requestType)
+        {
+            switch (requestType)
+            {
+                case "abort": return "/gateway/service/abort.vsp";
+                case "authorise": return "/gateway/service/authorise.vsp";
+                case "cancel": return "/gateway/service/cancel.vsp";
+                case "purchase": return "/gateway/service/vspserver-register.vsp";
+                case "refund": return "/gateway/service/refund.vsp";
+                case "release": return "/gateway/service/release.vsp";
+                case "repeat": return "/gateway/service/repeat.vsp";
+                case "void": return "/gateway/service/void.vsp";
+                case "3dcallback": return "/gateway/service/direct3dcallback.vsp";
+                case "showpost": return "/showpost/showpost.asp";
+				default: return null;
+            }
+        }
+    }
 }
